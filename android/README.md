@@ -11,7 +11,7 @@ Make sure you have the following software installed before beginning:
 - Latest version of Android Studio (3.0.1)
 - Recent version of the Android SDK (at least API 21)
 
-You can download these from the [Android Developer website](http://developer.android.com/sdk/index.html).
+You can download these from the [Android Developer website](https://developer.android.com/studio/index.html).
 
 > **NOTE:** If you have a Mac computer running macOS 10.11.5 or later, you may also be interested in our [iOS app](https://github.com/mirego/csgames18-competition/tree/master/ios), which uses Xcode and the latest iOS SDK.
 
@@ -36,7 +36,7 @@ Once you see a `BUILD SUCCESSFUL` notice in the Gradle Console, your environment
 
 The project should have already been configured as an Android project in Android Studio, therefore you should see a target named `app` in the main toolbar, with **Play** and **Debug** buttons on its right.
 
-Press on the **Debug** icon, and if you don't already have one, [create a new Android Virtual Device](http://developer.android.com/tools/devices/managing-avds.html), then select it to run the project.
+Press on the **Debug** icon, and if you don't already have one, [create a new Android Virtual Device](https://developer.android.com/studio/run/managing-avds.html), then select it to run the project.
 
 Once the app appears running in your Virtual Device, your environment is ready for the competition.
 
