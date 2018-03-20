@@ -40,10 +40,6 @@ Press on the **Debug** icon, and if you don't already have one, [create a new An
 
 Once the app appears running in your Virtual Device, your environment is ready for the competition.
 
-## How it works
-
-**CSMap** is a small application...
-
 ## License
 
 This competition is © 2018 [Mirego](http://www.mirego.com) and may be freely
