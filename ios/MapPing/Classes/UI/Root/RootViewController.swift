@@ -14,7 +14,7 @@ class RootViewController: BaseViewController {
     }
 
     private let viewControllers: [BaseViewController]
-    private var displatedViewController: Int = 0
+    private var displatedViewController: Int = 1
     private var transitionInProgress = false
 
     init(viewControllers: [BaseViewController]) {
@@ -28,7 +28,7 @@ class RootViewController: BaseViewController {
     }
 
     override func loadView() {
-        let firstViewController = viewControllers[0]
+        let firstViewController = viewControllers[displatedViewController]
         addChildViewController(firstViewController)
         view = RootView(view: firstViewController.view, icons: viewControllers.map { $0.navigationIcon ?? UIImage() })
         firstViewController.didMove(toParentViewController: self)

@@ -32,8 +32,8 @@ class NavigationButtons: UIView {
         super.init(frame: .zero)
 
         backgroundColor = UIColor.white.withAlphaComponent(0.9)
-        setShadow(radius: 10, offset: CGSize(width: 0, height: 2), opacity: 0.5, color: .black)
-        layer.cornerRadius = 4
+        setShadow(radius: 3, offset: CGSize(width: 0, height: 0), opacity: 0.25, color: .black)
+        layer.cornerRadius = 10
 
         for (index, button) in buttons.enumerated() {
             addSubview(button)

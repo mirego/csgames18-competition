@@ -9,7 +9,7 @@ import UIKit
 
 class ViewControllerFactory {
     func rootViewController() -> UIViewController {
-        return assign(RootViewController(viewControllers: [mapViewController(), listViewController(), augmentedRealityViewController()]))
+        return assign(RootViewController(viewControllers: [listViewController(), mapViewController(), augmentedRealityViewController()]))
     }
 
     func mapViewController() -> BaseViewController {
