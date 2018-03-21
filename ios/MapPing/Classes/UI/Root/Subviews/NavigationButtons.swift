@@ -59,7 +59,7 @@ class NavigationButtons: UIView {
         for (index, button) in buttons.enumerated() {
             button.pin.centerLeft().marginLeft(CGFloat(index) * NavigationButtons.buttonSize.width)
             if index < delimiters.count {
-                delimiters[index].pin.right(of: button).size(CGSize(width: 1, height: bounds.height)) // TODO fixed it...need update of Taylor
+                delimiters[index].pin.right(of: button).size(CGSize(width: 1, height: height))
             }
         }
     }

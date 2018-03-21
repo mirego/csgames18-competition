@@ -1,5 +1,5 @@
 PODS:
-  - MRGTaylor (1.4.1)
+  - MRGTaylor (1.4.2)
   - PinLayout (1.5.9)
 
 DEPENDENCIES:
@@ -7,7 +7,7 @@ DEPENDENCIES:
   - PinLayout
 
 SPEC CHECKSUMS:
-  MRGTaylor: bc9651ee0019186035700cb6088c6fa4f3b22aaa
+  MRGTaylor: bdfae9dec647ade7d22451ce2dcfaf0b95c80041
   PinLayout: b2ebf8622b28e82b6e1216ab4e4a0a8d082214fe
 
 PODFILE CHECKSUM: e3aa43e3edc8040cb921e18fa6688a6ced460849
