@@ -1,4 +1,4 @@
-# CS Games 2018 - Mobile
+# CS Games 2018 - Compétition mobile
 
 Bienvenue à la **compétition mobile des CS Games 2018**!
 (English below ↓)
@@ -66,6 +66,8 @@ Toutes les instructions pour démarrer les applications de base devraient être 
 
 
 ---
+
+# CS Games 2018 - Mobile Competition
 
 ## License
 
