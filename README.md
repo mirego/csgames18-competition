@@ -1,14 +1,14 @@
 # CS Games 2018 - Compétition mobile
 
 Bienvenue à la **compétition mobile des CS Games 2018**!
-(English below ↓)
+[(English below ↓)](#cs-games-2018---mobile-competition)
 
 ## Introduction
 
 L'arrivée des pingouins de l'espace a fait tout un émoi dans la communauté locale. Des efforts de masse ont été déployés pour retrouver les pièces du vaisseau éparpillées partout à travers le pays. Une plateforme de *crowdsourcing* a été créée pour documenter les pièces potentiellement identifiées par des habitants. Une banque de données a été partagée publiquement à l'adresse suivante:
 
 <p align="center">
-<a>https://s3.amazonaws.com/shared.ws.mirego.com/competition/mapping.json</a>
+  <strong><a>https://s3.amazonaws.com/shared.ws.mirego.com/competition/mapping.json</a></strong>
 </p>
 
 Heureux de cette assistance impromptue, les pingouins ont voulu bénéficier de la technologie disponible à leur portée pour utiliser cette banque de données à fond. Ils ont commencé à développer une application mobile, appelée **Map Ping**, qui leur permettra de consulter cette liste de pièces et de faciliter leur rappatriement. Malheureusement, leurs jours sont comptés et la technologie étant compliquée pour eux, ils ont besoin d'aide pour compléter leur application et se tournent donc vers vous, les fidèles.
