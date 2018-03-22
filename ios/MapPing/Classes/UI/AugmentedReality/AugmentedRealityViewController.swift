@@ -16,7 +16,7 @@ class AugmentedRealityViewController: BaseViewController {
 
     init() {
         super.init(nibName: nil, bundle: nil)
-        navigationIcon = UIImage(named: "icn-vr")
+        navigationIcon = UIImage(named: "icn-ar")
     }
 
     required init(coder aDecoder: NSCoder) {

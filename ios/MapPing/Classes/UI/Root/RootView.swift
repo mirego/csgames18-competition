@@ -53,6 +53,10 @@ class RootView: UIView {
             completion()
         }
     }
+
+    func setSelectedButton(index: Int) {
+        navigationButtons.setSelectedButton(index: index)
+    }
 }
 
 extension RootView: NavigationButtonsDelegate {

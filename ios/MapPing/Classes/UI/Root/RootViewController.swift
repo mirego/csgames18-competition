@@ -33,6 +33,7 @@ class RootViewController: BaseViewController {
         view = RootView(view: firstViewController.view, icons: viewControllers.map { $0.navigationIcon ?? UIImage() })
         firstViewController.didMove(toParentViewController: self)
         mainView.delegate = self
+        mainView.setSelectedButton(index: displatedViewController)
     }
 }
 
@@ -52,5 +53,6 @@ extension RootViewController: RootViewDelegate {
             strongSelf.transitionInProgress = false
         }
         displatedViewController = index
+        mainView.setSelectedButton(index: displatedViewController)
     }
 }

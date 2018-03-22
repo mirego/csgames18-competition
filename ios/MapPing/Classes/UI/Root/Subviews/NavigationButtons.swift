@@ -13,7 +13,7 @@ protocol NavigationButtonsDelegate: class {
 }
 
 class NavigationButtons: UIView {
-    private static let buttonSize = CGSize(width: 50, height: 44)
+    private static let buttonSize = CGSize(width: 45, height: 46)
 
     weak var delegate: NavigationButtonsDelegate?
 
@@ -31,7 +31,7 @@ class NavigationButtons: UIView {
         delimiters = views
         super.init(frame: .zero)
 
-        backgroundColor = UIColor.white.withAlphaComponent(0.9)
+        backgroundColor = UIColor.white.withAlphaComponent(0.95)
         setShadow(radius: 3, offset: CGSize(width: 0, height: 0), opacity: 0.25, color: .black)
         layer.cornerRadius = 10
 
@@ -64,9 +64,16 @@ class NavigationButtons: UIView {
         }
     }
 
+    func setSelectedButton(index: Int) {
+        for (buttonIndex, button) in buttons.enumerated() {
+            button.isEnabled = index != buttonIndex
+        }
+    }
+
     private static func buildButton(image: UIImage) -> UIButton {
         let button = UIButton()
-        button.setImage(image, for: .normal)
+        button.setImage(image.imageWithTintColor(.primary), for: .normal)
+        button.setImage(image.imageWithTintColor(.secondary), for: .disabled)
         button.pin.size(buttonSize)
         return button
     }
