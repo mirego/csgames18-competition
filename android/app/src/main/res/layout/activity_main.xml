@@ -6,13 +6,60 @@
     android:layout_height="match_parent"
     tools:context="com.mirego.csmapapplication.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <FrameLayout
+        android:id="@+id/fragmentRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="138dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="18dp"
+        android:layout_marginRight="18dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintRight_toRightOf="parent">
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <ImageButton
+                android:id="@+id/listButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:tint="@color/cloudGray"
+                android:clickable="true"
+                android:src="@drawable/ic_list"
+                android:background="@android:color/white"/>
+
+            <ImageButton
+                android:id="@+id/mapButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:tint="@color/cloudGray"
+                android:clickable="true"
+                android:src="@drawable/ic_map"
+                android:background="@android:color/white"/>
+
+            <ImageButton
+                android:id="@+id/arButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:tint="@color/cloudGray"
+                android:clickable="true"
+                android:src="@drawable/ic_ar"
+                android:background="@android:color/white"/>
+
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
 
 </android.support.constraint.ConstraintLayout>
