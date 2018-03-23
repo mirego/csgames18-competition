@@ -120,7 +120,7 @@ Les fonctionnalités potentielles sont infinies, votre créativité est sollicit
 
 Nous évaluerons votre travail en fonction de **_comment vous l'avez fait_**, et non de la **_quantité d'ajouts effectués_**. Il est mieux de faire une seule chose très bien que de faire plusieurs choses incomplètes.
 
-La grille suivante sera transmise avec nos évaluations:
+La grille suivante sera utilisée pour la correction:
 
 <table>
   <thead>
@@ -132,17 +132,17 @@ La grille suivante sera transmise avec nos évaluations:
   <tbody>
     <tr>
       <td>
-        <strong>Solution</strong>
+        <p><strong>Solution</strong></p>
         <ul>
           <li>Résolution générale du problème</li>          <li>Originalité de la solution</li>          <li>Qualité de l'intégration (apparence et utilisation)</li>
           <li>Respect du thème</li>
         </ul>
       </td>
-      <td align="right" valign="top"><strong>/ 50</strong></td>
+      <td align="right" valign="top"><strong>/ 35</strong></td>
     </tr>
     <tr>
       <td>
-        <strong>Implémentation</strong>
+        <p><strong>Implémentation</strong></p>
         <ul>
           <li>Qualité générale du code</li>          <li>Bonne utilisation des patterns de programmation</li>          <li>Bonne utilisation des librairies et ressources externes</li>
           <li>Respect des standards de la plateforme</li>
@@ -152,7 +152,7 @@ La grille suivante sera transmise avec nos évaluations:
     </tr>
     <tr>
       <td>
-        <strong>Qualité</strong>
+        <p><strong>Qualité</strong></p>
         <ul>
           <li>Respect de la structure du projet</li>          <li>Respect de la syntaxe du langage</li>          <li>Qualité de l'intégration (apparence et utilisation)</li>
           <li>Respect du thème</li>
@@ -162,13 +162,13 @@ La grille suivante sera transmise avec nos évaluations:
     </tr>
     <tr>
       <td>
-        <strong>Remise</strong>
+        <p><strong>Remise</strong></p>
         <ul>
           <li>Pull Request en bonne et du forme</li>
           <li>Description fournie et bien documentée</li>
         </ul>
       </td>
-      <td align="right" valign="top"><strong>/ 10</strong></td>
+      <td align="right" valign="top"><strong>/ 25</strong></td>
     </tr>
   </tbody>
   <tfoot>
@@ -178,6 +178,14 @@ La grille suivante sera transmise avec nos évaluations:
     </tr>
   </tfoot>
 </table>
+
+Autres points importants:
+
+- Un projet qui ne **builde pas** se verra accorder une note de **0 / 100** (en suite d'un effort minimal). Assurez-vous de bien détailler votre soumission si des étapes de build sont nécessaires.
+
+- Le code doit avoir été construit à partir des projets de base et il doit être facile d'identifier vos changements via un diff. Un répertoire restructuré qui demande de repasser vos fichiers un par un pour retrouver vos changements donnera **0 / 25** dans la partie "Remise".
+
+- L'heure de soumission de votre code ne doit pas dépasser la fin de la compétition. Une archive des branches sera effectuée en sortant des locaux – inutile de tenter d'amender vos commits dans les heures qui suivent. Une tricherie identifiée recevra aussi **0 / 100**.
 
 ### Remise
 
@@ -189,7 +197,62 @@ La correction sera effectuée à l'aide de **Pull Requests** sur le répertoire 
 - [Fork a repo](https://help.github.com/articles/fork-a-repo/)
 - [Creating a pull request from a fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/).
 
+Votre **Pull Request** doit respecter la structure suivante:
 
+- **Titre**: Code de votre équipe (exemple: `sherbrooke1`)
+- **Description**: Utiliser le template Markdown ci-bas en remplaçant les textes entre `{}`
+
+```markdown
+## Équipe
+
+**Nom de l'équipe:** {DaStreez}
+**Code de l'équipe:** {mirego1}
+**Université:** {Université de Griffintown}
+
+**Auteurs:**
+- {Hugo Lefrançois}
+- {Mathieu Larue}
+
+## Solution
+
+**Plateforme:** {iOS | Android}
+
+**Fonctionnalités:**
+1. {Mode carte: connexion de la datasource et affichage de toutes les pins}
+2. {Ramassage de pièce: possibilité de marquer une pièce ramassée}
+3. {Siri: demander à Siri la pièce la plus proche de ma position actuelle}
+4. {etc.}
+
+**Étapes de build:**
+- {On a ajouté la librairie GooglePlaces au Podfile, il faut rouler `pod install` avant de builder}
+- {On a activé la capability "Siri", connecter un compte Apple Developer pour tester}
+
+**Ce qui a bien été ou mal été:**
+- {Le projet de base était vraiment bien fait, ça a aidé pour commencer}
+- {Le clustering on a eu pas mal de misère, les librairies qu'on a essayé marchaient mal}
+
+**Fiertés et déceptions:**
+- {On est assez fier d'avoir pu faire marcher Siri, c'était hors de nos attentes et ça fonctionne aux toasts}
+- {On est déçus de ne pas avoir pu attaquer le mode AR, ça aurait été sick}
+
+```
+
+> **NOTE:** Si vous n'avez pas de compte Github, levez la main au début de l'épreuve, nous pourrons vous fournir un compte générique.
+
+## Licence
+
+Cette compétition est © 2018 [Mirego](http://www.mirego.com) et peut être librement distribuée sous la [license BSD](http://opensource.org/licenses/BSD-3-Clause).
+Voir le fichier [`LICENSE.md`](https://github.com/mirego/csgames18-competition/blob/master/LICENSE.md).
+
+## Remerciements
+
+Les icônes de pièces ont été conçues par [Eucalyp](https://creativemarket.com/eucalyp) de [Flaticon.com](https://www.flaticon.com/). Merci 👌
+
+## À propos de Mirego
+
+[Mirego](http://mirego.com) est une équipe de gens passionnés qui croit que le travail est un lieu agréable propice à l’innovation. Nous sommes une équipe de [personnes talentueuses](http://life.mirego.com) qui construisent des applications Web et Mobile. Nous nous réunissons pour partager nos idées et [changer le monde](http://mirego.org).
+
+Nous aimons aussi les [logiciels open-source](http://open.mirego.com) et tentons de redonner le plus possible dans la communauté.
 
 
 ---
@@ -198,6 +261,8 @@ La correction sera effectuée à l'aide de **Pull Requests** sur le répertoire 
 
 Welcome to the **CS Games 2017 Mobile Competition**!
 [(French above ↑)](#cs-games-2018---competition-mobile)
+
+------ TBD ------
 
 ## License
 
