@@ -193,9 +193,11 @@ Autres points importants:
 ⚠️ Prévoyez au moins 10 minutes à la fin pour préparer votre soumission ⚠️ 
 </th></tr></thead></table>
 
-La correction sera effectuée à l'aide de **Pull Requests** sur le répertoire Github. Si vous n'êtes pas familiers avec ce concept, référez-vous à ces articles: 
-- [Fork a repo](https://help.github.com/articles/fork-a-repo/)
-- [Creating a pull request from a fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/).
+La correction sera effectuée à l'aide de **Pull Requests** sur le répertoire Github.
+
+> Si vous n'êtes pas familiers avec ce concept, référez-vous à ces articles: 
+> - [Fork a repo](https://help.github.com/articles/fork-a-repo/)
+> - [Creating a pull request from a fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/).
 
 Votre **Pull Request** doit respecter la structure suivante:
 
