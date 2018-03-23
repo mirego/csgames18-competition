@@ -72,19 +72,51 @@ Certaines composantes n'ont pas de coordonnées GPS et d'autres n'ont pas d'adre
 
 ### Modes d'affichage
 
-L'application comporte 3 modes d'affichage:
+L'application comporte 3 modes d'affichage, qui pour l'instant ne font que démontrer le visuel à l'aide d'une pièce inexistante. Ces différents modes peuvent être complétés en implémentant les fonctionnalités suivantes:
 
-**Liste**
-* Lister chacune des pièces dans une table
-* TBD
+#### Liste de pièces
+* Afficher chacune des pièces dans une liste à cellules réutilisables
+* Afficher le sommaire des pièces à partir de la banque de données
+* Afficher l'icône de chaque type de pièce dans les cellules
+* Afficher la distance relative entre la pièce et l'emplacement actuel
+* Ordonner les pièces par proximité
 
-TBD
+#### Carte de pièces
+* Afficher chacune des pièces sur des épingles de la carte (📍)
+* Afficher le nom et le composant de la pièce à l'appui de l'épingle
+* Afficher l'icône de chaque type de pièce dans les épingles
+* Gérer le regroupement (clustering) à la réduction du niveau de zoom
+* Positionner la carte autour de la position actuelle (et afficher celle-ci)
+* Donner les directions entre la position actuelle et une pièce choisie
+
+#### Réalité augmentée
+* Afficher les pièces dans l'espace tridimensionnel géolocalisées
+* Afficher la distance entre la pièce dans l'espace et l'emplacement actuel
+
+### Fonctions supplémentaires
+
+Une fois les pièces affichées, beaucoup de fonctions peuvent être ajoutées à l'application pour aider les pingouins à retrouver leurs pièces. Quelques exemples:
+
+- **Détails des pièces**: La vue par liste affiche seulement un résumé de chaque pièce et la carte ne fait que les positionner. Un nouvel écran "Détail d'une pièce" permettrait de consulter, entre autres, ses notes d'identification et son adresse physique.
+
+- **Ramassage de pièce**: Vu la quantité de pièces à chercher, il serait pratique de pouvoir marquer les pièces lorsqu'elles ont été ramassées, pour pouvoir savoir lesquelles sont rescapées et lesquelles demeurent perdues.
+
+- **Notes de ramassage**: Lorsque les pingouins récupéreront la pièce, il pourrait être pertinent pour eux aussi d'ajouter des informations. Photo de la trouvaille, notes de cueillette, etc. - un formulaire pourrait leur être présenté pour entrer ces détails.
+
+- **Persistence**: Pour toutes les données entrées, il est intéressant de les ajouter localement dans l'application, mais cela n'en est rien si les données disparaissent suite à la fermeture de l'application. Implanter une sorte de stockage local permetterait d'assurer la persistance.
 
 ## Évaluation
+
+Évidemment, on ne vous demande pas de connecter la source, de faire fonctionner **tous** les modes d'affichages et d'ajouter **toutes** les fonctionnalités listés ci-haut. En 3 heures, on vous demande de faire le maximum possible et d'utiliser de votre créativité – le but ultime est de nous impressionner.
 
 <table><thead><tr><th align="center">
 ⚠️ Prévoyez au moins 10 minutes à la fin pour préparer votre soumission ⚠️ 
 </th></tr></thead></table>
+
+La correction sera effectuée à l'aide de **Pull Requests** sur le répertoire Github. Si vous n'êtes pas familiers avec ce concept, référez-vous à ces articles: 
+- [Fork a repo](https://help.github.com/articles/fork-a-repo/)
+- [Creating a pull request from a fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/).
+
 
 
 
