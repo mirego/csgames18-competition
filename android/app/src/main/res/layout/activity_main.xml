@@ -6,10 +6,21 @@
     android:layout_height="match_parent"
     tools:context="com.mirego.csmapapplication.MainActivity">
 
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:popupTheme="@android:style/ThemeOverlay.Material.Light"
+        android:theme="@android:style/ThemeOverlay.Material.ActionBar"
+        android:titleTextColor="@android:color/white" />
+
     <FrameLayout
         android:id="@+id/fragmentRoot"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <android.support.v7.widget.CardView
         android:layout_width="138dp"
@@ -22,8 +33,8 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
-            android:layout_height="match_parent"
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
             android:weightSum="3">
 
@@ -32,42 +43,37 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:tint="@color/cloudGray"
-                android:clickable="true"
+                android:background="?android:attr/selectableItemBackground"
                 android:src="@drawable/ic_list"
-                android:background="?android:attr/selectableItemBackground"/>
+                android:tint="@color/colorAccent" />
 
             <View
                 android:layout_width="0.5dp"
                 android:layout_height="match_parent"
-                android:background="@color/cloudGray">
-            </View>
+                android:background="@color/cloudGray" />
 
             <ImageButton
                 android:id="@+id/mapButton"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:tint="@color/cloudGray"
-                android:clickable="true"
+                android:background="?android:attr/selectableItemBackground"
                 android:src="@drawable/ic_map"
-                android:background="?android:attr/selectableItemBackground"/>
+                android:tint="@color/cloudGray" />
 
             <View
                 android:layout_width="0.5dp"
                 android:layout_height="match_parent"
-                android:background="@color/cloudGray">
-            </View>
+                android:background="@color/cloudGray" />
 
             <ImageButton
                 android:id="@+id/arButton"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:tint="@color/cloudGray"
-                android:clickable="true"
+                android:background="?android:attr/selectableItemBackground"
                 android:src="@drawable/ic_ar"
-                android:background="?android:attr/selectableItemBackground"/>
+                android:tint="@color/cloudGray" />
 
 
         </LinearLayout>
