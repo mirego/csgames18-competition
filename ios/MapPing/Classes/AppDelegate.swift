@@ -15,8 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private let serviceFactory = ServiceFactory()
     private let viewControllerFactory: ViewControllerFactory
 
+    private let partService: PartService
+
     override init() {
         viewControllerFactory = ViewControllerFactory(serviceFactory: serviceFactory)
+        partService = serviceFactory.partService()
         super.init()
     }
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -32,10 +35,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        serviceFactory.partService().refreshParts()
+        partService.refreshParts()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        serviceFactory.partService().refreshParts()
+        partService.refreshParts()
     }
 }

@@ -23,7 +23,7 @@ class ViewControllerFactory {
     }
 
     private func listViewController() -> NavigationViewController {
-        let navigationController = NavigationViewController(rootViewController: ListViewController())
+        let navigationController = NavigationViewController(rootViewController: ListViewController(partService: serviceFactory.partService()))
         navigationController.navigationIcon = #imageLiteral(resourceName: "icn-list")
         return navigationController
     }

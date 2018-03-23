@@ -13,7 +13,10 @@ class ListViewController: BaseViewController {
         return self.view as! ListView
     }
 
-    init() {
+    private let partService: PartService
+
+    init(partService: PartService) {
+        self.partService = partService
         super.init(nibName: nil, bundle: nil)
         title = "Map Ping" 
     }
@@ -28,5 +31,13 @@ class ListViewController: BaseViewController {
 
     override func loadView() {
         view = ListView()
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        _ = partService.partsObservable.register { (_, parts) in
+            print("Nb of parts received: \(parts.count)")
+        }
     }
 }
