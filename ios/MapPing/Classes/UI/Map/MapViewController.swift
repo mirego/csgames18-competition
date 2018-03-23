@@ -18,7 +18,7 @@ class MapViewController: BaseViewController {
 
     init() {
         super.init(nibName: nil, bundle: nil)
-        navigationIcon = UIImage(named: "icn-map")
+        navigationIcon = #imageLiteral(resourceName: "icn-map")
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -32,5 +32,6 @@ class MapViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mainView.mapView.setRegion(MKCoordinateRegion(center: quebecCityCoordinate, span: startSpan), animated: false)
+        mainView.mapView.addAnnotation(PieceAnnotation(coordinate: quebecCityCoordinate, iconName: "part-clutch"))
     }
 }

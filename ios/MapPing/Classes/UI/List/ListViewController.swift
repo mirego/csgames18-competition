@@ -15,7 +15,7 @@ class ListViewController: BaseViewController {
 
     init() {
         super.init(nibName: nil, bundle: nil)
-        navigationIcon = UIImage(named: "icn-list")
+        navigationIcon = #imageLiteral(resourceName: "icn-list")
     }
 
     required init(coder aDecoder: NSCoder) {

@@ -14,6 +14,8 @@ class MapView: UIView {
     init() {
         super.init(frame: .zero)
 
+        mapView.register(PieceAnnotationView.self, forAnnotationViewWithReuseIdentifier: PieceAnnotationView.reuseIdentifier)
+        mapView.delegate = self
         addSubview(mapView)
     }
 
@@ -27,3 +29,12 @@ class MapView: UIView {
     }
 }
 
+extension MapView: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard !(annotation is MKUserLocation), let annotation = annotation as? PieceAnnotation else { return nil }
+
+        let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: PieceAnnotationView.reuseIdentifier, for: annotation) as! PieceAnnotationView
+        annotationView.configure(pieceImageName: annotation.iconName)
+        return annotationView
+    }
+}
