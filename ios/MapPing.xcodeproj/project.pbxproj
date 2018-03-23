@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		940F0B61F668AD88441334C2 /* Pods_MapPing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16CD00BB887C10CE3E91B52C /* Pods_MapPing.framework */; };
+		F1196A76206481B60084672D /* PieceAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A75206481B60084672D /* PieceAnnotationView.swift */; };
+		F1196A782064857D0084672D /* PieceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A772064857D0084672D /* PieceAnnotation.swift */; };
 		F19EA0902061C36000FE9A5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19EA08F2061C36000FE9A5E /* AppDelegate.swift */; };
 		F19EA0972061C36000FE9A5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F19EA0962061C36000FE9A5E /* Assets.xcassets */; };
 		F19EA09A2061C36000FE9A5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F19EA0982061C36000FE9A5E /* LaunchScreen.storyboard */; };
@@ -29,6 +31,8 @@
 		16CD00BB887C10CE3E91B52C /* Pods_MapPing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapPing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BFA57CDB381CDA05A7C2162 /* Pods-MapPing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapPing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapPing/Pods-MapPing.debug.xcconfig"; sourceTree = "<group>"; };
 		E901EFF955E9ACF4A910DAE7 /* Pods-MapPing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapPing.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapPing/Pods-MapPing.release.xcconfig"; sourceTree = "<group>"; };
+		F1196A75206481B60084672D /* PieceAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceAnnotationView.swift; sourceTree = "<group>"; };
+		F1196A772064857D0084672D /* PieceAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceAnnotation.swift; sourceTree = "<group>"; };
 		F19EA08C2061C36000FE9A5E /* MapPing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapPing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F19EA08F2061C36000FE9A5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F19EA0962061C36000FE9A5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,6 +79,14 @@
 				16CD00BB887C10CE3E91B52C /* Pods_MapPing.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F1196A74206481680084672D /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				F1196A75206481B60084672D /* PieceAnnotationView.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		F19EA0832061C36000FE9A5E = {
@@ -166,8 +178,10 @@
 		F19EA0AF2061C66800FE9A5E /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				F1196A74206481680084672D /* Subviews */,
 				F19EA0B42061C6B300FE9A5E /* MapViewController.swift */,
 				F19EA0BA2061C6DC00FE9A5E /* MapView.swift */,
+				F1196A772064857D0084672D /* PieceAnnotation.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -335,7 +349,9 @@
 				F19EA0902061C36000FE9A5E /* AppDelegate.swift in Sources */,
 				F19EA0B32061C6A800FE9A5E /* AugmentedRealityViewController.swift in Sources */,
 				F19EA0C02061CB7100FE9A5E /* NavigationButtons.swift in Sources */,
+				F1196A782064857D0084672D /* PieceAnnotation.swift in Sources */,
 				F19EA0A72061C58400FE9A5E /* RootViewController.swift in Sources */,
+				F1196A76206481B60084672D /* PieceAnnotationView.swift in Sources */,
 				F19EA0B72061C6C100FE9A5E /* ListViewController.swift in Sources */,
 				F19EA0BB2061C6DC00FE9A5E /* MapView.swift in Sources */,
 				F19EA0BD2061C6E300FE9A5E /* ListView.swift in Sources */,
