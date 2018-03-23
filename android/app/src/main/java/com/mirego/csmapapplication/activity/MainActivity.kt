@@ -83,12 +83,12 @@ class MainActivity : FragmentActivity() {
 
     override fun onSaveInstanceState(outState: Bundle?) {
         super.onSaveInstanceState(outState)
-        outState?.putInt("saved", selectedSegmentIndex)
+        outState?.putInt(SELECTED_SEGMENT_INDEX_KEY, selectedSegmentIndex)
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
         super.onRestoreInstanceState(savedInstanceState)
-        savedInstanceState?.getInt("saved")?.let {
+        savedInstanceState?.getInt(SELECTED_SEGMENT_INDEX_KEY)?.let {
             selectedSegmentIndex = it
             updateSegmentButtonsColor()
         }
@@ -111,5 +111,9 @@ class MainActivity : FragmentActivity() {
                 if (selected) R.color.brightSunYellow else R.color.cloudGray
             )
         )
+    }
+
+    companion object {
+        private const val SELECTED_SEGMENT_INDEX_KEY = "SELECTED_SEGMENT_INDEX_KEY"
     }
 }
