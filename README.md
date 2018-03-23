@@ -5,13 +5,13 @@ Bienvenue à la **compétition mobile des CS Games 2018**!
 
 ## Introduction
 
-L'arrivée des pingouins de l'espace a fait tout un émoi dans la communauté locale. Des efforts de masse ont été déployés pour retrouver les pièces du vaisseau éparpillées partout à travers le pays. Une plateforme de *crowdsourcing* a été créée pour documenter les pièces potentiellement identifiées par des habitants. Une banque de données a été partagée publiquement à l'adresse suivante:
+L'arrivée des pingouins de l'espace a fait tout un émoi dans la communauté locale. Inhabitués aux présences vivantes extra-terrestres, les lieux de cultes ont investi toute leur énergie pour offrir de l'aide à ces nouveaux arrivants. Des efforts de masse ont été déployés pour retrouver les pièces du vaisseau éparpillées partout à travers le pays. Une plateforme de *crowdsourcing* a été créée pour documenter les pièces potentiellement identifiées par les tribus. La banque de données résultante a été partagée publiquement à l'adresse suivante:
 
 <p align="center">
   <strong><a>https://s3.amazonaws.com/shared.ws.mirego.com/competition/mapping.json</a></strong>
 </p>
 
-Heureux de cette assistance impromptue, les pingouins ont voulu bénéficier de la technologie disponible à leur portée pour utiliser cette banque de données à fond. Ils ont commencé à développer une application mobile, appelée **Map Ping**, qui leur permettra de consulter cette liste de pièces et de faciliter leur rappatriement. Malheureusement, leurs jours sont comptés et la technologie étant compliquée pour eux, ils ont besoin d'aide pour compléter leur application et se tournent donc vers vous, les fidèles.
+Heureux de cette assistance impromptue, les pingouins ont voulu bénéficier de la technologie disponible à leur portée pour utiliser cette banque de données au maximum. Ils ont commencé à développer une application mobile, appelée **Map Ping**, qui leur permettra de consulter cette liste de pièces et de faciliter leur rappatriement. Malheureusement, leurs jours sont comptés et la technologie étant compliquée pour eux, ils ont besoin d'aide pour compléter leur application et se tournent donc vers vous, les fidèles.
 
 <table>
 <thead><tr><th colspan="4">Map Ping</th></tr></thead>
@@ -33,7 +33,7 @@ Heureux de cette assistance impromptue, les pingouins ont voulu bénéficier de 
 
 ## Pour débuter
 
-Vous trouverez le code de base du projet **Map Ping** dans les sous-dossiers [`ios/`](https://github.com/mirego/csgames18-competition/tree/master/ios) et [`android/`](https://github.com/mirego/csgames18-competition/tree/master/android) de ce répertoire:
+Vous trouverez le code de base du projet **Map Ping** dans les sous-dossiers [`ios/`](https://github.com/mirego/csgames18-competition/tree/master/ios) et [`android/`](https://github.com/mirego/csgames18-competition/tree/master/android) de ce répertoire Github:
 
 <table width="100%">
   <thead>
@@ -54,8 +54,31 @@ Toutes les instructions pour démarrer les applications de base devraient être 
 
 ## Le défi
 
-- Source de données incomplètes; coordonnées manquantes 
+L'application **Map Ping** prévoit afficher les pièces identifiées et aider les pingouins à les retrouver sur la route. Pour l'instant, la listées dans la [banque de données](https://s3.amazonaws.com/shared.ws.mirego.com/competition/mapping.json) n'est pas connectée et l'affichage est entièrement statique.
 
+
+### Connexion des données
+
+Votre mission, pour commencer, sera d'abord de connecter les données pour les afficher dans l'application. Chaque pièce retrouvée a été détaillée de plusieurs informations:
+
+- Nom de la pièce
+- Composant du vaisseau associé
+- Notes d'identification (comment retrouver la pièce)
+- Type de pièce
+- Coordonnées GPS (lat, long)
+- Adresse physique
+
+Certaines composantes n'ont pas de coordonnées GPS et d'autres n'ont pas d'adresse physique. Il sera de votre ressort de retrouver l'un à partir de l'autre si nécessaire, à l'aide d'outils de géocodage.
+
+### Modes d'affichage
+
+L'application comporte 3 modes d'affichage:
+
+**Liste**
+* Lister chacune des pièces dans une table
+* TBD
+
+TBD
 
 ## Évaluation
 
@@ -68,6 +91,9 @@ Toutes les instructions pour démarrer les applications de base devraient être 
 ---
 
 # CS Games 2018 - Mobile Competition
+
+Welcome to the **CS Games 2017 Mobile Competition**!
+[(French above ↑)](#cs-games-2018---competition-mobile)
 
 ## License
 
