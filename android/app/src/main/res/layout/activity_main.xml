@@ -35,7 +35,13 @@
                 android:tint="@color/cloudGray"
                 android:clickable="true"
                 android:src="@drawable/ic_list"
-                android:background="@android:color/white"/>
+                android:background="?android:attr/selectableItemBackground"/>
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/cloudGray">
+            </View>
 
             <ImageButton
                 android:id="@+id/mapButton"
@@ -45,7 +51,13 @@
                 android:tint="@color/cloudGray"
                 android:clickable="true"
                 android:src="@drawable/ic_map"
-                android:background="@android:color/white"/>
+                android:background="?android:attr/selectableItemBackground"/>
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/cloudGray">
+            </View>
 
             <ImageButton
                 android:id="@+id/arButton"
@@ -55,7 +67,7 @@
                 android:tint="@color/cloudGray"
                 android:clickable="true"
                 android:src="@drawable/ic_ar"
-                android:background="@android:color/white"/>
+                android:background="?android:attr/selectableItemBackground"/>
 
 
         </LinearLayout>

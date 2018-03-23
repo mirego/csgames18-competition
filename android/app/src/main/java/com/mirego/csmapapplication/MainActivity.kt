@@ -52,28 +52,20 @@ class MainActivity : FragmentActivity() {
 
     private fun setupButtons() {
         val buttons = listOf<ImageButton>(listButton, mapButton, arButton)
-        val listener = View.OnTouchListener({ v: View, m: MotionEvent ->
-            when (m.action) {
-                MotionEvent.ACTION_DOWN -> {
-                    (v as ImageButton).setColorFilter(ContextCompat.getColor(this, R.color.brightSunYellow))
-                }
 
-                MotionEvent.ACTION_UP -> {
-                    for (b in buttons) {
-                        if (b == v as ImageButton) {
-                            b.setColorFilter(ContextCompat.getColor(this, R.color.brightSunYellow))
-                            didTouchUp(b)
-                        } else {
-                            b.setColorFilter(ContextCompat.getColor(this, R.color.cloudGray))
-                        }
-                    }
+        val listener = View.OnClickListener { v: View ->
+            for (b in buttons) {
+                if (b == v as ImageButton) {
+                    b.setColorFilter(ContextCompat.getColor(this, R.color.brightSunYellow))
+                    didTouchUp(b)
+                } else {
+                    b.setColorFilter(ContextCompat.getColor(this, R.color.cloudGray))
                 }
             }
-            true
-        })
+        }
 
         for (btn in buttons) {
-            btn.setOnTouchListener(listener)
+            btn.setOnClickListener(listener)
         }
     }
 
