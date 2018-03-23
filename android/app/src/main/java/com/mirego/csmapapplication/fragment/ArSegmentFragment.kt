@@ -1,4 +1,4 @@
-package com.mirego.csmapapplication.Ar
+package com.mirego.csmapapplication.fragment
 
 import android.support.v4.app.Fragment
 import android.os.Bundle

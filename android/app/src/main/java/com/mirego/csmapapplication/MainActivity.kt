@@ -6,9 +6,9 @@ import android.support.v4.app.FragmentActivity
 import android.support.v4.content.ContextCompat
 import android.view.View
 import android.widget.ImageButton
-import com.mirego.csmapapplication.List.ListSegmentFragment
-import com.mirego.csmapapplication.Ar.ArSegmentFragment
-import com.mirego.csmapapplication.Map.MapSegmentFragment
+import com.mirego.csmapapplication.fragment.ListSegmentFragment
+import com.mirego.csmapapplication.fragment.ArSegmentFragment
+import com.mirego.csmapapplication.fragment.MapSegmentFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : FragmentActivity() {
@@ -27,8 +27,8 @@ class MainActivity : FragmentActivity() {
 
     private fun setupMainView() {
         supportFragmentManager.beginTransaction()
-                .add(fragmentRoot.id, listFragment)
-                .commit()
+            .add(fragmentRoot.id, listFragment)
+            .commit()
     }
 
     private fun onSegmentButtonClicked(button: ImageButton) {
