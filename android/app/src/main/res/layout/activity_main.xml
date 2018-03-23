@@ -44,8 +44,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="?android:attr/selectableItemBackground"
-                android:src="@drawable/ic_list"
-                android:tint="@color/colorAccent" />
+                android:src="@drawable/ic_list" />
 
             <View
                 android:layout_width="0.5dp"
@@ -58,8 +57,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="?android:attr/selectableItemBackground"
-                android:src="@drawable/ic_map"
-                android:tint="@color/cloudGray" />
+                android:src="@drawable/ic_map" />
 
             <View
                 android:layout_width="0.5dp"
@@ -72,8 +70,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="?android:attr/selectableItemBackground"
-                android:src="@drawable/ic_ar"
-                android:tint="@color/cloudGray" />
+                android:src="@drawable/ic_ar" />
 
         </LinearLayout>
     </android.support.v7.widget.CardView>

@@ -17,15 +17,23 @@ class MainActivity : FragmentActivity() {
 
     private val listFragment = ListSegmentFragment()
     private val mapFragment = MapSegmentFragment()
+    private var selectedSegmentIndex = 0
+
+    private lateinit var segmentButtons: List<ImageButton>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        segmentButtons = listOf(listButton, mapButton, arButton)
+
         setActionBar(toolbar)
 
+        if (savedInstanceState == null) {
+            setupMainView()
+        }
+
         setupButtons()
-        setupMainView()
     }
 
     private fun setupMainView() {
@@ -35,7 +43,6 @@ class MainActivity : FragmentActivity() {
     }
 
     private fun onSegmentButtonClicked(button: ImageButton) {
-
         when (button) {
             listButton -> {
                 replaceFragment(listFragment)
@@ -58,32 +65,51 @@ class MainActivity : FragmentActivity() {
     }
 
     private fun setupButtons() {
-        val buttons = listOf<ImageButton>(listButton, mapButton, arButton)
-
         val listener = View.OnClickListener { view: View ->
-            for (button in buttons) {
-                if (button == view as ImageButton) {
-                    button.setColorFilter(
-                        ContextCompat.getColor(
-                            this,
-                            R.color.brightSunYellow
-                        )
-                    )
-                    onSegmentButtonClicked(button)
-                } else {
-                    button.setColorFilter(
-                        ContextCompat.getColor(
-                            this,
-                            R.color.cloudGray
-                        )
-                    )
+            for ((index, segmentButton) in segmentButtons.withIndex()) {
+                if (segmentButton == view as ImageButton) {
+                    selectedSegmentIndex = index
+                    updateSegmentButtonsColor()
+                    onSegmentButtonClicked(segmentButton)
+                    break
                 }
             }
         }
 
-        for (button in buttons) {
+        for (button in segmentButtons) {
             button.setOnClickListener(listener)
         }
     }
 
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+        outState?.putInt("saved", selectedSegmentIndex)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+        savedInstanceState?.getInt("saved")?.let {
+            selectedSegmentIndex = it
+            updateSegmentButtonsColor()
+        }
+    }
+
+    private fun updateSegmentButtonsColor() {
+        for ((index, segmentButton) in segmentButtons.withIndex()) {
+            if (index == selectedSegmentIndex) {
+                tintSegmentButton(segmentButton, true)
+            } else {
+                tintSegmentButton(segmentButton, false)
+            }
+        }
+    }
+
+    private fun tintSegmentButton(button: ImageButton, selected: Boolean) {
+        button.setColorFilter(
+            ContextCompat.getColor(
+                this,
+                if (selected) R.color.brightSunYellow else R.color.cloudGray
+            )
+        )
+    }
 }
