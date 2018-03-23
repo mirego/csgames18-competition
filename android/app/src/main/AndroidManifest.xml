@@ -3,6 +3,7 @@
     package="com.mirego.csmapapplication">
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <uses-feature
         android:name="android.hardware.camera.ar"
@@ -25,6 +26,9 @@
         <activity
             android:name=".activity.ArActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBpXOqs4Zphp4IgzMytEtzPnuJLJjfHVAA"/>
     </application>
 
 </manifest>
