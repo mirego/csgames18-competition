@@ -14,6 +14,10 @@
 		F1196A7F2064966E0084672D /* leaguespartan-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1196A7E2064966E0084672D /* leaguespartan-bold.ttf */; };
 		F1196A8120649BA40084672D /* NavigationIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A8020649BA40084672D /* NavigationIcon.swift */; };
 		F1196A8420649D580084672D /* PartCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A8320649D580084672D /* PartCellView.swift */; };
+		F1196A882065357A0084672D /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A872065357A0084672D /* Observable.swift */; };
+		F1196A8E20653B660084672D /* Part.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A8D20653B660084672D /* Part.swift */; };
+		F1196A9020653D4A0084672D /* PartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A8F20653D4A0084672D /* PartService.swift */; };
+		F1196A92206541700084672D /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A91206541700084672D /* ServiceFactory.swift */; };
 		F19EA0902061C36000FE9A5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19EA08F2061C36000FE9A5E /* AppDelegate.swift */; };
 		F19EA0972061C36000FE9A5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F19EA0962061C36000FE9A5E /* Assets.xcassets */; };
 		F19EA09A2061C36000FE9A5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F19EA0982061C36000FE9A5E /* LaunchScreen.storyboard */; };
@@ -41,6 +45,10 @@
 		F1196A7E2064966E0084672D /* leaguespartan-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "leaguespartan-bold.ttf"; sourceTree = "<group>"; };
 		F1196A8020649BA40084672D /* NavigationIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationIcon.swift; sourceTree = "<group>"; };
 		F1196A8320649D580084672D /* PartCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartCellView.swift; sourceTree = "<group>"; };
+		F1196A872065357A0084672D /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		F1196A8D20653B660084672D /* Part.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part.swift; sourceTree = "<group>"; };
+		F1196A8F20653D4A0084672D /* PartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartService.swift; sourceTree = "<group>"; };
+		F1196A91206541700084672D /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		F19EA08C2061C36000FE9A5E /* MapPing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapPing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F19EA08F2061C36000FE9A5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F19EA0962061C36000FE9A5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +121,40 @@
 			path = Subviews;
 			sourceTree = "<group>";
 		};
+		F1196A862065357A0084672D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F1196A872065357A0084672D /* Observable.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F1196A8A206539110084672D /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				F1196A8C2065391C0084672D /* Service */,
+				F1196A8B206539170084672D /* Model */,
+				F1196A91206541700084672D /* ServiceFactory.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		F1196A8B206539170084672D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F1196A8D20653B660084672D /* Part.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F1196A8C2065391C0084672D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F1196A8F20653D4A0084672D /* PartService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		F19EA0832061C36000FE9A5E = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				F19EA08F2061C36000FE9A5E /* AppDelegate.swift */,
+				F1196A8A206539110084672D /* Domain */,
+				F1196A862065357A0084672D /* Helpers */,
 				F19EA0A42061C56600FE9A5E /* UI */,
 			);
 			path = Classes;
@@ -371,13 +415,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1196A882065357A0084672D /* Observable.swift in Sources */,
 				F19EA0AC2061C5BE00FE9A5E /* BaseViewController.swift in Sources */,
 				F19EA0AE2061C5E800FE9A5E /* RootView.swift in Sources */,
 				F19EA0C22061DA7E00FE9A5E /* Stylesheet.swift in Sources */,
+				F1196A92206541700084672D /* ServiceFactory.swift in Sources */,
 				F1196A8420649D580084672D /* PartCellView.swift in Sources */,
 				F19EA0A92061C59B00FE9A5E /* ViewControllerFactory.swift in Sources */,
+				F1196A9020653D4A0084672D /* PartService.swift in Sources */,
 				F19EA0902061C36000FE9A5E /* AppDelegate.swift in Sources */,
 				F19EA0B32061C6A800FE9A5E /* AugmentedRealityViewController.swift in Sources */,
+				F1196A8E20653B660084672D /* Part.swift in Sources */,
 				F19EA0C02061CB7100FE9A5E /* NavigationButtons.swift in Sources */,
 				F1196A782064857D0084672D /* PartAnnotation.swift in Sources */,
 				F1196A7A2064928E0084672D /* NavigationViewController.swift in Sources */,

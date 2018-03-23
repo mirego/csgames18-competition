@@ -8,6 +8,12 @@
 import UIKit
 
 class ViewControllerFactory {
+    private let serviceFactory: ServiceFactory
+
+    init(serviceFactory: ServiceFactory) {
+        self.serviceFactory = serviceFactory
+    }
+
     func rootViewController() -> UIViewController {
         return assign(RootViewController(viewControllers: [listViewController(), mapViewController(), augmentedRealityViewController()]))
     }
