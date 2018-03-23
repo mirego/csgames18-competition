@@ -7,7 +7,6 @@ import android.support.v4.content.ContextCompat
 import android.view.View
 import android.widget.ImageButton
 import com.mirego.csmapapplication.fragment.ListSegmentFragment
-import com.mirego.csmapapplication.fragment.ArSegmentFragment
 import com.mirego.csmapapplication.fragment.MapSegmentFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -15,7 +14,6 @@ class MainActivity : FragmentActivity() {
 
     private val listFragment = ListSegmentFragment()
     private val mapFragment = MapSegmentFragment()
-    private val arFragment = ArSegmentFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,21 +32,25 @@ class MainActivity : FragmentActivity() {
     }
 
     private fun onSegmentButtonClicked(button: ImageButton) {
-        val transaction = supportFragmentManager.beginTransaction()
+
         when (button) {
             listButton -> {
+                val transaction = supportFragmentManager.beginTransaction()
                 transaction.replace(fragmentRoot.id, listFragment)
+                transaction.commit()
             }
 
             mapButton -> {
+                val transaction = supportFragmentManager.beginTransaction()
                 transaction.replace(fragmentRoot.id, mapFragment)
+                transaction.commit()
             }
 
             arButton -> {
-                transaction.replace(fragmentRoot.id, arFragment)
+
             }
         }
-        transaction.commit()
+
     }
 
     private fun setupButtons() {
