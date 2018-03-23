@@ -131,6 +131,8 @@ class ArActivity : AppCompatActivity(), GLSurfaceView.Renderer {
                     }
                     ArCoreApk.InstallStatus.INSTALLED -> {
                     }
+                    else -> {
+                    }
                 }
 
                 // ARCore requires camera permissions to operate. If we did not yet obtain runtime

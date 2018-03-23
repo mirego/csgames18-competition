@@ -7,7 +7,7 @@
 
     <uses-feature
         android:name="android.hardware.camera.ar"
-        android:required="false" />
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -29,6 +29,8 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBpXOqs4Zphp4IgzMytEtzPnuJLJjfHVAA"/>
+
+        <meta-data android:name="com.google.ar.core" android:value="required" />
     </application>
 
 </manifest>
