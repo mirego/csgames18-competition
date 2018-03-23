@@ -1,5 +1,5 @@
 //
-//  PieceAnnotation.swift
+//  PartAnnotation.swift
 //  MapPing
 //
 //  Copyright © 2018 Mirego. All rights reserved.
@@ -7,7 +7,7 @@
 
 import MapKit
 
-class PieceAnnotation: NSObject, MKAnnotation {
+class PartAnnotation: NSObject, MKAnnotation {
     let coordinate: CLLocationCoordinate2D
     let iconName: String
 

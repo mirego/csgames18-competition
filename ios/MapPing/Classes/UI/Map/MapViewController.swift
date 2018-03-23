@@ -32,6 +32,6 @@ class MapViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mainView.mapView.setRegion(MKCoordinateRegion(center: quebecCityCoordinate, span: startSpan), animated: false)
-        mainView.mapView.addAnnotation(PieceAnnotation(coordinate: quebecCityCoordinate, iconName: "part-clutch"))
+        mainView.mapView.addAnnotation(PartAnnotation(coordinate: quebecCityCoordinate, iconName: "part-clutch"))
     }
 }
