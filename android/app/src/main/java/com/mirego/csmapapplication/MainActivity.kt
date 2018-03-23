@@ -4,7 +4,6 @@ package com.mirego.csmapapplication
 import android.os.Bundle
 import android.support.v4.app.FragmentActivity
 import android.support.v4.content.ContextCompat
-import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageButton
 import com.mirego.csmapapplication.List.ListSegmentFragment
@@ -27,12 +26,13 @@ class MainActivity : FragmentActivity() {
     }
 
     private fun setupMainView() {
+        onSegmentButtonClicked(listButton)
         supportFragmentManager.beginTransaction()
                 .add(fragmentRoot.id, listFragment)
                 .commit()
     }
 
-    private fun didTouchUp(button: ImageButton) {
+    private fun onSegmentButtonClicked(button: ImageButton) {
         val transaction = supportFragmentManager.beginTransaction()
         when (button) {
             listButton -> {
@@ -53,19 +53,19 @@ class MainActivity : FragmentActivity() {
     private fun setupButtons() {
         val buttons = listOf<ImageButton>(listButton, mapButton, arButton)
 
-        val listener = View.OnClickListener { v: View ->
-            for (b in buttons) {
-                if (b == v as ImageButton) {
-                    b.setColorFilter(ContextCompat.getColor(this, R.color.brightSunYellow))
-                    didTouchUp(b)
+        val listener = View.OnClickListener { view: View ->
+            for (button in buttons) {
+                if (button == view as ImageButton) {
+                    button.setColorFilter(ContextCompat.getColor(this, R.color.brightSunYellow))
+                    onSegmentButtonClicked(button)
                 } else {
-                    b.setColorFilter(ContextCompat.getColor(this, R.color.cloudGray))
+                    button.setColorFilter(ContextCompat.getColor(this, R.color.cloudGray))
                 }
             }
         }
 
-        for (btn in buttons) {
-            btn.setOnClickListener(listener)
+        for (button in buttons) {
+            button.setOnClickListener(listener)
         }
     }
 
