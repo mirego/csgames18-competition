@@ -15,15 +15,18 @@ class ListViewController: BaseViewController {
 
     init() {
         super.init(nibName: nil, bundle: nil)
-        navigationIcon = #imageLiteral(resourceName: "icn-list")
+        title = "Map Ping" 
     }
 
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
     override func loadView() {
         view = ListView()
     }
 }
-

@@ -2,7 +2,6 @@
 //  PieceAnnotation.swift
 //  MapPing
 //
-//  Created by Hugo Lefrancois on 2018-03-22.
 //  Copyright © 2018 Mirego. All rights reserved.
 //
 

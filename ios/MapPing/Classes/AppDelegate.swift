@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private let viewControllerFactory = ViewControllerFactory()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        Stylesheet.appearance()
+
         window = UIWindow(frame: UIScreen.main.bounds)
         window!.backgroundColor = .white
         window!.tintColor = .primary

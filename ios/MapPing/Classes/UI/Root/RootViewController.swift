@@ -13,11 +13,11 @@ class RootViewController: BaseViewController {
         return self.view as! RootView
     }
 
-    private let viewControllers: [BaseViewController]
-    private var displatedViewController: Int = 1
+    private let viewControllers: [UIViewController & NavigationIconProvider]
+    private var displatedViewController: Int = 0
     private var transitionInProgress = false
 
-    init(viewControllers: [BaseViewController]) {
+    init(viewControllers: [UIViewController & NavigationIconProvider]) {
         assert(!viewControllers.isEmpty, "RootViewController needs at least one view controller")
         self.viewControllers = viewControllers
         super.init(nibName: nil, bundle: nil)
@@ -25,6 +25,14 @@ class RootViewController: BaseViewController {
 
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override var childViewControllerForStatusBarStyle: UIViewController? {
+        return viewControllers[displatedViewController]
+    }
+
+    override var childViewControllerForStatusBarHidden: UIViewController? {
+        return viewControllers[displatedViewController]
     }
 
     override func loadView() {
@@ -53,6 +61,7 @@ extension RootViewController: RootViewDelegate {
             strongSelf.transitionInProgress = false
         }
         displatedViewController = index
+        setNeedsStatusBarAppearanceUpdate()
         mainView.setSelectedButton(index: displatedViewController)
     }
 }

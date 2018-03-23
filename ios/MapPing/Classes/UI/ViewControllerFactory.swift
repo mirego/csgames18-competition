@@ -12,15 +12,17 @@ class ViewControllerFactory {
         return assign(RootViewController(viewControllers: [listViewController(), mapViewController(), augmentedRealityViewController()]))
     }
 
-    func mapViewController() -> BaseViewController {
+    private func mapViewController() -> MapViewController {
         return assign(MapViewController())
     }
 
-    func listViewController() -> BaseViewController {
-        return assign(ListViewController())
+    private func listViewController() -> NavigationViewController {
+        let navigationController = NavigationViewController(rootViewController: ListViewController())
+        navigationController.navigationIcon = #imageLiteral(resourceName: "icn-list")
+        return navigationController
     }
 
-    func augmentedRealityViewController() -> BaseViewController {
+    private func augmentedRealityViewController() -> AugmentedRealityViewController {
         return assign(AugmentedRealityViewController())
     }
 }

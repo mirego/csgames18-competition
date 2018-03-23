@@ -10,6 +10,9 @@
 		940F0B61F668AD88441334C2 /* Pods_MapPing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16CD00BB887C10CE3E91B52C /* Pods_MapPing.framework */; };
 		F1196A76206481B60084672D /* PieceAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A75206481B60084672D /* PieceAnnotationView.swift */; };
 		F1196A782064857D0084672D /* PieceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A772064857D0084672D /* PieceAnnotation.swift */; };
+		F1196A7A2064928E0084672D /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A792064928E0084672D /* NavigationViewController.swift */; };
+		F1196A7F2064966E0084672D /* leaguespartan-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1196A7E2064966E0084672D /* leaguespartan-bold.ttf */; };
+		F1196A8120649BA40084672D /* NavigationIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A8020649BA40084672D /* NavigationIcon.swift */; };
 		F19EA0902061C36000FE9A5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19EA08F2061C36000FE9A5E /* AppDelegate.swift */; };
 		F19EA0972061C36000FE9A5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F19EA0962061C36000FE9A5E /* Assets.xcassets */; };
 		F19EA09A2061C36000FE9A5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F19EA0982061C36000FE9A5E /* LaunchScreen.storyboard */; };
@@ -33,6 +36,9 @@
 		E901EFF955E9ACF4A910DAE7 /* Pods-MapPing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapPing.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapPing/Pods-MapPing.release.xcconfig"; sourceTree = "<group>"; };
 		F1196A75206481B60084672D /* PieceAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceAnnotationView.swift; sourceTree = "<group>"; };
 		F1196A772064857D0084672D /* PieceAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceAnnotation.swift; sourceTree = "<group>"; };
+		F1196A792064928E0084672D /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		F1196A7E2064966E0084672D /* leaguespartan-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "leaguespartan-bold.ttf"; sourceTree = "<group>"; };
+		F1196A8020649BA40084672D /* NavigationIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationIcon.swift; sourceTree = "<group>"; };
 		F19EA08C2061C36000FE9A5E /* MapPing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapPing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F19EA08F2061C36000FE9A5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F19EA0962061C36000FE9A5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -89,6 +95,14 @@
 			path = Subviews;
 			sourceTree = "<group>";
 		};
+		F1196A7D2064966E0084672D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F1196A7E2064966E0084672D /* leaguespartan-bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		F19EA0832061C36000FE9A5E = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				F19EA0962061C36000FE9A5E /* Assets.xcassets */,
+				F1196A7D2064966E0084672D /* Fonts */,
 				F19EA0982061C36000FE9A5E /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
@@ -147,7 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				F19EA0B12061C68C00FE9A5E /* AugmentedReality */,
-				F19EA0AA2061C5B400FE9A5E /* Base */,
+				F19EA0AA2061C5B400FE9A5E /* Common */,
 				F19EA0AF2061C66800FE9A5E /* Map */,
 				F19EA0B02061C68000FE9A5E /* List */,
 				F19EA0A52061C57600FE9A5E /* Root */,
@@ -167,12 +182,14 @@
 			path = Root;
 			sourceTree = "<group>";
 		};
-		F19EA0AA2061C5B400FE9A5E /* Base */ = {
+		F19EA0AA2061C5B400FE9A5E /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				F19EA0AB2061C5BE00FE9A5E /* BaseViewController.swift */,
+				F1196A792064928E0084672D /* NavigationViewController.swift */,
+				F1196A8020649BA40084672D /* NavigationIcon.swift */,
 			);
-			path = Base;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		F19EA0AF2061C66800FE9A5E /* Map */ = {
@@ -276,6 +293,7 @@
 			files = (
 				F19EA09A2061C36000FE9A5E /* LaunchScreen.storyboard in Resources */,
 				F19EA0972061C36000FE9A5E /* Assets.xcassets in Resources */,
+				F1196A7F2064966E0084672D /* leaguespartan-bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,12 +368,14 @@
 				F19EA0B32061C6A800FE9A5E /* AugmentedRealityViewController.swift in Sources */,
 				F19EA0C02061CB7100FE9A5E /* NavigationButtons.swift in Sources */,
 				F1196A782064857D0084672D /* PieceAnnotation.swift in Sources */,
+				F1196A7A2064928E0084672D /* NavigationViewController.swift in Sources */,
 				F19EA0A72061C58400FE9A5E /* RootViewController.swift in Sources */,
 				F1196A76206481B60084672D /* PieceAnnotationView.swift in Sources */,
 				F19EA0B72061C6C100FE9A5E /* ListViewController.swift in Sources */,
 				F19EA0BB2061C6DC00FE9A5E /* MapView.swift in Sources */,
 				F19EA0BD2061C6E300FE9A5E /* ListView.swift in Sources */,
 				F19EA0B52061C6B300FE9A5E /* MapViewController.swift in Sources */,
+				F1196A8120649BA40084672D /* NavigationIcon.swift in Sources */,
 				F19EA0B92061C6D200FE9A5E /* AugmentedRealityScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

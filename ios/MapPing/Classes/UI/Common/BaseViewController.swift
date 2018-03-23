@@ -7,8 +7,7 @@
 
 import UIKit
 
-class BaseViewController: UIViewController {
+class BaseViewController: UIViewController, NavigationIconProvider {
     var viewControllerFactory: ViewControllerFactory!
-
     var navigationIcon: UIImage?
 }

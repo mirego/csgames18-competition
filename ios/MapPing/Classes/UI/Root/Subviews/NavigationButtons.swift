@@ -72,8 +72,8 @@ class NavigationButtons: UIView {
 
     private static func buildButton(image: UIImage) -> UIButton {
         let button = UIButton()
-        button.setImage(image.imageWithTintColor(.primary), for: .normal)
-        button.setImage(image.imageWithTintColor(.secondary), for: .disabled)
+        button.setImage(image.imageWithTintColor(.secondary), for: .normal)
+        button.setImage(image.imageWithTintColor(.primary), for: .disabled)
         button.pin.size(buttonSize)
         return button
     }

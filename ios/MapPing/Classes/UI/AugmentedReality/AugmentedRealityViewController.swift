@@ -27,6 +27,10 @@ class AugmentedRealityViewController: BaseViewController {
         view = ARSKView()
     }
 
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
