@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">@color/copper</color>
-    <color name="colorPrimaryDark">@android:color/black</color>
+    <color name="colorPrimaryDark">@color/copperDark</color>
     <color name="colorAccent">@color/brightSunYellow</color>
 
     <color name="cloudGray">#C5C4C3</color>
     <color name="brightSunYellow">#F7D239</color>
     <color name="copper">#d1582a</color>
+    <color name="copperDark">#9F421E</color>
 </resources>
