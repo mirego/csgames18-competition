@@ -26,7 +26,6 @@ class MainActivity : FragmentActivity() {
     }
 
     private fun setupMainView() {
-        onSegmentButtonClicked(listButton)
         supportFragmentManager.beginTransaction()
                 .add(fragmentRoot.id, listFragment)
                 .commit()
