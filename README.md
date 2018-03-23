@@ -34,7 +34,7 @@ Heureux de cette assistance impromptue, les pingouins ont voulu bénéficier de 
 
 ## Pour débuter
 
-Vous trouverez le code de base du projet **Map Ping** dans les sous-dossiers [`ios/`](https://github.com/mirego/csgames18-competition/tree/master/ios) et [`android/`](https://github.com/mirego/csgames18-competition/tree/master/android) de ce répertoire Github:
+Vous trouverez le code de base du projet **Map Ping** dans les sous-dossiers [`ios/`](https://github.com/mirego/csgames18-competition/tree/master/ios) et [`android/`](https://github.com/mirego/csgames18-competition/tree/master/android) de ce répertoire GitHub:
 
 <table width="100%">
   <thead>
@@ -193,7 +193,7 @@ Autres points importants:
 ⚠️ Prévoyez au moins 10 minutes avant la fin de l'épreuve pour préparer votre soumission ⚠️ 
 </th></tr></thead></table>
 
-La correction sera effectuée à l'aide de **Pull Requests** sur le répertoire Github.
+La correction sera effectuée à l'aide de **Pull Requests** sur le répertoire GitHub.
 
 > Si vous n'êtes pas familiers avec ce concept, référez-vous à ces articles: 
 > - [Fork a repo](https://help.github.com/articles/fork-a-repo/)
@@ -239,7 +239,7 @@ Votre **Pull Request** doit respecter la structure suivante:
 
 ```
 
-> **NOTE:** Si vous n'avez pas de compte Github, levez la main au début de l'épreuve, nous pourrons vous fournir un compte générique.
+> **NOTE:** Si vous n'avez pas de compte GitHub, levez la main au début de l'épreuve, nous pourrons vous fournir un compte générique.
 
 ## Licence
 
@@ -295,7 +295,7 @@ Satisfied by this unexpected assistance, the pinguins wanted to make the most ou
 
 ## To Begin
 
-You will find the base code of **Map Ping** in the subfolders [`ios/`](https://github.com/mirego/csgames18-competition/tree/master/ios) and [`android/`](https://github.com/mirego/csgames18-competition/tree/master/android) of this Github repository:
+You will find the base code of **Map Ping** in the subfolders [`ios/`](https://github.com/mirego/csgames18-competition/tree/master/ios) and [`android/`](https://github.com/mirego/csgames18-competition/tree/master/android) of this GitHub repository:
 
 <table width="100%">
   <thead>
@@ -452,7 +452,7 @@ Autres points importants:
 ⚠️ Please keep 10 minutes before the end of the competition to prepare the submission ⚠️ 
 </th></tr></thead></table>
 
-The submission will be done by adding a **Pull Request** to this Github repository.
+The submission will be done by adding a **Pull Request** to this GitHub repository.
 
 > If you are not familiar with the concept, please refer to these articles:
 > - [Fork a repo](https://help.github.com/articles/fork-a-repo/)
@@ -498,7 +498,7 @@ Your **Pull Request** must respect the following pattern:
 
 ```
 
-> **NOTE:** If you don't have a Github account, raise your hand at the beginning of the challenge, we can provide you with a generic account.
+> **NOTE:** If you don't have a GitHub account, raise your hand at the beginning of the challenge, we can provide you with a generic account.
 
 ## License
 

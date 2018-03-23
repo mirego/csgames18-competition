@@ -17,7 +17,7 @@ You can download these from the [Android Developer website](https://developer.an
 
 ## Getting started
 
-First, make sure you have cloned the project from Github:
+First, make sure you have cloned the project from GitHub:
 
 ```
 git clone http://github.com/mirego/csgames18-competition.git
