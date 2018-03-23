@@ -63,8 +63,8 @@ extension AugmentedRealityViewController: ARSKViewDelegate {
     }
 
     func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
-        let bug = SKSpriteNode(imageNamed: "bug")
-        bug.name = "bug"
+        let bug = SKSpriteNode(imageNamed: "part-clutch")
+        bug.name = "Part"
         return bug
     }
 }

@@ -12,8 +12,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    private let viewControllerFactory = ViewControllerFactory()
+    private let serviceFactory = ServiceFactory()
+    private let viewControllerFactory: ViewControllerFactory
 
+    override init() {
+        viewControllerFactory = ViewControllerFactory(serviceFactory: serviceFactory)
+        super.init()
+    }
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Stylesheet.appearance()
 
@@ -22,6 +27,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.tintColor = .primary
         window!.rootViewController = viewControllerFactory.rootViewController()
         window!.makeKeyAndVisible()
+
         return true
+    }
+
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        serviceFactory.partService().refreshParts()
+    }
+
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        serviceFactory.partService().refreshParts()
     }
 }

@@ -23,7 +23,7 @@ Heureux de cette assistance impromptue, les pingouins ont voulu bénéficier de 
 <td><a href="https://user-images.githubusercontent.com/4378424/37754067-5d70fe82-2d76-11e8-9c8c-22609a3fd3b8.png" target="_blank"><img src="https://user-images.githubusercontent.com/4378424/37754067-5d70fe82-2d76-11e8-9c8c-22609a3fd3b8.png" alt="AR"></a></td>
 </tr>
 <tr>
-<td><em>Écran d'acceuil</em></td>
+<td><em>Écran d'accueil</em></td>
 <td><em>Liste de pièces</em></td>
 <td><em>Carte de pièces</em></td>
 <td><em>Réalité augmentée</em></td>
@@ -109,7 +109,7 @@ Une fois les pièces affichées, beaucoup de fonctions peuvent être ajoutées �
 
 - **Notes de ramassage**: Lorsque les pingouins récupéreront la pièce, il pourrait être pertinent pour eux aussi d'ajouter des informations. Photo de la trouvaille, notes de cueillette, etc. - un formulaire pourrait leur être présenté pour entrer ces détails.
 
-- **Persistence**: Pour toutes les données entrées, il est intéressant de les ajouter localement dans l'application, mais cela n'en est rien si les données disparaissent suite à la fermeture de l'application. Implanter une sorte de stockage local permetterait d'assurer la persistance.
+- **Persistence**: Pour toutes les données entrées, il est intéressant de les ajouter localement dans l'application, mais cela n'en est rien si les données disparaissent suite à la fermeture de l'application. Implanter une sorte de stockage local permettrait d'assurer la persistance.
 
 Les fonctionnalités potentielles sont infinies, votre créativité est sollicitée pour rendre **Map Ping** la plus fonctionnellement complète pour nos amis pingouins en détresse.
 
@@ -164,7 +164,7 @@ La grille suivante sera utilisée pour la correction:
       <td>
         <p><strong>Remise</strong></p>
         <ul>
-          <li>Pull Request en bonne et du forme</li>
+          <li>Pull Request en bonne et due forme</li>
           <li>Description fournie et bien documentée</li>
         </ul>
       </td>
@@ -183,7 +183,7 @@ Autres points importants:
 
 - Un projet qui ne **builde pas** se verra accorder une note de **0 / 100** (en suite d'un effort minimal). Assurez-vous de bien détailler votre soumission si des étapes de build sont nécessaires.
 
-- Le code doit avoir été construit à partir des projets de base et il doit être facile d'identifier vos changements via un diff. Un répertoire restructuré qui demande de repasser vos fichiers un par un pour retrouver vos changements donnera **0 / 25** dans la partie "Remise".
+- Le code doit avoir été construit à partir des projets de base et il doit être facile d'identifier vos changements via un **diff**. Un répertoire restructuré qui demande de repasser vos fichiers un par un pour retrouver vos changements donnera **0 / 25** dans la partie "Remise".
 
 - L'heure de soumission de votre code ne doit pas dépasser la fin de la compétition. Une archive des branches sera effectuée en sortant des locaux – inutile de tenter d'amender vos commits dans les heures qui suivent. Une tricherie identifiée recevra aussi **0 / 100**.
 
@@ -220,7 +220,7 @@ Votre **Pull Request** doit respecter la structure suivante:
 **Plateforme:** {iOS | Android}
 
 **Fonctionnalités:**
-1. {Mode carte: connexion de la datasource et affichage de toutes les pins}
+1. {Mode carte: connexion de la data source et affichage de toutes les pins}
 2. {Ramassage de pièce: possibilité de marquer une pièce ramassée}
 3. {Siri: demander à Siri la pièce la plus proche de ma position actuelle}
 4. {etc.}
@@ -261,19 +261,19 @@ Nous aimons aussi les [logiciels open-source](http://open.mirego.com) et tentons
 
 # CS Games 2018 - Mobile Competition
 
-Welcome to the **CS Games 2017 Mobile Competition**!
+Welcome to the **CS Games 2018 Mobile Competition**!
 
 [(French above ↑)](#cs-games-2018---compétition-mobile)
 
 ## Introduction
 
-The space pinguins arrival on Earth has caused a great stir in the local community. Unused to live extraterrestial presences, the places of worship invested all their energy to help these newcomers. Mass efforts were deployed to find the vessel parts spreaded all over the country. A *crowdsourcing* platform was erected to document missing parts, as potentially identified by the tribes. The resulting data source was shared publicly here:
+The space penguins arrival on Earth has caused a great stir in the local community. Unused to live extraterrestial presences, the places of worship invested all their energy to help these newcomers. Mass efforts were deployed to find the vessel parts spreaded all over the country. A *crowdsourcing* platform was erected to document missing parts, as potentially identified by the tribes. The resulting data source was shared publicly here:
 
 <p align="center">
   <strong><a>https://s3.amazonaws.com/shared.ws.mirego.com/competition/mapping.json</a></strong>
 </p>
 
-Satisfied by this unexpected assistance, the pinguins wanted to make the most out of the technology available to use this datasource intelligently. They started to develop a mobile application, called **Map Ping**, which allows them to see this list of parts and facilitate their repatriation. Alas, their days are numbered and the technology being complex, the pinguins need help to finish their application and they're reaching to you, the participants.
+Satisfied by this unexpected assistance, the penguins wanted to make the most out of the technology available to use this data source intelligently. They started to develop a mobile application, called **Map Ping**, which allows them to see this list of parts and facilitate their repatriation. Alas, their days are numbered and the technology being complex, the penguins need help to finish their application and they're reaching to you, the participants.
 
 <table>
 <thead><tr><th colspan="4">Map Ping</th></tr></thead>
@@ -315,11 +315,11 @@ All the instructions to build these base projects should be covered in the above
 
 ## The Challenge
 
-**Map Ping** plans to display the identified vessel parts and help the pinguins to find them in the wild. Currently, the [data source](https://s3.amazonaws.com/shared.ws.mirego.com/competition/mapping.json) is not connected and all screens are purely static.
+**Map Ping** plans to display the identified vessel parts and help the penguins to find them in the wild. Currently, the [data source](https://s3.amazonaws.com/shared.ws.mirego.com/competition/mapping.json) is not connected and all screens are purely static.
 
 ### Data Connection
 
-You first mission is to connect the data to display the parts in the app. Every identified part was detailed with many info:
+You first mission is to connect the data to display the parts in the app. Every identified part was detailed with much info:
 
 - `name`: Part name
 - `component`: Vessel component associated with the part
@@ -336,56 +336,58 @@ Some components don't have GPS coordinates while some others don't have a civil 
 The app has 3 display modes, which only shows the expected appearance using a fake vessel part. These modes can be completed by implementing the following features, for example:
 
 #### <img src="https://user-images.githubusercontent.com/4378424/37808993-ac71646a-2e23-11e8-9b8a-eb467fc6cc67.png" height="13" width="17"> Part List
-* Afficher chacune des pièces dans une liste défilable à cellules réutilisables
-* Afficher le sommaire des pièces à partir de la banque de données
-* Afficher l'icône de chaque type de pièce dans chacune des cellules
-* Afficher la distance relative entre la pièce et l'emplacement actuel du téléphone
-* Ordonner les pièces par proximité (du plus près au plus éloigné)
-* Filter les pièces par type ou par composant du vaisseau
+
+* Display every part in a scrollable list with reusable cells
+* Display the part summaries using the data source
+* Display the right icon for each part type in their cells
+* Display the relative distance between the part and the phone current location
+* Sort the parts by proximity (the closest to the farthest)
+* Filter the parts by type or by vessel component
 
 #### <img src="https://user-images.githubusercontent.com/4378424/37808994-ac7c2cd8-2e23-11e8-8b7f-d499210cf74e.png" height="16" width="20"> Part Map
-* Afficher chacune des pièces sur des épingles de la carte (📍)
-* Afficher le nom et le composant de la pièce suite à l'appui de l'épingle
-* Afficher l'icône de chaque type de pièce dans les épingles
-* Filter les pièces par type ou par composant du vaisseau
-* Gérer le regroupement (clustering) à la réduction du niveau de zoom
-* Positionner la carte autour de la position actuelle (et afficher celle-ci)
-* Donner les directions entre la position actuelle et une pièce choisie
+
+* Display every part with pins on the map (📍)
+* Display the part name and component on pin taps
+* Display icons of part types in the pins
+* Filter the parts by type or by vessel component
+* Regroup the pins with clustering when dezooming the map
+* Position the map around the current position (and display it)
+* Give turn-by-turn directions between the current position and a selected part
 
 #### <img src="https://user-images.githubusercontent.com/4378424/37808992-ac65adfa-2e23-11e8-8350-65befbe98843.png" height="16" width="20"> Augmented Reality
-* Afficher les pièces dans l'espace tridimensionnel géolocalisées
-* Afficher la distance entre la pièce dans l'espace et l'emplacement actuel
+* Display the part in geolocalized tridimensional space
+* Display the distance between the part and the current location
 
 This list is only a summary of possibilities, you are free to add anything to render one or more of these display modes more useful. The mockups in the introduction can serve as inspiration.
 
-### Additionnal Features
+### Additional Features
 
-One the parts shown, many features can be added to the app to help pinguins find back their vessel parts. For example:
+One the parts shown, many features can be added to the app to help penguins find back their vessel parts. For example:
 
 - **Part detail**: The List View only shows a summary of each part, and the map only positions them. A new "Part Detail" screen could show more specific information, like the identification notes and the civil address.
 
 - **Part pickup**: While there are many parts to pick up, it could be useful to mark them as "picked up" to easily see those that were found and those that are left.
 
-- **Pickup notes**: When parts are picked up, it could also be useful to add information from the situation. Part picture, pickup notes, etc - a form could be displayed to enter these details.
+- **Pickup notes**: When parts are picked up, it could also be useful to add information from the situation. Part photo, pickup notes, etc - a form could be displayed to enter these details.
 
 - **Persistence**: While entering data in the app has its value, it's rendered useless if everything is forgotten once the app is closed. Implementing a local storage would insure persistence.
 
-The potential features are infinite, we sollicitate your creativity to make the most out of **Map Ping** and give a big hand to our pinguin friends in distress.
+The potential features are infinite, we sollicit your creativity to make the most out of **Map Ping** and give a big hand to our penguin friends in distress.
 
 ## Evaluation
 
-Évidemment, on ne vous demande pas de connecter la source, de faire fonctionner **tous** les modes d'affichages et d'ajouter **toutes** les fonctionnalités listées ci-haut. En 3 heures, on vous demande de faire le maximum possible et d'utiliser de votre créativité – le but ultime est de nous impressionner.
+We're not asking to do connect the data source, implement **all** display modes and add **all** the features listed above. In 3 hours, we ask you to do as much as possible and make full use of your creativity – the ultimate goal is to impress us.
 
 ### Criteria
 
-Nous évaluerons votre travail en fonction de **_comment vous l'avez fait_**, et non de la **_quantité d'ajouts effectués_**. Il est mieux de faire une seule chose très bien que de faire plusieurs choses incomplètes.
+We will score your work based on **_how well you did on each feature_**, not **_the number of features you did try to implement_**. It's better to do one thing really well than do multiple things incorrectly or incompletely.
 
-La grille suivante sera utilisée pour la correction:
+Your solutions will be marked using the following grid:
 
 <table>
   <thead>
     <tr>
-      <th>Critère</th>
+      <th>Criteria</th>
       <th>Points</th>
     </tr>
   </thead>
@@ -394,37 +396,37 @@ La grille suivante sera utilisée pour la correction:
       <td>
         <p><strong>Solution</strong></p>
         <ul>
-          <li>Résolution générale du problème</li>          <li>Originalité de la solution</li>          <li>Qualité de l'intégration (apparence et utilisation)</li>
-          <li>Respect du thème</li>
+          <li>General resolution of the problem </li>          <li>Originality of the solution</li>          <li>Quality of the integration (look and feel)</li>
+          <li>Respect of the theme</li>
         </ul>
       </td>
       <td align="right" valign="top"><strong>/ 35</strong></td>
     </tr>
     <tr>
       <td>
-        <p><strong>Implémentation</strong></p>
+        <p><strong>Implementation</strong></p>
         <ul>
-          <li>Qualité générale du code</li>          <li>Bonne utilisation des patterns de programmation</li>          <li>Bonne utilisation des librairies et ressources externes</li>
-          <li>Respect des standards de la plateforme</li>
+          <li>General quality of the code</li>          <li>Good use of programming patterns</li>          <li>Good use of libraries and external resources</li>
+          <li>Respect of the platform standards</li>
         </ul>
       </td>
       <td align="right" valign="top"><strong>/ 30</strong></td>
     </tr>
     <tr>
       <td>
-        <p><strong>Qualité</strong></p>
+        <p><strong>Quality</strong></p>
         <ul>
-          <li>Respect de la structure du projet</li>          <li>Respect de la syntaxe du langage</li>
+          <li>Respect of the project structure</li>          <li>Respect of the language syntax</li>
         </ul>
       </td>
       <td align="right" valign="top"><strong>/ 10</strong></td>
     </tr>
     <tr>
       <td>
-        <p><strong>Remise</strong></p>
+        <p><strong>Submission</strong></p>
         <ul>
-          <li>Pull Request en bonne et du forme</li>
-          <li>Description fournie et bien documentée</li>
+          <li>Pull Request correctly submitted</li>
+          <li>Solution description provided and well-documented</li>
         </ul>
       </td>
       <td align="right" valign="top"><strong>/ 25</strong></td>
@@ -438,15 +440,15 @@ La grille suivante sera utilisée pour la correction:
   </tfoot>
 </table>
 
-Autres points importants:
+Other important points:
 
-- Un projet qui ne **builde pas** se verra accorder une note de **0 / 100** (en suite d'un effort minimal). Assurez-vous de bien détailler votre soumission si des étapes de build sont nécessaires.
+- A project that **doesn't build** will be awarded a note of **0 / 100** (after minimal effort). Make sure that your solution is well documented if any build steps are required.
 
-- Le code doit avoir été construit à partir des projets de base et il doit être facile d'identifier vos changements via un diff. Un répertoire restructuré qui demande de repasser vos fichiers un par un pour retrouver vos changements donnera **0 / 25** dans la partie "Remise".
+- Your code must be based on our sample projects and your additions must be easily trackable using a **diff**. If you restructured the repository and we must go through every file to see your changes, you will get **0 / 25** on the "Submission" mark.
 
-- L'heure de soumission de votre code ne doit pas dépasser la fin de la compétition. Une archive des branches sera effectuée en sortant des locaux – inutile de tenter d'amender vos commits dans les heures qui suivent. Une tricherie identifiée recevra aussi **0 / 100**.
+- The submission timestamp must not be greater than the end of the competition. We will archive all branches when leaving the room; trying to amend your commits afterwards is fairly useless. If we catch you cheating, you will also get **0 / 100**.
 
-### Remise
+### Submission
 
 <table><thead><tr><th align="center">
 ⚠️ Please keep 10 minutes before the end of the competition to prepare the submission ⚠️ 
@@ -476,7 +478,7 @@ Your **Pull Request** must respect the following pattern:
 
 ## Solution
 
-**Plateform:** {iOS | Android}
+**Platform:** {iOS | Android}
 
 **Features:**
 1. {Map mode: connect the data source to display every pin}
