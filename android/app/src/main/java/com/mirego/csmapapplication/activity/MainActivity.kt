@@ -1,11 +1,14 @@
-package com.mirego.csmapapplication
+package com.mirego.csmapapplication.activity
 
 
+import android.content.Intent
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentActivity
 import android.support.v4.content.ContextCompat
 import android.view.View
 import android.widget.ImageButton
+import com.mirego.csmapapplication.R
 import com.mirego.csmapapplication.fragment.ListSegmentFragment
 import com.mirego.csmapapplication.fragment.MapSegmentFragment
 import kotlinx.android.synthetic.main.activity_main.*
@@ -35,22 +38,23 @@ class MainActivity : FragmentActivity() {
 
         when (button) {
             listButton -> {
-                val transaction = supportFragmentManager.beginTransaction()
-                transaction.replace(fragmentRoot.id, listFragment)
-                transaction.commit()
+                replaceFragment(listFragment)
             }
 
             mapButton -> {
-                val transaction = supportFragmentManager.beginTransaction()
-                transaction.replace(fragmentRoot.id, mapFragment)
-                transaction.commit()
+                replaceFragment(mapFragment)
             }
 
             arButton -> {
-
+                startActivity(Intent(this, ArActivity::class.java))
             }
         }
+    }
 
+    private fun replaceFragment(fragment: Fragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(fragmentRoot.id, fragment)
+        transaction.commit()
     }
 
     private fun setupButtons() {
@@ -59,10 +63,20 @@ class MainActivity : FragmentActivity() {
         val listener = View.OnClickListener { view: View ->
             for (button in buttons) {
                 if (button == view as ImageButton) {
-                    button.setColorFilter(ContextCompat.getColor(this, R.color.brightSunYellow))
+                    button.setColorFilter(
+                        ContextCompat.getColor(
+                            this,
+                            R.color.brightSunYellow
+                        )
+                    )
                     onSegmentButtonClicked(button)
                 } else {
-                    button.setColorFilter(ContextCompat.getColor(this, R.color.cloudGray))
+                    button.setColorFilter(
+                        ContextCompat.getColor(
+                            this,
+                            R.color.cloudGray
+                        )
+                    )
                 }
             }
         }
