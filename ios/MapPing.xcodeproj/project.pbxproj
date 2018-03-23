@@ -13,6 +13,7 @@
 		F1196A7A2064928E0084672D /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A792064928E0084672D /* NavigationViewController.swift */; };
 		F1196A7F2064966E0084672D /* leaguespartan-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1196A7E2064966E0084672D /* leaguespartan-bold.ttf */; };
 		F1196A8120649BA40084672D /* NavigationIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A8020649BA40084672D /* NavigationIcon.swift */; };
+		F1196A8420649D580084672D /* PartCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A8320649D580084672D /* PartCellView.swift */; };
 		F19EA0902061C36000FE9A5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19EA08F2061C36000FE9A5E /* AppDelegate.swift */; };
 		F19EA0972061C36000FE9A5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F19EA0962061C36000FE9A5E /* Assets.xcassets */; };
 		F19EA09A2061C36000FE9A5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F19EA0982061C36000FE9A5E /* LaunchScreen.storyboard */; };
@@ -39,6 +40,7 @@
 		F1196A792064928E0084672D /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		F1196A7E2064966E0084672D /* leaguespartan-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "leaguespartan-bold.ttf"; sourceTree = "<group>"; };
 		F1196A8020649BA40084672D /* NavigationIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationIcon.swift; sourceTree = "<group>"; };
+		F1196A8320649D580084672D /* PartCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartCellView.swift; sourceTree = "<group>"; };
 		F19EA08C2061C36000FE9A5E /* MapPing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapPing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F19EA08F2061C36000FE9A5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F19EA0962061C36000FE9A5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		F1196A8220649C720084672D /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				F1196A8320649D580084672D /* PartCellView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				F19EA0AC2061C5BE00FE9A5E /* BaseViewController.swift in Sources */,
 				F19EA0AE2061C5E800FE9A5E /* RootView.swift in Sources */,
 				F19EA0C22061DA7E00FE9A5E /* Stylesheet.swift in Sources */,
+				F1196A8420649D580084672D /* PartCellView.swift in Sources */,
 				F19EA0A92061C59B00FE9A5E /* ViewControllerFactory.swift in Sources */,
 				F19EA0902061C36000FE9A5E /* AppDelegate.swift in Sources */,
 				F19EA0B32061C6A800FE9A5E /* AugmentedRealityViewController.swift in Sources */,
