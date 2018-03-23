@@ -72,26 +72,30 @@ Certaines composantes n'ont pas de coordonnées GPS et d'autres n'ont pas d'adre
 
 ### Modes d'affichage
 
-L'application comporte 3 modes d'affichage, qui pour l'instant ne font que démontrer le visuel à l'aide d'une pièce inexistante. Ces différents modes peuvent être complétés en implémentant les fonctionnalités suivantes:
+L'application comporte 3 modes d'affichage, qui pour l'instant ne font que démontrer le visuel à l'aide d'une pièce qui n'existe pas réellement. Ces différents modes peuvent être complétés en implémentant les fonctionnalités suivantes, par exemple:
 
-#### Liste de pièces
-* Afficher chacune des pièces dans une liste à cellules réutilisables
+#### <img src="https://user-images.githubusercontent.com/4378424/37808993-ac71646a-2e23-11e8-9b8a-eb467fc6cc67.png" height="13" width="17"> Liste de pièces
+* Afficher chacune des pièces dans une liste défilable à cellules réutilisables
 * Afficher le sommaire des pièces à partir de la banque de données
-* Afficher l'icône de chaque type de pièce dans les cellules
-* Afficher la distance relative entre la pièce et l'emplacement actuel
-* Ordonner les pièces par proximité
+* Afficher l'icône de chaque type de pièce dans chacune des cellules
+* Afficher la distance relative entre la pièce et l'emplacement actuel du téléphone
+* Ordonner les pièces par proximité (du plus près au plus éloigné)
+* Filter les pièces par type ou par composant du vaisseau
 
-#### Carte de pièces
+#### <img src="https://user-images.githubusercontent.com/4378424/37808994-ac7c2cd8-2e23-11e8-8b7f-d499210cf74e.png" height="16" width="20"> Carte de pièces
 * Afficher chacune des pièces sur des épingles de la carte (📍)
-* Afficher le nom et le composant de la pièce à l'appui de l'épingle
+* Afficher le nom et le composant de la pièce suite à l'appui de l'épingle
 * Afficher l'icône de chaque type de pièce dans les épingles
+* Filter les pièces par type ou par composant du vaisseau
 * Gérer le regroupement (clustering) à la réduction du niveau de zoom
 * Positionner la carte autour de la position actuelle (et afficher celle-ci)
 * Donner les directions entre la position actuelle et une pièce choisie
 
-#### Réalité augmentée
+#### <img src="https://user-images.githubusercontent.com/4378424/37808992-ac65adfa-2e23-11e8-8350-65befbe98843.png" height="16" width="20"> Réalité augmentée
 * Afficher les pièces dans l'espace tridimensionnel géolocalisées
 * Afficher la distance entre la pièce dans l'espace et l'emplacement actuel
+
+Ceci n'est qu'une liste sommaire de possibilités, libre à vous de laisser aller votre imagination pour rendre utile un ou plusieurs de ces modes d'affichage. Les maquettes dans l'introduction ci-haut peuvent vous servir d'inspiration.
 
 ### Fonctions supplémentaires
 
@@ -105,9 +109,17 @@ Une fois les pièces affichées, beaucoup de fonctions peuvent être ajoutées �
 
 - **Persistence**: Pour toutes les données entrées, il est intéressant de les ajouter localement dans l'application, mais cela n'en est rien si les données disparaissent suite à la fermeture de l'application. Implanter une sorte de stockage local permetterait d'assurer la persistance.
 
+Les fonctionnalités potentielles sont infinies, votre créativité est sollicitée pour rendre **Map Ping** la plus fonctionnellement complète pour les pingouins en détresse.
+
 ## Évaluation
 
 Évidemment, on ne vous demande pas de connecter la source, de faire fonctionner **tous** les modes d'affichages et d'ajouter **toutes** les fonctionnalités listés ci-haut. En 3 heures, on vous demande de faire le maximum possible et d'utiliser de votre créativité – le but ultime est de nous impressionner.
+
+### Critères
+
+fdsafdas
+
+### Remise
 
 <table><thead><tr><th align="center">
 ⚠️ Prévoyez au moins 10 minutes à la fin pour préparer votre soumission ⚠️ 
