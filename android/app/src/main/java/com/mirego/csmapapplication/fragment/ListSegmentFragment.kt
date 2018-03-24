@@ -13,6 +13,11 @@ class ListSegmentFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val args = arguments
+        val list = args!!.getInt("list", 0)
+
         return inflater.inflate(R.layout.fragment_list, container, false)
     }
+
+
 }
