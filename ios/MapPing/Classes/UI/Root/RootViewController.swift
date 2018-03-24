@@ -14,7 +14,7 @@ class RootViewController: BaseViewController {
     }
 
     private let viewControllers: [UIViewController & NavigationIconProvider]
-    private var displatedViewController: Int = 0
+    private var displayedViewController: Int = 1
     private var transitionInProgress = false
 
     init(viewControllers: [UIViewController & NavigationIconProvider]) {
@@ -28,29 +28,29 @@ class RootViewController: BaseViewController {
     }
 
     override var childViewControllerForStatusBarStyle: UIViewController? {
-        return viewControllers[displatedViewController]
+        return viewControllers[displayedViewController]
     }
 
     override var childViewControllerForStatusBarHidden: UIViewController? {
-        return viewControllers[displatedViewController]
+        return viewControllers[displayedViewController]
     }
 
     override func loadView() {
-        let firstViewController = viewControllers[displatedViewController]
+        let firstViewController = viewControllers[displayedViewController]
         addChildViewController(firstViewController)
         view = RootView(view: firstViewController.view, icons: viewControllers.map { $0.navigationIcon ?? UIImage() })
         firstViewController.didMove(toParentViewController: self)
         mainView.delegate = self
-        mainView.setSelectedButton(index: displatedViewController)
+        mainView.setSelectedButton(index: displayedViewController)
     }
 }
 
 extension RootViewController: RootViewDelegate {
     func didTapButton(at index: Int) {
-        guard displatedViewController != index && !transitionInProgress else { return }
+        guard displayedViewController != index && !transitionInProgress else { return }
 
         transitionInProgress = true
-        let viewControllerToRemove = viewControllers[displatedViewController]
+        let viewControllerToRemove = viewControllers[displayedViewController]
         let viewControllerToAdd = viewControllers[index]
         viewControllerToRemove.willMove(toParentViewController: nil)
         addChildViewController(viewControllerToAdd)
@@ -60,8 +60,8 @@ extension RootViewController: RootViewDelegate {
             viewControllerToRemove.removeFromParentViewController()
             strongSelf.transitionInProgress = false
         }
-        displatedViewController = index
+        displayedViewController = index
         setNeedsStatusBarAppearanceUpdate()
-        mainView.setSelectedButton(index: displatedViewController)
+        mainView.setSelectedButton(index: displayedViewController)
     }
 }

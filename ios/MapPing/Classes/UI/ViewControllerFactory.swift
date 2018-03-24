@@ -23,9 +23,8 @@ class ViewControllerFactory {
     }
 
     private func listViewController() -> NavigationViewController {
-        let navigationController = NavigationViewController(rootViewController: ListViewController(partService: serviceFactory.partService()))
-        navigationController.navigationIcon = #imageLiteral(resourceName: "icn-list")
-        return navigationController
+        let listViewController = assign(ListViewController(partService: serviceFactory.partService()))
+        return NavigationViewController(rootViewController: listViewController)
     }
 
     private func augmentedRealityViewController() -> AugmentedRealityViewController {

@@ -13,7 +13,7 @@ protocol NavigationButtonsDelegate: class {
 }
 
 class NavigationButtons: UIView {
-    private static let buttonSize = CGSize(width: 45, height: 46)
+    private static let buttonSize = CGSize(width: 46, height: 46)
 
     weak var delegate: NavigationButtonsDelegate?
 
@@ -59,7 +59,7 @@ class NavigationButtons: UIView {
         for (index, button) in buttons.enumerated() {
             button.pin.centerLeft().marginLeft(CGFloat(index) * NavigationButtons.buttonSize.width)
             if index < delimiters.count {
-                delimiters[index].pin.right(of: button).size(CGSize(width: 1, height: height))
+                delimiters[index].pin.right(of: button).size(CGSize(width: 0.5, height: height))
             }
         }
     }

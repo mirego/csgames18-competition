@@ -18,7 +18,8 @@ class ListViewController: BaseViewController {
     init(partService: PartService) {
         self.partService = partService
         super.init(nibName: nil, bundle: nil)
-        title = "Map Ping" 
+        title = "Map Ping"
+        navigationIcon = #imageLiteral(resourceName: "icn-list")
     }
 
     required init(coder aDecoder: NSCoder) {

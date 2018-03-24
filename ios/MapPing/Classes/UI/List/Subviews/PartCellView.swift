@@ -51,7 +51,7 @@ class PartCellView: UIView {
         partImage.pin.left(15).vCenter()
         title.pin.right(of: partImage, aligned: .top).marginLeft(15).marginTop(8)
         subTitle.pin.below(of: title, aligned: .left).marginTop(1)
-        coordinates.pin.below(of: subTitle, aligned: .left).marginTop(3)
+        coordinates.pin.below(of: subTitle, aligned: .left).marginTop(5)
         distance.pin.right(of: coordinates, aligned: .center).marginLeft(6)
     }
 

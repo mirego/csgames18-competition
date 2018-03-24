@@ -8,5 +8,9 @@
 import UIKit
 
 class NavigationViewController: UINavigationController, NavigationIconProvider {
-    var navigationIcon: UIImage?
+    var navigationIcon: UIImage? {
+        get {
+            return (viewControllers.first as? BaseViewController)?.navigationIcon
+        }
+    }
 }
