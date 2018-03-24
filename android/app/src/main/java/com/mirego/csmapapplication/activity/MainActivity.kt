@@ -48,6 +48,8 @@ class MainActivity : FragmentActivity() {
         }
 
         setupButtons()
+
+        downloadData()
     }
 
     private fun downloadData() {
@@ -57,7 +59,9 @@ class MainActivity : FragmentActivity() {
             }
 
             override fun onResponse(call: Call<List<Piece>>?, response: Response<List<Piece>>?) {
-                Log.d("street's test", "That's it")
+                if (response!!.isSuccessful) {
+                    MapPingApplication.pieces = response.body()!!
+                }
             }
         })
     }
