@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.mirego.csmapapplication.R
 
-class ListSegmentFragment : Fragment() {
+open class ListSegmentFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

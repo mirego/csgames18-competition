@@ -10,7 +10,7 @@
         android:required="true" />
 
     <application
-        android:name="com.mirego.csmapapplication.MapPingApplication"
+        android:name="com.mirego.csmapapplication.ExtendedMapPingApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

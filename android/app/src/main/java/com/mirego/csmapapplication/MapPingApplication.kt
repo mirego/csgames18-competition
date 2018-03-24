@@ -6,7 +6,7 @@ import com.mirego.csmapapplication.component.NetComponent
 import com.mirego.csmapapplication.module.AppModule
 import com.mirego.csmapapplication.module.NetModule
 
-class MapPingApplication : Application() {
+open class MapPingApplication : Application() {
     lateinit var netComponent: NetComponent
 
     override fun onCreate() {

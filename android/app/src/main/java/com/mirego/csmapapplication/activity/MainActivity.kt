@@ -11,7 +11,7 @@ import android.view.View
 import android.widget.ImageButton
 import com.mirego.csmapapplication.MapPingApplication
 import com.mirego.csmapapplication.R
-import com.mirego.csmapapplication.fragment.ListSegmentFragment
+import com.mirego.csmapapplication.fragment.ExtendedListSegmentFragment
 import com.mirego.csmapapplication.fragment.MapSegmentFragment
 import com.mirego.csmapapplication.model.Repo
 import kotlinx.android.synthetic.main.activity_main.*
@@ -25,7 +25,7 @@ import retrofit2.Response
 
 class MainActivity : FragmentActivity() {
 
-    private val listFragment = ListSegmentFragment()
+    private val listFragment = ExtendedListSegmentFragment()
     private val mapFragment = MapSegmentFragment()
     private var selectedSegmentIndex = 0
 
