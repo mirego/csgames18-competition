@@ -12,7 +12,7 @@ class DataHelper {
     
     
     
-    static func getData() -> [Any] {
+    static func getData() -> [Part] {
         let urlString = "https://s3.amazonaws.com/shared.ws.mirego.com/competition/mapping.json"
         let url = URL(string: urlString)
         
@@ -21,7 +21,7 @@ class DataHelper {
         var dataArray = [Any]()
         
         do {
-            let data = try Data(contentsOf: url)
+            let data = try Data(contentsOf: url!)
             let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
             if let jsonResult = jsonResult as? Array<Part> {
 
@@ -33,8 +33,9 @@ class DataHelper {
             print("Something went wrong")
         }
         
+        var partArray = [Part]()
 
-        return dataArray
+        return partArray
     }
     
 }
