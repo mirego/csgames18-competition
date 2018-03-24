@@ -10,8 +10,8 @@
 
     </style>
 
-    <style name="customfontstyle" parent="@android:style/TextAppearance.Small">
-        <item name="android:fontFamily">@font/leaguespartan_bold</item>
+    <style name="customFontStyle" parent="@android:style/TextAppearance.Small">
+        <item name="android:fontFamily">@font/leaguespartan</item>
     </style>
 
 </resources>

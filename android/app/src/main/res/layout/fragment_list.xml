@@ -7,30 +7,28 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="106dp"
         android:background="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:layout_marginTop="16dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/imageIcon"
-                android:layout_width="68dp"
-                android:layout_height="68dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:scaleType="fitCenter"
                 android:background="@drawable/imageview_copper_border"
                 android:padding="12dp"
-                android:src="@drawable/ic_part_turbo" />
+                android:src="@drawable/ic_part_bulb" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -43,17 +41,8 @@
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:maxLines="1"
-                    android:text="Turbo"
-                    android:textAppearance="@style/customfontstyle"
-                    android:textColor="@color/purpleBrown"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:text="Pièce du moteur"
+                    android:text="Bougie 4W"
+                    android:textAppearance="@style/customFontStyle"
                     android:textColor="@color/purpleBrown" />
 
                 <TextView
@@ -61,8 +50,34 @@
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:maxLines="1"
-                    android:text="46.7552° N, 71.2265° W  (0.62 km)"
+                    android:text="Moteur principal"
+                    android:textColor="@color/purpleBrown" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="46.7552° N, 71.2265° W"
                     android:textColor="@color/brownishGrey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="(0.62 km)"
+                        android:textColor="@color/brownishGrey"
+                        android:textStyle="italic" />
+
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>
