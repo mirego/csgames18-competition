@@ -2,7 +2,7 @@
 
 This project serves as a starting base for the CS Games 2018 Mobile Competition.
 
-You may edit it as much as you like (or start completely from scratch if you prefer) – as long as you make something awesome!
+You may edit it as much as you like – as long as you make something awesome!
 
 ## Prerequisites
 

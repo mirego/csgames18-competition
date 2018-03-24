@@ -2,6 +2,8 @@
 
 This project serves as a starting base for the CS Games 2018 Mobile Competition.
 
+You may edit it as much as you like – as long as you make something awesome!
+
 ## Prerequisites
 
 Make sure you have the following software installed before beginning:
