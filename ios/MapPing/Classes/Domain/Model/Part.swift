@@ -15,4 +15,8 @@ struct Part: Codable {
     let name: String
     let latitude: Float
     let longitude: Float
+    let type: Int
+    let notes: String
+    let address: String
+    let component: String
 }
