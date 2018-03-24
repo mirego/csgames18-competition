@@ -97,7 +97,9 @@ class MainActivity : FragmentActivity() {
             for ((index, segmentButton) in segmentButtons.withIndex()) {
                 if (segmentButton == view as ImageButton) {
                     selectedSegmentIndex = index
-                    updateSegmentButtonsColor()
+                    if (view != arButton) {
+                        updateSegmentButtonsColor()
+                    }
                     onSegmentButtonClicked(segmentButton)
                     break
                 }

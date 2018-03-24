@@ -10,7 +10,11 @@
 
     </style>
 
-    <style name="customFontStyle" parent="@android:style/TextAppearance.Small">
+    <style name="toolbarTitle" parent="@android:style/TextAppearance.Material.Widget.Toolbar.Title">
+        <item name="android:fontFamily">@font/leaguespartan</item>
+    </style>
+
+    <style name="partTitle" parent="@android:style/TextAppearance.Small">
         <item name="android:fontFamily">@font/leaguespartan</item>
     </style>
 

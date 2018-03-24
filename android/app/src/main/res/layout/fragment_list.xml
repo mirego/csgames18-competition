@@ -42,7 +42,7 @@
                     android:ellipsize="end"
                     android:maxLines="1"
                     android:text="Bougie 4W"
-                    android:textAppearance="@style/customFontStyle"
+                    android:textAppearance="@style/partTitle"
                     android:textColor="@color/purpleBrown" />
 
                 <TextView
