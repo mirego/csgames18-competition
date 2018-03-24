@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		31F3B93320670F4000789AA7 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F3B93220670F4000789AA7 /* DataHelper.swift */; };
+		31F3B9352067128700789AA7 /* parts.json in Resources */ = {isa = PBXBuildFile; fileRef = 31F3B9342067128700789AA7 /* parts.json */; };
 		940F0B61F668AD88441334C2 /* Pods_MapPing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16CD00BB887C10CE3E91B52C /* Pods_MapPing.framework */; };
 		F1196A76206481B60084672D /* PartAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A75206481B60084672D /* PartAnnotationView.swift */; };
 		F1196A782064857D0084672D /* PartAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A772064857D0084672D /* PartAnnotation.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		16CD00BB887C10CE3E91B52C /* Pods_MapPing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapPing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31F3B93220670F4000789AA7 /* DataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
+		31F3B9342067128700789AA7 /* parts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = parts.json; sourceTree = "<group>"; };
 		4BFA57CDB381CDA05A7C2162 /* Pods-MapPing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapPing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapPing/Pods-MapPing.debug.xcconfig"; sourceTree = "<group>"; };
 		E901EFF955E9ACF4A910DAE7 /* Pods-MapPing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapPing.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapPing/Pods-MapPing.release.xcconfig"; sourceTree = "<group>"; };
 		F1196A75206481B60084672D /* PartAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartAnnotationView.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		F1196A862065357A0084672D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				31F3B9342067128700789AA7 /* parts.json */,
 				F1196A872065357A0084672D /* Observable.swift */,
 				31F3B93220670F4000789AA7 /* DataHelper.swift */,
 			);
@@ -349,6 +352,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31F3B9352067128700789AA7 /* parts.json in Resources */,
 				F19EA09A2061C36000FE9A5E /* LaunchScreen.storyboard in Resources */,
 				F19EA0972061C36000FE9A5E /* Assets.xcassets in Resources */,
 				F1196A7F2064966E0084672D /* leaguespartan-bold.ttf in Resources */,

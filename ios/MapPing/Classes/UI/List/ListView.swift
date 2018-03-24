@@ -14,6 +14,7 @@ class ListView: UIView {
     init() {
         super.init(frame: .zero)
         backgroundColor = .white
+        DataHelper.getData()
 
         partCellView.configure(partImageName: "part-sensor", title: "Bougie 4W", subTitle: "Moteur principal", coordinates: "46.7552° N, 71.2265° W", distance: "(0.62 km)")
         
