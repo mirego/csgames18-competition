@@ -12,10 +12,12 @@
 
     <style name="toolbarTitle" parent="@android:style/TextAppearance.Material.Widget.Toolbar.Title">
         <item name="android:fontFamily">@font/leaguespartan</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="partTitle" parent="@android:style/TextAppearance.Small">
         <item name="android:fontFamily">@font/leaguespartan</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>
