@@ -3,13 +3,14 @@
     package="com.mirego.csmapapplication">
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-feature
         android:name="android.hardware.camera.ar"
         android:required="true" />
 
     <application
+        android:name="com.mirego.csmapapplication.MapPingApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -26,11 +27,14 @@
         <activity
             android:name=".activity.ArActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBpXOqs4Zphp4IgzMytEtzPnuJLJjfHVAA"/>
+            android:value="AIzaSyBpXOqs4Zphp4IgzMytEtzPnuJLJjfHVAA" />
 
-        <meta-data android:name="com.google.ar.core" android:value="required" />
+        <meta-data
+            android:name="com.google.ar.core"
+            android:value="required" />
     </application>
 
 </manifest>

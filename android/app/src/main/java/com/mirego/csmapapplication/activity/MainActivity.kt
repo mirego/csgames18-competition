@@ -6,12 +6,22 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentActivity
 import android.support.v4.content.ContextCompat
+import android.util.Log
 import android.view.View
 import android.widget.ImageButton
+import com.mirego.csmapapplication.MapPingApplication
 import com.mirego.csmapapplication.R
 import com.mirego.csmapapplication.fragment.ListSegmentFragment
 import com.mirego.csmapapplication.fragment.MapSegmentFragment
+import com.mirego.csmapapplication.model.Repo
 import kotlinx.android.synthetic.main.activity_main.*
+import retrofit2.Retrofit
+import javax.inject.Inject
+import com.mirego.csmapapplication.service.GitHubService
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+
 
 class MainActivity : FragmentActivity() {
 
@@ -21,9 +31,13 @@ class MainActivity : FragmentActivity() {
 
     private lateinit var segmentButtons: List<ImageButton>
 
+    @Inject
+    lateinit var retrofit: Retrofit
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        (application as MapPingApplication).netComponent.inject(this)
 
         segmentButtons = listOf(listButton, mapButton, arButton)
 
@@ -34,6 +48,20 @@ class MainActivity : FragmentActivity() {
         }
 
         setupButtons()
+
+        downloadData()
+    }
+
+    private fun downloadData() {
+        retrofit.create(GitHubService::class.java).listRepos("olivierpineau").enqueue(object : Callback<List<Repo>> {
+            override fun onFailure(call: Call<List<Repo>>?, t: Throwable?) {
+                Log.d("street's test", "Oops")
+            }
+
+            override fun onResponse(call: Call<List<Repo>>?, response: Response<List<Repo>>?) {
+                Log.d("street's test", "That's it")
+            }
+        })
     }
 
     private fun setupMainView() {
