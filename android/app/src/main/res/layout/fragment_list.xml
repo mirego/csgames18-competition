@@ -28,6 +28,8 @@
                 android:layout_width="68dp"
                 android:layout_height="68dp"
                 android:scaleType="fitCenter"
+                android:background="@drawable/imageview_copper_border"
+                android:padding="12dp"
                 android:src="@drawable/ic_part_turbo" />
 
             <LinearLayout

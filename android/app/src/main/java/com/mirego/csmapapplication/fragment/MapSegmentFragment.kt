@@ -10,6 +10,9 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.mirego.csmapapplication.R
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.model.BitmapDescriptor
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
+import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.fragment_map.mapView
 import kotlinx.android.synthetic.main.fragment_map.view.mapView
 
@@ -23,7 +26,23 @@ class MapSegmentFragment : Fragment(), OnMapReadyCallback {
         return inflater.inflate(R.layout.fragment_map, container, false).also { mapSegmentView ->
             mapSegmentView.mapView.onCreate(savedInstanceState)
             mapSegmentView.mapView.getMapAsync { map ->
-                map.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(45.4920403, -73.5584612), 14.0f))
+                val miregoMtlCoordinates = LatLng(45.4920403, -73.5584612)
+
+                map.addMarker(
+                    MarkerOptions()
+                        .position(miregoMtlCoordinates)
+                        .title("Mirego Mtl")
+//                        .icon(
+//                            BitmapDescriptorFactory.fromResource(R.drawable.ic_cluster)
+//                        )
+                )
+
+                map.moveCamera(
+                    CameraUpdateFactory.newLatLngZoom(
+                        miregoMtlCoordinates,
+                        14.0f
+                    )
+                )
             }
         }
     }
@@ -35,5 +54,6 @@ class MapSegmentFragment : Fragment(), OnMapReadyCallback {
 
     override fun onMapReady(p0: GoogleMap?) {
         // Nothing to do here
+
     }
 }
