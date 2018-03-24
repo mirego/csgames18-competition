@@ -2,7 +2,7 @@ package com.mirego.csmapapplication.model;
 
 import com.google.gson.annotations.Expose;
 
-public class Mapping {
+public class Piece {
     @Expose
     private String name;
     @Expose
@@ -18,7 +18,7 @@ public class Mapping {
     @Expose
     private String address;
 
-    public Mapping() {
+    public Piece() {
     }
 
     public String getName() {
