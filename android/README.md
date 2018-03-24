@@ -13,7 +13,7 @@ Make sure you have the following software installed before beginning:
 
 You can download these from the [Android Developer website](https://developer.android.com/studio/index.html).
 
-> **NOTE:** If you have a Mac computer running macOS 10.11.5 or later, you may also be interested in our [iOS app](https://github.com/mirego/csgames18-competition/tree/master/ios), which uses Xcode and the latest iOS SDK.
+> **NOTE:** If you have a Mac computer running macOS 10.12.6 or later, you may also be interested in our [iOS app](https://github.com/mirego/csgames18-competition/tree/master/ios), which uses Xcode and the latest iOS SDK.
 
 ## Getting started
 
