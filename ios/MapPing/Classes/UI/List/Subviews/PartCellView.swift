@@ -7,16 +7,18 @@
 
 import UIKit
 
-class PartCellView: UIView {
+class PartCellView: UITableViewCell {
 
     private let partImage = UIImageView()
     private let title = UILabel()
     private let subTitle = UILabel()
     private let coordinates = UILabel()
     private let distance = UILabel()
+    
+    var part : Part!
 
     init() {
-        super.init(frame: .zero)
+        super.init(style: UITableViewCellStyle.subtitle, reuseIdentifier: "PartCellView")
 
         partImage.backgroundColor = .white
         partImage.contentMode = .center

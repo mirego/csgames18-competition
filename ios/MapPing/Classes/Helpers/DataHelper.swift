@@ -14,7 +14,7 @@ class DataHelper {
     
     
     func getData() -> [Part] {
-        var dataArray = [Part]()
+        var dataArray = [Part(name: "Waddup", latitude: 46.7906725, longitude: -71.2868071, type: "sink", notes: "Not real", address: "78 Penfield Drive", component: "Identification de l'équipage")]
         let url = NSURL(string: urlString)
         
         return dataArray
