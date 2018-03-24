@@ -1,15 +1,24 @@
 package com.mirego.csmapapplication.model;
 
-public class mapping {
+import com.google.gson.annotations.Expose;
+
+public class Mapping {
+    @Expose
     private String name;
+    @Expose
     private String component;
+    @Expose
     private String notes;
+    @Expose
     private String type;
-    private String lat;
-    private String lng;
+    @Expose
+    private double latitude;
+    @Expose
+    private double longitude;
+    @Expose
     private String address;
 
-    public mapping() {
+    public Mapping() {
     }
 
     public String getName() {
@@ -44,20 +53,20 @@ public class mapping {
         this.type = type;
     }
 
-    public String getLat() {
-        return lat;
+    public double getLatitude() {
+        return latitude;
     }
 
-    public void setLat(String lat) {
-        this.lat = lat;
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
     }
 
-    public String getLng() {
-        return lng;
+    public double getLongitude() {
+        return longitude;
     }
 
-    public void setLng(String lng) {
-        this.lng = lng;
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 
     public String getAddress() {
