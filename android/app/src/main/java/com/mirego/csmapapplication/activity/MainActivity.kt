@@ -13,11 +13,11 @@ import com.mirego.csmapapplication.MapPingApplication
 import com.mirego.csmapapplication.R
 import com.mirego.csmapapplication.fragment.ListSegmentFragment
 import com.mirego.csmapapplication.fragment.MapSegmentFragment
-import com.mirego.csmapapplication.model.Repo
+import com.mirego.csmapapplication.model.Part
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Retrofit
 import javax.inject.Inject
-import com.mirego.csmapapplication.service.GitHubService
+import com.mirego.csmapapplication.service.PartService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -28,6 +28,7 @@ class MainActivity : FragmentActivity() {
     private val listFragment = ListSegmentFragment()
     private val mapFragment = MapSegmentFragment()
     private var selectedSegmentIndex = 0
+    private var listSpaceshipPart: List<Part>? = null
 
     private lateinit var segmentButtons: List<ImageButton>
 
@@ -53,13 +54,13 @@ class MainActivity : FragmentActivity() {
     }
 
     private fun downloadData() {
-        retrofit.create(GitHubService::class.java).listRepos("olivierpineau").enqueue(object : Callback<List<Repo>> {
-            override fun onFailure(call: Call<List<Repo>>?, t: Throwable?) {
+        retrofit.create(PartService::class.java).listParts().enqueue(object : Callback<List<Part>> {
+            override fun onFailure(call: Call<List<Part>>?, t: Throwable?) {
                 Log.d("street's test", "Oops")
             }
 
-            override fun onResponse(call: Call<List<Repo>>?, response: Response<List<Repo>>?) {
-                Log.d("street's test", "That's it")
+            override fun onResponse(call: Call<List<Part>>?, response: Response<List<Part>>?) {
+                listSpaceshipPart = response?.body()
             }
         })
     }
