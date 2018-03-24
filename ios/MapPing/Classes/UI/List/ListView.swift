@@ -16,6 +16,7 @@ class ListView: UIView {
         backgroundColor = .white
 
         partCellView.configure(partImageName: "part-sensor", title: "Bougie 4W", subTitle: "Moteur principal", coordinates: "46.7552° N, 71.2265° W", distance: "(0.62 km)")
+        
         addSubview(partCellView)
     }
 
