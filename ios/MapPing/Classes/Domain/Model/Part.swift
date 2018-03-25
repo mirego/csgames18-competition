@@ -5,6 +5,8 @@
 //  Copyright © 2018 Mirego. All rights reserved.
 //
 
+import CoreLocation
+
 struct Part: Codable, Equatable {
     enum CodingKeys: String, CodingKey {
         case name
@@ -21,7 +23,7 @@ struct Part: Codable, Equatable {
     let longitude: Float?
     let component: String
     let type: String
-    let address: String
+    let address: String?
     let notes: String
     
     public static func ==(lhs: Part, rhs: Part) -> Bool {
