@@ -2,21 +2,10 @@
 
 Welcome to the **CS Games 2018 Mobile Competition**!
 
-## TO DO
-
-- Analysis to find the most dense spot for spare parts on the map?
-- Geocoding API?
-- host images for the part types
-- Give turn-by-turn directions between the current position and a selected part
-- mark them as "picked up" to easily see those that were found and those that are left.
-- Pickup notes: When parts are picked up, it could also be useful to add information from the situation. Part photo, pickup notes, etc - a form could be displayed to enter these details.
-- Persistence: While entering data in the app has its value, it's rendered useless if everything is forgotten once the app is closed. Implementing a local storage would insure persistence.
-
-
 ## Team
 
 **Team Name:** Battlestar Concordia
-**Team Code:** {mirego1}
+**Team Code:** concordia1
 **University:** Concordia University
 
 **Authors:**
@@ -31,20 +20,19 @@ Welcome to the **CS Games 2018 Mobile Competition**!
 1. Created list of parts to see
 2. Appropriate icons for part type in List
 3. Clicking on item in list brings you to appropriate location on map with appropriate pin and artwork
+4. After populating the list by fetching it from our server, we display the "penguin teleportation distance" (Pythagorean distance) between your current GPS location and all parts.
 
 **Server Features (for after our Series A funding) :**
 1. Authentication endpoints (register, login and logout)
 2. User management endpoints (getAllUsers, getUserById)
 3. Mapping endpoints (getAllTypes)
 4. Generated a new mapping.json by parsing it and obtaining lat/lon through Google geocoding API
-5. Endpoint to calculate the "penguin teleportation distance" between the user's location and all part locations
+5. Endpoint to calculate the "penguin teleportation distance" (Pythagorean distance) between the user's GPS location and all part locations in real-time
 
-
-SERVER URL!!!
+The server is also being hosted live at http://concordia-at-csgames.com:4000/
 
 **Client Build Steps:**
-- {We added the GooglePlaces lib to the Podfile, you need to run `pod install` before build}
-- {We activated the "Siri" capability, connect an Apple Developer account to test}
+No changes were made to the client build steps
 
 **Server Build Steps:**
 
@@ -56,20 +44,22 @@ SERVER URL!!!
 You can see also server API docs in `server/README.md`
 
 **What went well:**
-- {The base project was really well done, it helped a lot to begin}
-- {The clustering was really tricky, we had to try a couple of libraries...}
+- Defining the service using retrofit went smoothly and worked as expected
+- Thanks for providing the icons!
+- Kotlin was a welcome addition (we like Kotlin even though we suck at it)
 
 **What went wrong:**
 - After competing in the Mobile competitions for 2 years in a row, we were really expecting requirements for an Express server..
-- {The clustering was really tricky, we had to try a couple of libraries...}
+- We had issues with the Google Play services in the emulator so we had to downgrade to version 11
+- We didn't immediately realize that the icons were provided
 
 **What you are proud of:**
-- {We're quite proud to have succeeded in connecting Siri, it was above our expectations and it works quite well}
-- {We're sad we couldn't attack the AR mode, it looked very promising}
+- We're proud of delivering features that we think fit well with the scope of the application
+- We're proud that we were able to delegate some tasks to our server to put it to good use
 
 **What you are disappointed of:**
-- {We're quite proud to have succeeded in connecting Siri, it was above our expectations and it works quite well}
-- {We're sad we couldn't attack the AR mode, it looked very promising}
+- More Express web servers please!
+- AR didn't work because we were using the emulator :(
 
 ## Introduction
 
