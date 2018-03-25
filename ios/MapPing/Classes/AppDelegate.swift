@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.tintColor = .primary
         window!.rootViewController = viewControllerFactory.rootViewController()
         window!.makeKeyAndVisible()
-
+        
         return true
     }
 

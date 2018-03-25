@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class PartCellView: UIView {
+class PartCellView: UITableViewCell {
 
     private let partImage = UIImageView()
     private let title = UILabel()
@@ -15,8 +16,8 @@ class PartCellView: UIView {
     private let coordinates = UILabel()
     private let distance = UILabel()
 
-    init() {
-        super.init(frame: .zero)
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: .default, reuseIdentifier: "item")
 
         partImage.backgroundColor = .white
         partImage.contentMode = .center
@@ -61,6 +62,36 @@ class PartCellView: UIView {
         self.subTitle.setProperties(text: subTitle, fit: true)
         self.coordinates.setProperties(text: coordinates, fit: true)
         self.distance.setProperties(text: distance, fit: true)
+        setNeedsLayout()
+    }
+    
+    /*
+     * Utility function to take a dictionary retrieved from the
+     * server, and set the view components to match the information.
+     */
+    func configure(dict:NSDictionary) {
+        let name = dict["name"] as! String
+        let type = dict["type"] as! String
+        let component = dict["component"] as! String
+        let lat = dict["lat"] as? Double
+        let lon = dict["lon"] as? Double
+        let address = dict["address"] as? String
+
+        var description = "Unavailable"
+        var distance = ""
+        if lat != nil && lon != nil {
+            description = "\(lat!)°N, \(lon!)°W"
+            if let location = ListViewController.location {
+                let here = CLLocation(latitude: lat!, longitude: lon!)
+                let d = (location.distance(from: here) / 1000 * 10).rounded() / 10
+                distance = "\(d)km"
+            }
+        } else if let address = address {
+            description = address
+        }
+        
+        self.configure(partImageName: "part-\(type)", title: name, subTitle: component, coordinates: description, distance: distance)
+
         setNeedsLayout()
     }
 }
