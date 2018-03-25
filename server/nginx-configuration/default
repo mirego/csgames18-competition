@@ -1,0 +1,9 @@
+server {
+        listen 4000;
+        server_name concordia-at-csgames.com;
+        root /srv/mirego;
+        autoindex on;
+
+        location / {}
+}
+
