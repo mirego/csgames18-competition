@@ -49,6 +49,7 @@ class ListViewController: BaseViewController, ContentSizeUpdate {
             print("Parts received!!")
             print("Nb of parts received: \(parts.count)")
             //Add the parts to the list
+            listView.addPartCells(partInfo: parts)
         }
     }
     

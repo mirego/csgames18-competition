@@ -13,6 +13,7 @@ class ListView: UIView {
     private let pcv2 = PartCellView()
     
     private var pcvArr = [PartCellView]()
+    private var numCells = 0
     
     var contentSizeDelegate: ContentSizeUpdate?
 
@@ -20,7 +21,7 @@ class ListView: UIView {
         super.init(frame: .zero)
         backgroundColor = .white
 
-        partCellView.configure(partImageName: "part-sensor", title: "Bougie 4W", subTitle: "Moteur principal", coordinates: "46.7552° N, 71.2265° W", distance: "(0.62 km)")
+        /*partCellView.configure(partImageName: "part-sensor", title: "Bougie 4W", subTitle: "Moteur principal", coordinates: "46.7552° N, 71.2265° W", distance: "(0.62 km)")
         addSubview(partCellView)
         
         
@@ -33,7 +34,9 @@ class ListView: UIView {
             
             pcvArr.append(tempPCV)
             addSubview(tempPCV)
-        }
+        }*/
+        
+    
         
     }
 
@@ -42,23 +45,30 @@ class ListView: UIView {
     }
     
     func addPartCells(partInfo: [Part]) {
-        
+        for part in partInfo {
+            let tempPCV = PartCellView()
+            tempPCV.configure(partImageName: "part-\(part.type)", title: part.name, subTitle: part.description, coordinates: "\(part.latitude!),\(part.longitude!)", distance: "")
+            pcvArr.append(tempPCV)
+            addSubview(tempPCV)
+            numCells += 1
+        }
         
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        partCellView.pin.top().horizontally()
-        pcv2.pin.below(of: partCellView).horizontally()
-        for index in 0...34 {
+    
+        for index in 0...pcvArr.count-1 {
             if(index > 0) {
                 pcvArr[index].pin.below(of: pcvArr[index-1]).horizontally()
             } else {
-                pcvArr[0].pin.below(of: pcv2).horizontally()
+                pcvArr[0].pin.top().horizontally()
             }
            
         }
-        self.contentSizeDelegate?.updateContentSize(height: 37*pcvArr[0].height)
+        print("updating content size: \(CGFloat(numCells)*pcvArr[1].height)")
+        print("arr1 height: \(pcvArr[1].height)")
+        self.contentSizeDelegate!.updateContentSize(height: CGFloat(numCells)*pcvArr[1].height)
     }
     
 }
