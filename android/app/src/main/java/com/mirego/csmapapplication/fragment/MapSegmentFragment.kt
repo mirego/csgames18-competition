@@ -44,6 +44,8 @@ class MapSegmentFragment : Fragment(), OnMapReadyCallback {
         }
     }
 
+    fun fillMap()
+
     override fun onResume() {
         super.onResume()
         mapView.onResume()
