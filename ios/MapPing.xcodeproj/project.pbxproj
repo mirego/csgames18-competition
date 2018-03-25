@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		665624242067128700F37197 /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665624232067128700F37197 /* HttpService.swift */; };
 		6656242820671A7900F37197 /* FailableDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6656242720671A7900F37197 /* FailableDecodable.swift */; };
+		93695A4C20671488007D1410 /* PartClusterAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93695A4B20671488007D1410 /* PartClusterAnnotationView.swift */; };
 		940F0B61F668AD88441334C2 /* Pods_MapPing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16CD00BB887C10CE3E91B52C /* Pods_MapPing.framework */; };
 		F1196A76206481B60084672D /* PartAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A75206481B60084672D /* PartAnnotationView.swift */; };
 		F1196A782064857D0084672D /* PartAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A772064857D0084672D /* PartAnnotation.swift */; };
@@ -42,6 +43,7 @@
 		4BFA57CDB381CDA05A7C2162 /* Pods-MapPing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapPing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapPing/Pods-MapPing.debug.xcconfig"; sourceTree = "<group>"; };
 		665624232067128700F37197 /* HttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
 		6656242720671A7900F37197 /* FailableDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailableDecodable.swift; sourceTree = "<group>"; };
+		93695A4B20671488007D1410 /* PartClusterAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartClusterAnnotationView.swift; sourceTree = "<group>"; };
 		E901EFF955E9ACF4A910DAE7 /* Pods-MapPing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapPing.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapPing/Pods-MapPing.release.xcconfig"; sourceTree = "<group>"; };
 		F1196A75206481B60084672D /* PartAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartAnnotationView.swift; sourceTree = "<group>"; };
 		F1196A772064857D0084672D /* PartAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartAnnotation.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				F1196A75206481B60084672D /* PartAnnotationView.swift */,
+				93695A4B20671488007D1410 /* PartClusterAnnotationView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				F19EA0A92061C59B00FE9A5E /* ViewControllerFactory.swift in Sources */,
 				F1196A9020653D4A0084672D /* PartService.swift in Sources */,
 				F19EA0902061C36000FE9A5E /* AppDelegate.swift in Sources */,
+				93695A4C20671488007D1410 /* PartClusterAnnotationView.swift in Sources */,
 				F19EA0B32061C6A800FE9A5E /* AugmentedRealityViewController.swift in Sources */,
 				F1196A8E20653B660084672D /* Part.swift in Sources */,
 				F19EA0C02061CB7100FE9A5E /* NavigationButtons.swift in Sources */,

@@ -34,7 +34,21 @@ extension MapView: MKMapViewDelegate {
         guard !(annotation is MKUserLocation), let annotation = annotation as? PartAnnotation else { return nil }
 
         let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: PartAnnotationView.reuseIdentifier, for: annotation) as! PartAnnotationView
-        annotationView.configure(partImageName: annotation.iconName)
+        annotationView.configure(partAnnotation: annotation) {
+            print("TODO")
+        }
         return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard let annotationView = view as? PartAnnotationView else { return }
+        
+        annotationView.didSelect()
+    }
+    
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        guard let annotationView = view as? PartAnnotationView else { return }
+        
+        annotationView.didDeselect()
     }
 }

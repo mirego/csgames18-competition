@@ -20,7 +20,7 @@ struct Part: Codable {
     let component: String
     let notes: String
     let type: String
-    let latitude: Float
-    let longitude: Float
+    let latitude: Double
+    let longitude: Double
     let address: String
 }
