@@ -59,7 +59,7 @@ class MainActivity : FragmentActivity() {
             }
 
             override fun onResponse(call: Call<List<VesselPart>>?, response: Response<List<VesselPart>>?) {
-                val vesselParts = response?.body()
+                mapFragment.setVesselParts(response?.body())
             }
         })
     }
