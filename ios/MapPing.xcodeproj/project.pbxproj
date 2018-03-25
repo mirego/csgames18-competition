@@ -10,6 +10,8 @@
 		665624242067128700F37197 /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665624232067128700F37197 /* HttpService.swift */; };
 		6656242820671A7900F37197 /* FailableDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6656242720671A7900F37197 /* FailableDecodable.swift */; };
 		6656242A20671BE300F37197 /* PartType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6656242920671BE300F37197 /* PartType.swift */; };
+		6656242D20672F4900F37197 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6656242C20672F4900F37197 /* DetailsView.swift */; };
+		6656242F20672F5600F37197 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6656242E20672F5600F37197 /* DetailsViewController.swift */; };
 		93695A4C20671488007D1410 /* PartClusterAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93695A4B20671488007D1410 /* PartClusterAnnotationView.swift */; };
 		940F0B61F668AD88441334C2 /* Pods_MapPing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16CD00BB887C10CE3E91B52C /* Pods_MapPing.framework */; };
 		F1196A76206481B60084672D /* PartAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A75206481B60084672D /* PartAnnotationView.swift */; };
@@ -45,6 +47,8 @@
 		665624232067128700F37197 /* HttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
 		6656242720671A7900F37197 /* FailableDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailableDecodable.swift; sourceTree = "<group>"; };
 		6656242920671BE300F37197 /* PartType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartType.swift; sourceTree = "<group>"; };
+		6656242C20672F4900F37197 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		6656242E20672F5600F37197 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		93695A4B20671488007D1410 /* PartClusterAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartClusterAnnotationView.swift; sourceTree = "<group>"; };
 		E901EFF955E9ACF4A910DAE7 /* Pods-MapPing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapPing.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapPing/Pods-MapPing.release.xcconfig"; sourceTree = "<group>"; };
 		F1196A75206481B60084672D /* PartAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartAnnotationView.swift; sourceTree = "<group>"; };
@@ -95,6 +99,15 @@
 				E901EFF955E9ACF4A910DAE7 /* Pods-MapPing.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		6656242B20672F0000F37197 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				6656242E20672F5600F37197 /* DetailsViewController.swift */,
+				6656242C20672F4900F37197 /* DetailsView.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		6DAB11BEC4EE23ADF3FF7B54 /* Frameworks */ = {
@@ -227,6 +240,7 @@
 		F19EA0A42061C56600FE9A5E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				6656242B20672F0000F37197 /* Details */,
 				F19EA0B12061C68C00FE9A5E /* AugmentedReality */,
 				F19EA0AA2061C5B400FE9A5E /* Common */,
 				F19EA0AF2061C66800FE9A5E /* Map */,
@@ -438,6 +452,8 @@
 				F19EA0A92061C59B00FE9A5E /* ViewControllerFactory.swift in Sources */,
 				F1196A9020653D4A0084672D /* PartService.swift in Sources */,
 				F19EA0902061C36000FE9A5E /* AppDelegate.swift in Sources */,
+				6656242F20672F5600F37197 /* DetailsViewController.swift in Sources */,
+				6656242D20672F4900F37197 /* DetailsView.swift in Sources */,
 				93695A4C20671488007D1410 /* PartClusterAnnotationView.swift in Sources */,
 				F19EA0B32061C6A800FE9A5E /* AugmentedRealityViewController.swift in Sources */,
 				F1196A8E20653B660084672D /* Part.swift in Sources */,

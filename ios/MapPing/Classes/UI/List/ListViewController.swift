@@ -40,7 +40,10 @@ class ListViewController: BaseViewController {
         _ = partService.partsObservable.register { [weak self] (_, parts) in
             print("Nb of parts received: \(parts.count)")
             
-            self?.mainView.configure(parts: parts)
+            self?.mainView.configure(parts: parts) { (part) in
+                let detailsViewControlller = DetailsViewController(part: part)
+                self?.navigationController?.pushViewController(detailsViewControlller, animated: true)
+            }
         }
     }
 }
