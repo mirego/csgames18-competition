@@ -53,5 +53,6 @@ class ListView: UIView, UITableViewDataSource {
         super.layoutSubviews()
         tableView.pin.all()
         tableView.contentInset.top = 32
+        tableView.rowHeight = 100
     }
 }

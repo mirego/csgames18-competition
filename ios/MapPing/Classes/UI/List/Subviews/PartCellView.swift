@@ -41,6 +41,7 @@ class PartCellView: UITableViewCell {
         addSubview(distance)
 
         height = 100
+        
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -56,7 +57,7 @@ class PartCellView: UITableViewCell {
         coordinates.pin.below(of: subTitle, aligned: .left).marginTop(5)
         distance.pin.right(of: coordinates, aligned: .center).marginLeft(6)
     }
-
+    
     func configure(partImageName: String, title: String, subTitle: String, coordinates: String, distance: String) {
         partImage.image = UIImage(named: partImageName)
         self.title.setProperties(text: title, fit: true)
