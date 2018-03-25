@@ -54,6 +54,7 @@ public class MapSegmentFragment extends Fragment implements OnMapReadyCallback, 
 
     private OnFragmentInteractionListener mListener;
     private ProgressDialog progressDialog;
+    private LocationManager locationManager;
 
     public MapSegmentFragment() {
         // Required empty public constructor
@@ -168,7 +169,7 @@ public class MapSegmentFragment extends Fragment implements OnMapReadyCallback, 
         if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(getActivity(), new String[]{ Manifest.permission.ACCESS_FINE_LOCATION }, LOCATION_PERMISSION);
         } else {
-            LocationManager locationManager = (LocationManager)getActivity().getSystemService(getActivity().LOCATION_SERVICE);
+            locationManager = (LocationManager)getActivity().getSystemService(getActivity().LOCATION_SERVICE);
             Criteria criteria = new Criteria();
             String bestProvider = locationManager.getBestProvider(criteria, true);
 
@@ -220,6 +221,7 @@ public class MapSegmentFragment extends Fragment implements OnMapReadyCallback, 
 
         mMap.moveCamera(CameraUpdateFactory.newLatLng(loc));
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc, 16.0f));
+        locationManager.removeUpdates(this);
     }
 
     @Override
