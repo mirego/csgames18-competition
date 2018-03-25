@@ -1,0 +1,38 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Compiled files
+dist
+
+#maven
+dependency-reduced-pom.xml
+
+# IDE
+.idea
+
+**/target/
+/target/
+*/target/*
+.classpath
+.project
+.settings
+
+Package Files #
+*.jar
+*.war
+*.ear
+*.iml
+
+/frontend/src/**/*.js
+/frontend/src/**/*.js.map
