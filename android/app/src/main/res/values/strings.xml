@@ -4,7 +4,14 @@
     <string name="name">Nom</string>
     <string name="component">Composant</string>
     <string name="address">Adresse</string>
+    <string name="type">Type</string>
+    <string name="notes">Notes</string>
+    <string name="create_piece">Créer la pièce</string>
+
     <string name="piece_detail">Détail d\'une pièce</string>
+    <string name="new_piece">Nouvelle pièce</string>
+    <string name="new_piece_created">Nouvelle pièce créée</string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="loading_mappings">Loading the mappings...</string>
 </resources>

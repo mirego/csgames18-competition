@@ -1,7 +1,6 @@
 package com.mirego.csmapapplication
 
 import android.app.Application
-import android.util.Log
 import com.mirego.csmapapplication.component.DaggerNetComponent
 import com.mirego.csmapapplication.component.NetComponent
 import com.mirego.csmapapplication.model.Piece
@@ -28,6 +27,6 @@ class MapPingApplication : Application() {
 
     companion object {
         private const val DATA_SOURCE_URL = "http://s3.amazonaws.com/"
-        lateinit var pieces: List<Piece>
+        lateinit var pieces: MutableList<Piece>
     }
 }

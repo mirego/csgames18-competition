@@ -39,7 +39,7 @@ class MainActivity : FragmentActivity() {
         setContentView(R.layout.activity_main)
         (application as MapPingApplication).netComponent.inject(this)
 
-        segmentButtons = listOf(listButton, mapButton, arButton)
+        segmentButtons = listOf(listButton, mapButton, arButton, createButton)
 
         setActionBar(toolbar)
 
@@ -60,7 +60,7 @@ class MainActivity : FragmentActivity() {
 
             override fun onResponse(call: Call<List<Piece>>?, response: Response<List<Piece>>?) {
                 if (response!!.isSuccessful) {
-                    MapPingApplication.pieces = response.body()!!
+                    MapPingApplication.pieces = response.body()!!.toMutableList()
                 }
             }
         })
@@ -84,6 +84,9 @@ class MainActivity : FragmentActivity() {
 
             arButton -> {
                 startActivity(Intent(this, ArActivity::class.java))
+            }
+            createButton -> {
+                startActivity(Intent(this, CreatePieceActivity::class.java))
             }
         }
     }
