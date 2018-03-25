@@ -34,11 +34,10 @@ class ListSegmentFragment : Fragment() {
     }
 
     fun onPartListLoad(partList: List<Part>?) {
-        for (part in partList!!) {
+        if (partList != null) {
+            val adapter = CartsAdapter(this, partList)
+            lvPart?.adapter = adapter
         }
-
-        val adapter = CartsAdapter(this, partList)
-        lvPart?.adapter = adapter
     }
 
     inner class CartsAdapter : BaseAdapter {
