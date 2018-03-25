@@ -48,11 +48,9 @@ class MapSegmentFragment : Fragment(), OnMapReadyCallback {
         super.onResume()
         mapView.onResume()
 
-        val url = "https://s3.amazonaws.com/shared.ws.mirego.com/competition/mapping.json"
+        var requestQueue = Volley.newRequestQueue(this.context)
 
-        var requestQueue = Volley.newRequestQueue(this.context);
-
-        val jsonArrayRequest = JsonArrayRequest(Request.Method.GET, url, null,
+        val jsonArrayRequest = JsonArrayRequest(Request.Method.GET, resources.getString(R.string.pieces_url), null,
                 Response.Listener { response ->
                     for (i in 0 until response.length()) {
 
