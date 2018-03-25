@@ -11,4 +11,8 @@ module.exports = {
         })
         return types
     },
+
+    findAllParts() {
+        return jsonParser.read_mapping_json()
+    },
 }
