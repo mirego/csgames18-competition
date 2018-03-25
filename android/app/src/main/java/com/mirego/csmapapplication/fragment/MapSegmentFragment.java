@@ -36,14 +36,10 @@ import com.mirego.csmapapplication.MapPingApplication;
 import com.mirego.csmapapplication.R;
 import com.mirego.csmapapplication.model.Piece;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class MapSegmentFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, LocationListener {
 
     private final int LOCATION_PERMISSION = 3;
 
-    @BindView(R.id.mapView)
     MapView mapView;
 
     GoogleMap mMap;
