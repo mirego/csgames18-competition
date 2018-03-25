@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		940F0B61F668AD88441334C2 /* Pods_MapPing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16CD00BB887C10CE3E91B52C /* Pods_MapPing.framework */; };
+		CD65EFA0206719EC00BCE9BD /* parseJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65EF9F206719EC00BCE9BD /* parseJSON.swift */; };
+		CD65EFA22067256B00BCE9BD /* direct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65EFA12067256B00BCE9BD /* direct.swift */; };
+		CD65EFA4206727A800BCE9BD /* newPartCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65EFA3206727A800BCE9BD /* newPartCellView.swift */; };
 		F1196A76206481B60084672D /* PartAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A75206481B60084672D /* PartAnnotationView.swift */; };
 		F1196A782064857D0084672D /* PartAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A772064857D0084672D /* PartAnnotation.swift */; };
 		F1196A7A2064928E0084672D /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A792064928E0084672D /* NavigationViewController.swift */; };
@@ -38,6 +41,9 @@
 /* Begin PBXFileReference section */
 		16CD00BB887C10CE3E91B52C /* Pods_MapPing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapPing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BFA57CDB381CDA05A7C2162 /* Pods-MapPing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapPing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapPing/Pods-MapPing.debug.xcconfig"; sourceTree = "<group>"; };
+		CD65EF9F206719EC00BCE9BD /* parseJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parseJSON.swift; sourceTree = "<group>"; };
+		CD65EFA12067256B00BCE9BD /* direct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = direct.swift; sourceTree = "<group>"; };
+		CD65EFA3206727A800BCE9BD /* newPartCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newPartCellView.swift; sourceTree = "<group>"; };
 		E901EFF955E9ACF4A910DAE7 /* Pods-MapPing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapPing.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapPing/Pods-MapPing.release.xcconfig"; sourceTree = "<group>"; };
 		F1196A75206481B60084672D /* PartAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartAnnotationView.swift; sourceTree = "<group>"; };
 		F1196A772064857D0084672D /* PartAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartAnnotation.swift; sourceTree = "<group>"; };
@@ -97,6 +103,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CD65EF9D2067190800BCE9BD /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				CD65EFA12067256B00BCE9BD /* direct.swift */,
+				CD65EF9F206719EC00BCE9BD /* parseJSON.swift */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 		F1196A74206481680084672D /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				F1196A8320649D580084672D /* PartCellView.swift */,
+				CD65EFA3206727A800BCE9BD /* newPartCellView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -215,6 +231,7 @@
 		F19EA0A42061C56600FE9A5E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				CD65EF9D2067190800BCE9BD /* JSON */,
 				F19EA0B12061C68C00FE9A5E /* AugmentedReality */,
 				F19EA0AA2061C5B400FE9A5E /* Common */,
 				F19EA0AF2061C66800FE9A5E /* Map */,
@@ -417,6 +434,8 @@
 			files = (
 				F1196A882065357A0084672D /* Observable.swift in Sources */,
 				F19EA0AC2061C5BE00FE9A5E /* BaseViewController.swift in Sources */,
+				CD65EFA4206727A800BCE9BD /* newPartCellView.swift in Sources */,
+				CD65EFA22067256B00BCE9BD /* direct.swift in Sources */,
 				F19EA0AE2061C5E800FE9A5E /* RootView.swift in Sources */,
 				F19EA0C22061DA7E00FE9A5E /* Stylesheet.swift in Sources */,
 				F1196A92206541700084672D /* ServiceFactory.swift in Sources */,
@@ -437,6 +456,7 @@
 				F19EA0B52061C6B300FE9A5E /* MapViewController.swift in Sources */,
 				F1196A8120649BA40084672D /* NavigationIcon.swift in Sources */,
 				F19EA0B92061C6D200FE9A5E /* AugmentedRealityScene.swift in Sources */,
+				CD65EFA0206719EC00BCE9BD /* parseJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
