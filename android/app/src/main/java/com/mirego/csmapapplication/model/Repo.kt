@@ -3,11 +3,11 @@ package com.mirego.csmapapplication.model
 import com.google.gson.annotations.SerializedName
 
 class Repo {
-    @SerializedName("id")
-    private val idRep: String? = null
-
     private val name: String? = null
-
-    @SerializedName("full_name")
-    private val fullName: String? = null
+    private val component: String? = null
+    private val notes: String? = null
+    private val type: String? = null
+    private val lat: Double? = null
+    private val lon: Double? = null
+    private val address: String? = null
 }
