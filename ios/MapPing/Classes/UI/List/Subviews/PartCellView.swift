@@ -7,16 +7,16 @@
 
 import UIKit
 
-class PartCellView: UIView {
+class PartCellView: UITableViewCell {
 
     private let partImage = UIImageView()
     private let title = UILabel()
     private let subTitle = UILabel()
     private let coordinates = UILabel()
     private let distance = UILabel()
-
-    init() {
-        super.init(frame: .zero)
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         partImage.backgroundColor = .white
         partImage.contentMode = .center
@@ -38,7 +38,7 @@ class PartCellView: UIView {
         distance.setProperties(font: .italicSystemFont(ofSize: 12), textColor: .brownishGrey)
         addSubview(distance)
 
-        height = 100
+        //height = 150
     }
 
     required init(coder aDecoder: NSCoder) {
