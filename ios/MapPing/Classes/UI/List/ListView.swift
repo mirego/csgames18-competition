@@ -8,7 +8,7 @@
 import UIKit
 
 class ListView: UIView, UITableViewDataSource {
-    private let partCellView = PartCellView()
+    //private let partCellView = PartCellView()
     private let tableView = UITableView()
     private var data : [Part]
 
@@ -17,8 +17,12 @@ class ListView: UIView, UITableViewDataSource {
         super.init(frame: .zero)
         backgroundColor = .white
         DataHelper.getData()
+        
+        let testPart = Part(name: "Générateur de flammèches", latitude: 46.7909223, longitude: -71.2873006, type: "generator", notes: "Passer au Bureau 200", address: "2327 Boulevard du Versant N, Ville de Québec, QC G1N 4C2, Canada", component: "Propulsion intergalactique")
+        
+        data.append(testPart)
 
-        partCellView.configure(partImageName: "part-sensor", title: "Bougie 4W", subTitle: "Moteur principal", coordinates: "46.7552° N, 71.2265° W", distance: "(0.62 km)")
+        //partCellView.configure(partImageName: "part-sensor", title: "Bougie 4W", subTitle: "Moteur principal", coordinates: "46.7552° N, 71.2265° W", distance: "(0.62 km)")
 
         
         tableView.dataSource = self
@@ -30,7 +34,7 @@ class ListView: UIView, UITableViewDataSource {
         let view = PartCellView()
 
         view.configure(partImageName: "part-sensor", title: part.name, subTitle: part.component, coordinates: part.formattedCoordinates, distance: "(idk yet lol)")
-        return partCellView
+        return view
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,6 +51,7 @@ class ListView: UIView, UITableViewDataSource {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        tableView.pin.top(pin.safeArea).left(pin.safeArea).bottom(pin.safeArea)
+        tableView.pin.all()
+        tableView.contentInset.top = 64
     }
 }
