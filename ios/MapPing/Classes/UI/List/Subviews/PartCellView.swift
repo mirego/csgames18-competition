@@ -7,7 +7,9 @@
 
 import UIKit
 
-class PartCellView: UIView {
+
+// changed it to UITableViewCell to be able to have nice scrolling lists
+class PartCellView: UITableViewCell {
 
     private let partImage = UIImageView()
     private let title = UILabel()
@@ -16,7 +18,7 @@ class PartCellView: UIView {
     private let distance = UILabel()
 
     init() {
-        super.init(frame: .zero)
+        super.init(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
 
         partImage.backgroundColor = .white
         partImage.contentMode = .center
@@ -38,7 +40,11 @@ class PartCellView: UIView {
         distance.setProperties(font: .italicSystemFont(ofSize: 12), textColor: .brownishGrey)
         addSubview(distance)
 
+        // make sure cells have a set height
+        
         height = 100
+        
+        heightAnchor.constraint(equalToConstant: height).isActive = true
     }
 
     required init(coder aDecoder: NSCoder) {
