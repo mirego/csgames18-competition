@@ -36,7 +36,11 @@
             android:name="com.google.ar.core"
             android:value="required" />
 
-        <activity android:name=".activity.PieceDetailActivity"></activity>
+        <activity
+            android:name=".activity.PieceDetailActivity"
+            android:label="@string/piece_detail">
+
+        </activity>
     </application>
 
 </manifest>

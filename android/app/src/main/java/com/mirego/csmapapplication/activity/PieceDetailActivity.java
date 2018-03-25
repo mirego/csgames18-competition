@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.mirego.csmapapplication.ExtraKeys;
 import com.mirego.csmapapplication.MapPingApplication;
@@ -15,6 +16,7 @@ public class PieceDetailActivity extends Activity {
 
     private Integer pieceIndex;
 
+    private Toolbar toolbar;
     private TextView nameTextView;
     private TextView componentTextView;
     private TextView notesTextView;
@@ -26,11 +28,14 @@ public class PieceDetailActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_piece_detail);
 
+        toolbar = findViewById(R.id.toolbar);
         nameTextView = findViewById(R.id.name_value);
         componentTextView = findViewById(R.id.component_value);
         notesTextView = findViewById(R.id.notes_value);
         addressLabelTextView = findViewById(R.id.address_label);
         addressTextView = findViewById(R.id.address_value);
+
+        setActionBar(toolbar);
 
         Intent intent = getIntent();
         pieceIndex = intent.getIntExtra(ExtraKeys.PIECE_INDEX, 0);
