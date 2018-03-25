@@ -5,15 +5,27 @@
 //  Copyright © 2018 Mirego. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class PartService {
-    private let partsUrl = URL(string: "https://s3.amazonaws.com/shared.ws.mirego.com/competition/mapping.json")!
+    let partsUrl = "https://s3.amazonaws.com/shared.ws.mirego.com/competition/mapping.json"
 
     var partsObservable = Observable<[Part]>()
 
     func refreshParts() {
-        partsObservable.notify(data: [])
-        // TODO 🙄
+        HttpService.get(url: partsUrl) { (data, error) in
+            guard let data = data else {
+                return
+            }
+            do {
+                let partsData = try JSONDecoder()
+                    .decode([FailableDecodable<Part>].self, from: data)
+                    .flatMap { $0.base }
+                
+                self.partsObservable.notify(data:partsData)
+            } catch {
+                print("Error trying to convert data to JSON")
+            }
+        }
     }
 }

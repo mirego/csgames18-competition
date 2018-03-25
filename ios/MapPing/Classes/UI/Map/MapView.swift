@@ -32,9 +32,27 @@ class MapView: UIView {
 extension MapView: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard !(annotation is MKUserLocation), let annotation = annotation as? PartAnnotation else { return nil }
-
+        
         let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: PartAnnotationView.reuseIdentifier, for: annotation) as! PartAnnotationView
-        annotationView.configure(partImageName: annotation.iconName)
+        annotationView.configure(partAnnotation: annotation) {
+            // TODO
+        }
         return annotationView
+        
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard let annotationView = view as? PartAnnotationView else { return }
+        
+        annotationView.didSelect()
+        if let location = annotationView.annotation?.coordinate {
+            mapView.setCenter(location, animated: true)
+        }
+    }
+    
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        guard let annotationView = view as? PartAnnotationView else { return }
+        
+        annotationView.didDeselect()
     }
 }
