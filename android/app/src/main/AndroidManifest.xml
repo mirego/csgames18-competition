@@ -4,20 +4,23 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
 
     <uses-feature
         android:name="android.hardware.camera.ar"
         android:required="true" />
 
     <application
-        android:name="com.mirego.csmapapplication.MapPingApplication"
+        android:name="com.mirego.csmapapplication.ExtendedMapPingApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.ExtendedMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -24,7 +24,7 @@ import android.support.annotation.DrawableRes
 
 
 
-class MapSegmentFragment : Fragment(), OnMapReadyCallback {
+open class MapSegmentFragment : Fragment(), OnMapReadyCallback {
 
     override fun onCreateView(
         inflater: LayoutInflater,

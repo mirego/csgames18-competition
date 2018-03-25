@@ -11,7 +11,7 @@ import android.view.View
 import android.widget.ImageButton
 import com.mirego.csmapapplication.MapPingApplication
 import com.mirego.csmapapplication.R
-import com.mirego.csmapapplication.fragment.ListSegmentFragment
+import com.mirego.csmapapplication.fragment.ExtendedListSegmentFragment
 import com.mirego.csmapapplication.fragment.MapSegmentFragment
 import com.mirego.csmapapplication.model.Repo
 import kotlinx.android.synthetic.main.activity_main.*
@@ -23,21 +23,20 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-class MainActivity : FragmentActivity() {
+abstract class MainActivity : FragmentActivity() {
 
-    private val listFragment = ListSegmentFragment()
+    private val listFragment = ExtendedListSegmentFragment()
     private val mapFragment = MapSegmentFragment()
     private var selectedSegmentIndex = 0
 
     private lateinit var segmentButtons: List<ImageButton>
 
-    @Inject
-    lateinit var retrofit: Retrofit
+    //@Inject
+    //lateinit var retrofit: Retrofit
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        (application as MapPingApplication).netComponent.inject(this)
 
         segmentButtons = listOf(listButton, mapButton, arButton)
 
@@ -53,7 +52,7 @@ class MainActivity : FragmentActivity() {
     }
 
     private fun downloadData() {
-        retrofit.create(GitHubService::class.java).listRepos("olivierpineau").enqueue(object : Callback<List<Repo>> {
+       /* retrofit.create(GitHubService::class.java).listRepos("olivierpineau").enqueue(object : Callback<List<Repo>> {
             override fun onFailure(call: Call<List<Repo>>?, t: Throwable?) {
                 Log.d("street's test", "Oops")
             }
@@ -61,7 +60,7 @@ class MainActivity : FragmentActivity() {
             override fun onResponse(call: Call<List<Repo>>?, response: Response<List<Repo>>?) {
                 Log.d("street's test", "That's it")
             }
-        })
+        }) */
     }
 
     private fun setupMainView() {

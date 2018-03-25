@@ -1,5 +1,6 @@
 package com.mirego.csmapapplication.component
 
+import com.mirego.csmapapplication.activity.ExtendedMainActivity
 import com.mirego.csmapapplication.activity.MainActivity
 import com.mirego.csmapapplication.module.AppModule
 import com.mirego.csmapapplication.module.NetModule
@@ -9,5 +10,6 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = [AppModule::class, NetModule::class])
 interface NetComponent {
-    fun inject(activity: MainActivity)
+    fun inject(activity: ExtendedMainActivity)
+
 }
