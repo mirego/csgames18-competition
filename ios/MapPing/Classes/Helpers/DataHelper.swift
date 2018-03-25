@@ -21,8 +21,9 @@ class DataHelper {
             
             do {
                 let parts = try JSONDecoder().decode([Part].self, from: data)
-                
-                completionHandler(parts)
+                DispatchQueue.main.async {
+                    completionHandler(parts)
+                }
             } catch {
                 print("Error while deserializing: \(error)")
             }

@@ -13,7 +13,20 @@ class PartService {
     var partsObservable = Observable<[Part]>()
 
     func refreshParts() {
-        partsObservable.notify(data: [])
-        // TODO 🙄
+        let sessionConfig = URLSessionConfiguration.default
+        let session = URLSession(configuration: sessionConfig)
+        
+        session.dataTask(with: partsUrl, completionHandler: { (data, response, error) in
+            guard let data = data else { print("Error!!"); return }
+            
+            do {
+                let parts = try JSONDecoder().decode([Part].self, from: data)
+                DispatchQueue.main.async {
+                    self.partsObservable.notify(data: parts)
+                }
+            } catch {
+                print("Error while deserializing: \(error)")
+            }
+        }).resume()
     }
 }
