@@ -11,6 +11,7 @@ import android.R.array
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.widget.ArrayAdapter
+import com.mirego.csmapapplication.R.id.recyclerView
 import com.mirego.csmapapplication.adapter.RecyclerAdapter
 import com.mirego.csmapapplication.model.PartItem
 import kotlinx.android.synthetic.main.fragment_list.*
@@ -27,11 +28,15 @@ class ListSegmentFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        //setContentView(R.layout.fragment_list)
+        val view = inflater.inflate(R.layout.fragment_list, container, false)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
         linearLayoutManager = LinearLayoutManager(context)
         recyclerView.layoutManager = linearLayoutManager
-        val list = arrayListOf(PartItem("", "", "", "", BigDecimal(1), BigDecimal(1), ""))
+        val list = arrayListOf(PartItem("Générateur de flammèches", "", "", "", BigDecimal(1), BigDecimal(1), ""),
+                PartItem("", "", "", "", BigDecimal(1), BigDecimal(1), ""))
         adapter = RecyclerAdapter(list)
         recyclerView.adapter = adapter
-        return recyclerView
+        return view
     }
 }
