@@ -61,6 +61,7 @@ class MainActivity : FragmentActivity() {
 
             override fun onResponse(call: Call<List<Part>>?, response: Response<List<Part>>?) {
                 listSpaceshipPart = response?.body()
+                listFragment.onPartListLoad(listSpaceshipPart)
             }
         })
     }
@@ -74,8 +75,6 @@ class MainActivity : FragmentActivity() {
     private fun onSegmentButtonClicked(button: ImageButton) {
         when (button) {
             listButton -> {
-                val args = Bundle()
-                args.putInt("parts", spaceshipParts)
                 replaceFragment(listFragment)
             }
 
