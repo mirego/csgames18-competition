@@ -32,13 +32,10 @@ class ListSegmentFragment : Fragment() {
     }
 
     fun onPartListLoad(partList: List<Part>?) {
-        for (part in partList!!) {
-            // var newCard = baseCard // TODO need a deep copy of basCard then change its attributes
-            // view!!.findViewById<ConstraintLayout>(R.id.frag_list).addView(newCard)
+        if (partList != null) {
+            val adapter = CartsAdapter(this, partList)
+            lvPart?.adapter = adapter
         }
-
-        val adapter = CartsAdapter(this, partList)
-        lvPart?.adapter = adapter
     }
 
     inner class CartsAdapter : BaseAdapter {
