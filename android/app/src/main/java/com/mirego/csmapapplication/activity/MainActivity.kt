@@ -22,6 +22,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Retrofit
 import javax.inject.Inject
 import com.mirego.csmapapplication.service.PartService
+import kotlinx.android.synthetic.main.list_item.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -91,20 +92,25 @@ class MainActivity : FragmentActivity() {
     }
 
     private fun sortData() {
-        listSpaceshipPart =  listSpaceshipPart?.sortedWith(compareBy { calculateDistanceFromDevice(it) })
-        listSpaceshipPart?.forEach { println(it.distance) }
+        for (part in listSpaceshipPart!!) {
+            part.distance = calculateDistanceFromDevice(part)
+        }
+        listSpaceshipPart =  listSpaceshipPart?.sortedWith(compareBy { it.distance })
+        listFragment.onPartListLoad(listSpaceshipPart)
     }
 
-    private fun calculateDistanceFromDevice(part: Part): Float {
-        val radius = 6378137.0f   // approximate Earth radius, *in meters*
+    private fun calculateDistanceFromDevice(part: Part): Float? {
+        val radius = Float.MAX_VALUE
         if (part.latitude == null || part.longitude == null) {
-            return radius
+            return null
         }
 
+        if (currentLocation == null) {
+            return radius
+        }
         val array = FloatArray(10)
         Location.distanceBetween(currentLocation.latitude, currentLocation.longitude, part.latitude, part.longitude, array)
 
-        part.distance = array[0]
         return array[0]
     }
 
