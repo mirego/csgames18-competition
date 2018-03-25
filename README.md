@@ -4,7 +4,6 @@ Welcome to the **CS Games 2018 Mobile Competition**!
 
 ## TO DO
 
-- Icons for pins on the map
 - Analysis to find the most dense spot for spare parts on the map?
 - Geocoding API?
 - host images for the part types
@@ -12,7 +11,6 @@ Welcome to the **CS Games 2018 Mobile Competition**!
 - mark them as "picked up" to easily see those that were found and those that are left.
 - Pickup notes: When parts are picked up, it could also be useful to add information from the situation. Part photo, pickup notes, etc - a form could be displayed to enter these details.
 - Persistence: While entering data in the app has its value, it's rendered useless if everything is forgotten once the app is closed. Implementing a local storage would insure persistence.
-- Send your position, get distance between all points
 
 
 ## Team
@@ -30,19 +28,32 @@ Welcome to the **CS Games 2018 Mobile Competition**!
 **Platform:** Android
 
 **Client Features:**
-1. {Map mode: connect the data source to display every pin}
-2. {Pin pick-up: found parts can be marked as "picked-up"}
-3. {Siri: ask Siri which part is the nearest to current position}
-4. {etc.}
+1. Created list of parts to see
+2. Appropriate icons for part type in List
+3. Clicking on item in list brings you to appropriate location on map with appropriate pin and artwork
 
 **Server Features (for after our Series A funding) :**
-1. Full authentication with register, login and logout
+1. Authentication endpoints (register, login and logout)
+2. User management endpoints (getAllUsers, getUserById)
+3. Mapping endpoints (getAllTypes)
+4. Generated a new mapping.json by parsing it and obtaining lat/lon through Google geocoding API
+5. Endpoint to calculate the "penguin teleportation distance" between the user's location and all part locations
+
+
+SERVER URL!!!
 
 **Client Build Steps:**
 - {We added the GooglePlaces lib to the Podfile, you need to run `pod install` before build}
 - {We activated the "Siri" capability, connect an Apple Developer account to test}
 
 **Server Build Steps:**
+
+1. `cd server`
+2. `npm install` to install all the node dependencies
+3. `npm run geocode` to generate the new mapping.json with geocoding information
+4. `npm start` to start the server
+
+You can see also server API docs in `server/README.md`
 
 **What went well:**
 - {The base project was really well done, it helped a lot to begin}

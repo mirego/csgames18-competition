@@ -2,17 +2,9 @@ const express = require('express')
 const session = require('express-session')
 const nedb = require('nedb')
 const bodyParser = require('body-parser')
-const cors = require('cors')
 
 // Configure application server
 let app = express()
-let corsConfiguration = {
-    'origin': ['http://localhost', 'http://localhost:3000', 'http://localhost:3002'],
-    'preflightContinue': true,
-    'credentials': true,
-    'optionsSuccessStatus': 204
-}
-app.use(cors(corsConfiguration))
 app.set('port', process.env.PORT || 3002)
 app.use(session({
     // This secret is in plain-text just because

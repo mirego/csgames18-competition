@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "geocode": "node ./scripts/geocoding.js"
   },
   "author": "",
   "license": "ISC",
@@ -12,10 +13,10 @@
     "axios": "^0.18.0",
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
-    "cors": "^2.8.4",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
     "nedb": "^1.8.0",
+    "node-geocoder": "^3.22.0",
     "nodemon": "^1.17.2"
   }
 }
