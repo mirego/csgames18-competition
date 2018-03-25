@@ -9,22 +9,19 @@ import android.support.v4.content.ContextCompat
 import android.util.Log
 import android.view.View
 import android.widget.ImageButton
-import android.widget.ListView
 import com.mirego.csmapapplication.MapPingApplication
 import com.mirego.csmapapplication.R
 import com.mirego.csmapapplication.adapter.MappingListAdapter
 import com.mirego.csmapapplication.fragment.ListSegmentFragment
 import com.mirego.csmapapplication.fragment.MapSegmentFragment
 import com.mirego.csmapapplication.model.LocationDto
-import com.mirego.csmapapplication.model.Repo
-import kotlinx.android.synthetic.main.activity_main.*
-import retrofit2.Retrofit
-import javax.inject.Inject
-import com.mirego.csmapapplication.service.GitHubService
 import com.mirego.csmapapplication.service.MappingService
+import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import retrofit2.Retrofit
+import javax.inject.Inject
 
 
 class MainActivity : FragmentActivity() {
