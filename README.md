@@ -41,8 +41,6 @@ No changes were made to the client build steps
 3. `npm run geocode` to generate the new mapping.json with geocoding information
 4. `npm start` to start the server
 
-You can see also server API docs in `server/README.md`
-
 **What went well:**
 - Defining the service using retrofit went smoothly and worked as expected
 - Thanks for providing the icons!
