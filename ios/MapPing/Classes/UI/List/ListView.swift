@@ -12,6 +12,8 @@ class ListView: UIView {
     private var parts: [Part] = []
     private let partCellView = PartCellView()
     
+    fileprivate var calloutDetailsPressed: ((Part) -> ())? = nil
+    
     fileprivate lazy var collectionViewLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets.zero
@@ -54,9 +56,14 @@ class ListView: UIView {
         collectionView.frame.origin.y = 0
     }
     
-    func configure(parts: [Part]) {
+    func configure(parts: [Part], onDetailPressed: ((Part) -> ())? = nil) {
         self.parts = parts
         collectionView.reloadData()
+        self.calloutDetailsPressed = onDetailPressed
+    }
+    
+    func calloutDetailPressed(part: Part) {
+        calloutDetailsPressed?(part)
     }
 }
 
@@ -88,5 +95,9 @@ extension ListView: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsetsMake(cellMargin, cellMargin, cellMargin, cellMargin) // margin between cells
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        calloutDetailPressed(part: parts[(indexPath as NSIndexPath).row]);
     }
 }

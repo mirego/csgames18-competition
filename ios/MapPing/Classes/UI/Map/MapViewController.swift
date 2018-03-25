@@ -32,6 +32,6 @@ class MapViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mainView.mapView.setRegion(MKCoordinateRegion(center: quebecCityCoordinate, span: startSpan), animated: false)
-        mainView.mapView.addAnnotation(PartAnnotation(part: Part(name: "Clutch 1", component: "Clutch thing", notes: "Note", type: "clutch", latitude: quebecCityCoordinate.latitude, longitude: quebecCityCoordinate.longitude, address: "123 blablabla")))
+        //mainView.mapView.addAnnotation(PartAnnotation(part: Part(name: "Clutch 1", component: "Clutch thing", notes: "Note", type: "clutch", latitude: quebecCityCoordinate.latitude, longitude: quebecCityCoordinate.longitude, address: "123 blablabla")))
     }
 }
