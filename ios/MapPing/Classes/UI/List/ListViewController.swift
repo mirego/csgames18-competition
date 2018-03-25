@@ -39,6 +39,8 @@ class ListViewController: BaseViewController {
 
         _ = partService.partsObservable.register { (_, parts) in
             print("Nb of parts received: \(parts.count)")
+            
+            self.mainView.configure(parts: parts)
         }
     }
 }
