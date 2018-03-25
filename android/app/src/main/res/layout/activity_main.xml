@@ -38,7 +38,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:weightSum="3">
+            android:weightSum="3"
+            >
 
             <ImageButton
                 android:id="@+id/listButton"
@@ -48,10 +49,11 @@
                 android:background="?android:attr/selectableItemBackground"
                 android:src="@drawable/ic_list" />
 
-            <View
+            <android.support.v7.widget.RecyclerView
                 android:layout_width="0.5dp"
                 android:layout_height="match_parent"
-                android:background="@color/cloudGray" />
+                android:background="@color/cloudGray"
+                android:id="@+id/List_View"/>
 
             <ImageButton
                 android:id="@+id/mapButton"

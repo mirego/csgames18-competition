@@ -11,7 +11,8 @@
         android:background="@android:color/white"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:maxLines="1"
-                    android:text="Bougie 4W"
+                    android:id="@+id/name"
                     android:textAppearance="@style/partTitle"
                     android:textColor="@color/purpleBrown" />
 
@@ -50,7 +51,7 @@
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:maxLines="1"
-                    android:text="Moteur principal"
+                    android:id="@+id/component"
                     android:textColor="@color/purpleBrown" />
 
                 <LinearLayout
@@ -60,12 +61,12 @@
                     android:orientation="horizontal">
 
                     <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:text="46.7552° N, 71.2265° W"
-                    android:textColor="@color/brownishGrey" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:id="@+id/lat_lon"
+                        android:textColor="@color/brownishGrey" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -73,7 +74,7 @@
                         android:layout_marginStart="10dp"
                         android:ellipsize="end"
                         android:maxLines="1"
-                        android:text="(0.62 km)"
+                        android:id="@+id/distance"
                         android:textColor="@color/brownishGrey"
                         android:textStyle="italic" />
 
