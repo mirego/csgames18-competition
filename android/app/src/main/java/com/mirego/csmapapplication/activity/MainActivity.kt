@@ -9,15 +9,19 @@ import android.support.v4.content.ContextCompat
 import android.util.Log
 import android.view.View
 import android.widget.ImageButton
+import android.widget.ListView
 import com.mirego.csmapapplication.MapPingApplication
 import com.mirego.csmapapplication.R
+import com.mirego.csmapapplication.adapter.MappingListAdapter
 import com.mirego.csmapapplication.fragment.ListSegmentFragment
 import com.mirego.csmapapplication.fragment.MapSegmentFragment
+import com.mirego.csmapapplication.model.LocationDto
 import com.mirego.csmapapplication.model.Repo
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Retrofit
 import javax.inject.Inject
 import com.mirego.csmapapplication.service.GitHubService
+import com.mirego.csmapapplication.service.MappingService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -30,6 +34,9 @@ class MainActivity : FragmentActivity() {
     private var selectedSegmentIndex = 0
 
     private lateinit var segmentButtons: List<ImageButton>
+
+    private val adapter = MappingListAdapter(this, ArrayList<LocationDto>())
+
 
     @Inject
     lateinit var retrofit: Retrofit
@@ -48,19 +55,36 @@ class MainActivity : FragmentActivity() {
         }
 
         setupButtons()
+        replaceFragment(listFragment)
+        setupAdaper()
 
         downloadData()
     }
 
+    private fun setupAdaper(){
+        listFragment.setAdapter(adapter)
+//        val listView = listFragment.view?.findViewById<ListView>(R.id.listView)
+//        Log.d("ListView", listView.toString())
+    }
+
     private fun downloadData() {
-        retrofit.create(GitHubService::class.java).listRepos("olivierpineau").enqueue(object : Callback<List<Repo>> {
-            override fun onFailure(call: Call<List<Repo>>?, t: Throwable?) {
-                Log.d("street's test", "Oops")
+        var self = this
+        retrofit.create(MappingService::class.java).listData().enqueue(object: Callback<List<LocationDto>>{
+            override fun onFailure(call: Call<List<LocationDto>>?, t: Throwable?) {
+                Log.d("PLS", "NO")
             }
 
-            override fun onResponse(call: Call<List<Repo>>?, response: Response<List<Repo>>?) {
-                Log.d("street's test", "That's it")
+            override fun onResponse(call: Call<List<LocationDto>>?, response: Response<List<LocationDto>>?) {
+                if (response != null) {
+                    val list = response.body()
+                    listFragment.setAdapter(MappingListAdapter(self, ArrayList(list)))
+                    Log.d("called", "adapterAdd")
+//                    list!!.forEach{
+//                        Log.d("resp", it.name)
+//                    }
+                }
             }
+
         })
     }
 
