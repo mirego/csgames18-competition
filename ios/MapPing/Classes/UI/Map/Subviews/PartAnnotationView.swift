@@ -19,6 +19,11 @@ class PartAnnotationView: MKAnnotationView {
         addSubview(pinImage)
         addSubview(partImage)
         size = pinImage.size
+        
+        // Enable callout
+        self.canShowCallout = true
+        self.calloutOffset = CGPoint(x: -5, y: 5)
+        //self.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
     }
 
     required init?(coder aDecoder: NSCoder) {

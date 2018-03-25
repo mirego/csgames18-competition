@@ -13,7 +13,21 @@ class PartService {
     var partsObservable = Observable<[Part]>()
 
     func refreshParts() {
-        partsObservable.notify(data: [])
-        // TODO 🙄
+        
+        // Create and initiate a data task to download the JSON from URL
+        URLSession.shared.dataTask(with: partsUrl) { (data, response, error) in
+            guard let data = data else { return }
+            
+            do {
+                
+                // Decode the downloaded JSON data into Part object
+                let decoder = JSONDecoder()
+                let data = try decoder.decode([Part].self, from: data)
+                
+                // Pass decoded JSON data to observer
+                self.partsObservable.notify(data: data)
+                
+            } catch let err { print("Error: Unable to decode JSON into Part object", err) }
+        }.resume()
     }
 }
