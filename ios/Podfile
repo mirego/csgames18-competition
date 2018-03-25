@@ -5,4 +5,5 @@ target 'MapPing' do
   use_frameworks!
   pod 'PinLayout'
   pod 'MRGTaylor'
+  pod 'CodableAlamofire'
 end

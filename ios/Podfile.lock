@@ -1,15 +1,21 @@
 PODS:
+  - Alamofire (4.7.0)
+  - CodableAlamofire (1.1.0):
+    - Alamofire (~> 4.0)
   - MRGTaylor (1.4.2)
   - PinLayout (1.6.0)
 
 DEPENDENCIES:
+  - CodableAlamofire
   - MRGTaylor
   - PinLayout
 
 SPEC CHECKSUMS:
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  CodableAlamofire: e2d2edcec7cf413f7862c30c8fa98eded27a83f9
   MRGTaylor: bdfae9dec647ade7d22451ce2dcfaf0b95c80041
   PinLayout: a2bbe9057d49a1e326b13dc4fe8c14751f8c8844
 
-PODFILE CHECKSUM: e3aa43e3edc8040cb921e18fa6688a6ced460849
+PODFILE CHECKSUM: 01cfd17b2f7b2b30cabca86a32b1e20bd5af71c5
 
 COCOAPODS: 1.4.0

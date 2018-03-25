@@ -15,8 +15,11 @@ class MapViewController: BaseViewController {
     private var mainView: MapView {
         return self.view as! MapView
     }
+    
+    private let partService: PartService
 
-    init() {
+    init(partService: PartService) {
+        self.partService = partService
         super.init(nibName: nil, bundle: nil)
         navigationIcon = #imageLiteral(resourceName: "icn-map")
     }
@@ -32,6 +35,24 @@ class MapViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mainView.mapView.setRegion(MKCoordinateRegion(center: quebecCityCoordinate, span: startSpan), animated: false)
-        mainView.mapView.addAnnotation(PartAnnotation(coordinate: quebecCityCoordinate, iconName: "part-clutch"))
+        
+        _ = partService.partsObservable.register { [weak self] (_, parts) in
+            print("Nb of parts received: \(parts.count)")
+            self?.render(parts)
+        }
+    }
+    
+    private func render(_ parts: [Part]) {
+        for part in parts {
+            guard let lat = part.latitude, let long = part.longitude else { continue }
+            
+            mainView.mapView.addAnnotation(
+                PartAnnotation(
+                    coordinate: CLLocationCoordinate2D(latitude: Double(lat), longitude: Double(long)),
+                    iconName: "part-\(part.type)"
+                )
+            )
+        }
+        
     }
 }

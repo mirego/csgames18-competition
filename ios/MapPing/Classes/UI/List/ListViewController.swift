@@ -9,9 +9,8 @@ import UIKit
 
 class ListViewController: BaseViewController {
 
-    private var mainView: ListView {
-        return self.view as! ListView
-    }
+    private let tableView = UITableView(frame: CGRect.zero, style: .plain)
+    private let functionalTableData = FunctionalTableData()
 
     private let partService: PartService
 
@@ -30,15 +29,49 @@ class ListViewController: BaseViewController {
         return .lightContent
     }
 
-    override func loadView() {
-        view = ListView()
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.addSubviewsForAutolayout(tableView)
+        tableView.constrainToFillView(view)
+    
+        functionalTableData.tableView = tableView
 
-        _ = partService.partsObservable.register { (_, parts) in
+        _ = partService.partsObservable.register { [weak self] (_, parts) in
             print("Nb of parts received: \(parts.count)")
+            self?.render(parts)
         }
+    }
+    
+    private func render(_ parts: [Part]) {
+        
+        var rows: [CellConfigType] = []
+        for part in parts {
+            rows.append(
+                PartCell(
+                    key: "\(part.name)",
+                    style: CellStyle(
+                        bottomSeparator: .inset,
+                        separatorColor: .lightGray,
+                        accessoryType: .disclosureIndicator
+                    ),
+                    actions: CellActions( selectionAction: { [weak self, part] _ in
+                        guard let strongSelf = self else { return .deselected }
+                        let controller = DetailsViewController(part: part)
+                        strongSelf.show(controller, sender: strongSelf)
+                        return .deselected
+                    }),
+                    state: PartCellViewState(part: part),
+                    cellUpdater: PartCellViewState.updateView
+                )
+            )
+        }
+        
+        let section = TableSection(
+            key: "parts",
+            rows: rows
+        )
+        
+        functionalTableData.renderAndDiff([section])
     }
 }
