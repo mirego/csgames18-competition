@@ -11,8 +11,8 @@ import android.view.View
 import android.widget.ImageButton
 import com.mirego.csmapapplication.MapPingApplication
 import com.mirego.csmapapplication.R
-import com.mirego.csmapapplication.fragment.ListSegmentFragment
 import com.mirego.csmapapplication.fragment.MapSegmentFragment
+import com.mirego.csmapapplication.fragment.PiecesListFragment
 import com.mirego.csmapapplication.model.Piece
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Retrofit
@@ -25,7 +25,7 @@ import retrofit2.Response
 
 class MainActivity : FragmentActivity() {
 
-    private val listFragment = ListSegmentFragment()
+    private val listFragment = PiecesListFragment()
     private val mapFragment = MapSegmentFragment()
     private var selectedSegmentIndex = 0
 
@@ -43,9 +43,7 @@ class MainActivity : FragmentActivity() {
 
         setActionBar(toolbar)
 
-        if (savedInstanceState == null) {
-            setupMainView()
-        }
+
 
         setupButtons()
 
@@ -61,15 +59,14 @@ class MainActivity : FragmentActivity() {
             override fun onResponse(call: Call<List<Piece>>?, response: Response<List<Piece>>?) {
                 if (response!!.isSuccessful) {
                     MapPingApplication.pieces = response.body()!!
+
+                    supportFragmentManager.beginTransaction()
+                            .add(fragmentRoot.id, listFragment)
+                            .commit()
+
                 }
             }
         })
-    }
-
-    private fun setupMainView() {
-        supportFragmentManager.beginTransaction()
-            .add(fragmentRoot.id, listFragment)
-            .commit()
     }
 
     private fun onSegmentButtonClicked(button: ImageButton) {
