@@ -1,5 +1,6 @@
 package com.mirego.csmapapplication.fragment
 
+import android.content.Context
 import android.support.v4.app.Fragment
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -20,9 +21,18 @@ import android.graphics.Canvas
 import android.graphics.Bitmap
 import android.support.v4.content.res.ResourcesCompat
 import android.graphics.drawable.Drawable
+import android.os.AsyncTask
 import android.support.annotation.DrawableRes
+import android.util.Log
+import com.mirego.csmapapplication.ObjectSerializer
+import org.json.JSONArray
+import org.json.JSONObject
+import java.io.InputStreamReader
+import java.net.HttpURLConnection
+import java.net.URL
 
-
+private val latList = ArrayList<String>()
+private val lonList = ArrayList<String>()
 
 class MapSegmentFragment : Fragment(), OnMapReadyCallback {
 
@@ -34,6 +44,15 @@ class MapSegmentFragment : Fragment(), OnMapReadyCallback {
         return inflater.inflate(R.layout.fragment_map, container, false).also { mapSegmentView ->
             mapSegmentView.mapView.onCreate(savedInstanceState)
             mapSegmentView.mapView.getMapAsync { map ->
+                apiCall()
+                for (i: Int in 0..latList.size) {
+                    map.addMarker(
+                            MarkerOptions()
+                                    .position(LatLng(java.lang.Double.parseDouble(latList.get(i)),java.lang.Double.parseDouble(lonList.get(i))))
+                                    .title("Test Opin")
+                                    .icon(createPinForPart(R.drawable.ic_part_bulb))
+                    )
+                }
                 map.addMarker(
                     MarkerOptions()
                         .position(LatLng(46.7794201,-71.2778703))
@@ -51,8 +70,8 @@ class MapSegmentFragment : Fragment(), OnMapReadyCallback {
 
     override fun onMapReady(p0: GoogleMap?) {
         // Nothing to do here
-    }
 
+    }
     private fun createPinForPart(@DrawableRes partResId: Int): BitmapDescriptor {
         val pinDrawable = ResourcesCompat.getDrawable(resources, R.drawable.ic_pin, null)
         val partDrawable = ResourcesCompat.getDrawable(resources, partResId, null)!!
@@ -70,5 +89,50 @@ class MapSegmentFragment : Fragment(), OnMapReadyCallback {
         partDrawable.draw(canvas)
 
         return BitmapDescriptorFactory.fromBitmap(bitmap)
+    }
+
+    private fun apiCall() {
+        val downloadTask = DownloadTask()
+        var result: String? = null
+        try {
+            result = downloadTask.execute("https://s3.amazonaws.com/shared.ws.mirego.com/competition/mapping.json").get()
+            val received = JSONArray(result)
+            for(entry: Int in 0..received.length()-1) {
+                Log.i("Response", received.get(entry).toString())
+                var entrydata = JSONObject(received.get(entry).toString())
+                var lat = entrydata.get("lat").toString()
+                var lon = entrydata.get("lon").toString()
+
+                latList.add(lat)
+                lonList.add(lon)
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
+    inner class DownloadTask : AsyncTask<String, Void, String>() {
+
+        override fun doInBackground(vararg urls: String): String {
+            var result = ""
+            val url: URL
+            val urlConnection: HttpURLConnection
+            try {
+                url = URL(urls[0])
+                urlConnection = url.openConnection() as HttpURLConnection
+                val `in` = urlConnection.inputStream
+                val reader = InputStreamReader(`in`)
+                var data = reader.read()
+                while (data != -1) {
+                    val current = data.toChar()
+                    result += current
+                    data = reader.read()
+                }
+                return result
+            } catch (e: Exception) {
+                e.printStackTrace()
+                return "Failed"
+            }
+        }
     }
 }
