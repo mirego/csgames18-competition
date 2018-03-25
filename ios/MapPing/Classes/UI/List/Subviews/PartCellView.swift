@@ -6,14 +6,17 @@
 //
 
 import UIKit
+import CoreLocation
+
+typealias PartCell = HostCell<PartCellView, PartCellViewState, LayoutMarginsTableItemLayout>
 
 class PartCellView: UIView {
 
-    private let partImage = UIImageView()
-    private let title = UILabel()
-    private let subTitle = UILabel()
-    private let coordinates = UILabel()
-    private let distance = UILabel()
+    fileprivate let partImage = UIImageView()
+    fileprivate let title = UILabel()
+    fileprivate let subTitle = UILabel()
+    fileprivate let coordinates = UILabel()
+    fileprivate let distance = UILabel()
 
     init() {
         super.init(frame: .zero)
@@ -39,6 +42,7 @@ class PartCellView: UIView {
         addSubview(distance)
 
         height = 100
+        heightAnchor.constraint(equalToConstant: 100.0).isActive = true
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -54,14 +58,45 @@ class PartCellView: UIView {
         coordinates.pin.below(of: subTitle, aligned: .left).marginTop(5)
         distance.pin.right(of: coordinates, aligned: .center).marginLeft(6)
     }
-
-    func configure(partImageName: String, title: String, subTitle: String, coordinates: String, distance: String) {
-        partImage.image = UIImage(named: partImageName)
-        self.title.setProperties(text: title, fit: true)
-        self.subTitle.setProperties(text: subTitle, fit: true)
-        self.coordinates.setProperties(text: coordinates, fit: true)
-        self.distance.setProperties(text: distance, fit: true)
-        setNeedsLayout()
-    }
 }
 
+struct PartCellViewState: Equatable {
+    let part: Part
+    
+    public static func updateView(_ view: PartCellView, state: PartCellViewState?) {
+        guard let state = state else {
+            view.partImage.image = nil
+            view.title.text = nil
+            view.subTitle.text = nil
+            view.coordinates.text = nil
+            view.distance.text = nil
+            return
+        }
+        
+        // Compute distance
+        let partLocation = CLLocation(latitude: Double(state.part.latitude!), longitude: Double(state.part.longitude!))
+        
+        let currentCoord = LocationService.instance.lastReportedLocation!
+        let currentLocation = CLLocation(latitude: currentCoord.latitude, longitude: currentCoord.longitude)
+        
+        let distanceInKms = Double(round(partLocation.distance(from: currentLocation)/1000 * 100) / 100)
+        
+        let roundLatitude = Double(round(state.part.latitude!*10000/10000))
+        let roundLongitude = Double(round(state.part.longitude!*10000/10000))
+        
+        view.partImage.image = state.getImage()
+        view.title.setProperties(text: state.part.name, fit: true)
+        view.subTitle.setProperties(text: state.part.component, fit: true)
+        view.coordinates.setProperties(text: "\(roundLatitude)° N, \(roundLongitude)° W", fit: true)
+        view.distance.setProperties(text: "(\(distanceInKms) km)", fit: true)
+        view.setNeedsLayout()
+    }
+    
+    private func getImage() -> UIImage? {
+        return UIImage(named: "part-\(part.type)")
+    }
+    
+    public static func ==(lhs: PartCellViewState, rhs: PartCellViewState) -> Bool {
+        return lhs.part == rhs.part
+    }
+}

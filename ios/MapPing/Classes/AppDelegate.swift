@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         partService = serviceFactory.partService()
         super.init()
     }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Stylesheet.appearance()
 

@@ -42,6 +42,9 @@ class RootViewController: BaseViewController {
         firstViewController.didMove(toParentViewController: self)
         mainView.delegate = self
         mainView.setSelectedButton(index: displayedViewController)
+        
+        // Initiate location service
+        LocationService.instance.initiateLocationService()
     }
 }
 
