@@ -38,7 +38,13 @@ class ListViewController: BaseViewController {
         super.viewDidLoad()
 
         _ = partService.partsObservable.register { (_, parts) in
-            print("Nb of parts received: \(parts.count)")
+            
+            for part in parts {
+                
+            self.mainView.insert(partImageName: "part-"+part.type, title: part.name, subTitle: part.component,
+                                 coordinates: "\(part.latitude ?? 0.0),\(part.longitude ?? 0.0)",
+                distance: "20m")
+            }
         }
     }
 }

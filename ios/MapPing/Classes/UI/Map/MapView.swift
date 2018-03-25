@@ -30,11 +30,20 @@ class MapView: UIView {
 }
 
 extension MapView: MKMapViewDelegate {
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+ 
+     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard !(annotation is MKUserLocation), let annotation = annotation as? PartAnnotation else { return nil }
-
+     
         let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: PartAnnotationView.reuseIdentifier, for: annotation) as! PartAnnotationView
         annotationView.configure(partImageName: annotation.iconName)
         return annotationView
+     }
+ 
+    
+    
+    
+    // Fires when an MKAnnotationView is selected
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
     }
 }
