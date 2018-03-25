@@ -2,6 +2,7 @@ package com.mirego.csmapapplication.adapter
 
 import android.app.Activity
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -47,7 +48,9 @@ class MappingListAdapter(private var activity: Activity, private var items: Arra
         viewHolder.txtComponent?.text = locationDto.component
         viewHolder.txtName?.text = locationDto.name
         viewHolder.txtLat?.text = createCoordinates(locationDto.lat, locationDto.lon)
-//        viewHolder.iconImage?.setImageDrawable(R.drawable.ic_part_filter)
+
+        val resId = view?.resources?.getIdentifier("ic_part_" + locationDto.type, "drawable", view?.context.packageName)
+        resId?.let { viewHolder.iconImage?.setImageResource(it) }
 
         return view as View
     }

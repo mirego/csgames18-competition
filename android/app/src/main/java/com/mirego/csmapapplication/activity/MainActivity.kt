@@ -32,10 +32,11 @@ class MainActivity : FragmentActivity() {
     private val listFragment = ListSegmentFragment()
     private val mapFragment = MapSegmentFragment()
     private var selectedSegmentIndex = 0
+    private var data: ArrayList<LocationDto>? = null
 
     private lateinit var segmentButtons: List<ImageButton>
 
-    private val adapter = MappingListAdapter(this, ArrayList<LocationDto>())
+    private var adapter: MappingListAdapter? = null
 
 
     @Inject
@@ -55,20 +56,23 @@ class MainActivity : FragmentActivity() {
         }
 
         setupButtons()
-        replaceFragment(listFragment)
-        setupAdaper()
-
-        downloadData()
+        setupAdapter()
     }
 
-    private fun setupAdaper(){
-        listFragment.setAdapter(adapter)
-//        val listView = listFragment.view?.findViewById<ListView>(R.id.listView)
-//        Log.d("ListView", listView.toString())
+    private fun setupAdapter(){
+        if (data == null){
+            downloadData()
+        }else{
+            updateAdapter(data!!)
+        }
+    }
+
+    private fun updateAdapter(data: ArrayList<LocationDto>){
+        adapter = MappingListAdapter(this, data)
+        listFragment.setAdapter(adapter!!)
     }
 
     private fun downloadData() {
-        var self = this
         retrofit.create(MappingService::class.java).listData().enqueue(object: Callback<List<LocationDto>>{
             override fun onFailure(call: Call<List<LocationDto>>?, t: Throwable?) {
                 Log.d("PLS", "NO")
@@ -77,11 +81,10 @@ class MainActivity : FragmentActivity() {
             override fun onResponse(call: Call<List<LocationDto>>?, response: Response<List<LocationDto>>?) {
                 if (response != null) {
                     val list = response.body()
-                    listFragment.setAdapter(MappingListAdapter(self, ArrayList(list)))
-                    Log.d("called", "adapterAdd")
-//                    list!!.forEach{
-//                        Log.d("resp", it.name)
-//                    }
+                    if (data == null){
+                        data = ArrayList(list)
+                    }
+                    updateAdapter(data!!)
                 }
             }
 

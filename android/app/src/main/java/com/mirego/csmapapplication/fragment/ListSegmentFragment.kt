@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ListView
-import android.widget.TextView
 import com.mirego.csmapapplication.R
 import com.mirego.csmapapplication.adapter.MappingListAdapter
 
@@ -21,6 +20,11 @@ class ListSegmentFragment : Fragment() {
         listView?.adapter = listAdapter
     }
 
+
+    override fun onResume() {
+        super.onResume()
+        listView?.adapter = listAdapter
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -34,7 +38,7 @@ class ListSegmentFragment : Fragment() {
     }
 
     fun setAdapter(adapter: MappingListAdapter){
-//        listAdapter = adapter
+        listAdapter = adapter
         listView?.adapter = adapter
     }
 }
