@@ -33,7 +33,7 @@ class ListView: UIView, UITableViewDataSource {
         let part = data[indexPath.row]
         let view = PartCellView()
 
-        view.configure(partImageName: "part-sensor", title: part.name, subTitle: part.component, coordinates: part.formattedCoordinates, distance: "(idk yet lol)")
+        view.configure(partImageName: "part-sensor", title: part.name, subTitle: part.component, coordinates: part.formattedCoordinates, distance: "(distance tbd)")
         return view
     }
     
@@ -52,6 +52,6 @@ class ListView: UIView, UITableViewDataSource {
     override func layoutSubviews() {
         super.layoutSubviews()
         tableView.pin.all()
-        tableView.contentInset.top = 64
+        tableView.contentInset.top = 32
     }
 }
