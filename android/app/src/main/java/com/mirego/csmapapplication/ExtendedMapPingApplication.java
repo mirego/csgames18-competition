@@ -11,7 +11,7 @@ import com.mirego.csmapapplication.repository.DataRepository;
 public class ExtendedMapPingApplication extends MapPingApplication {
 
     private static ExtendedMapPingApplication instance;
-    public ExtendedMapPingApplication getInstance()
+    public static ExtendedMapPingApplication getInstance()
     {
         return instance;
     }
@@ -28,8 +28,7 @@ public class ExtendedMapPingApplication extends MapPingApplication {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 
         StrictMode.setThreadPolicy(policy);
-        dataRepository = new DataRepository();
-        dataRepository.load();
+        dataRepository = new DataRepository();dataRepository.load();
 
 
     }
