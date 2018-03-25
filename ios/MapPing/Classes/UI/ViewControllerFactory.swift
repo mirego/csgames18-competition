@@ -19,7 +19,7 @@ class ViewControllerFactory {
     }
 
     private func mapViewController() -> MapViewController {
-        return assign(MapViewController())
+        return assign(MapViewController(partService: serviceFactory.partService()))
     }
 
     private func listViewController() -> NavigationViewController {

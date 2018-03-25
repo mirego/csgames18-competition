@@ -68,7 +68,7 @@ class ListView: UIView, UITableViewDataSource, CLLocationManagerDelegate {
             locstring = "(unavailable)"
         }
         
-        view.configure(partImageName: "part-sensor", title: part.name, subTitle: part.component, coordinates: part.formattedCoordinates, distance: locstring)
+        view.configure(partImageName: "part-\(part.type)", title: part.name, subTitle: part.component, coordinates: part.formattedCoordinates, distance: locstring)
         return view
     }
     
@@ -87,7 +87,7 @@ class ListView: UIView, UITableViewDataSource, CLLocationManagerDelegate {
     override func layoutSubviews() {
         super.layoutSubviews()
         tableView.pin.all()
-        tableView.contentInset.top = 32
+        tableView.contentInset.top = 16
         tableView.rowHeight = 100
     }
 }
