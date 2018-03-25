@@ -39,20 +39,19 @@ class MapSegmentFragment : Fragment(), OnMapReadyCallback {
         }
     }
 
-    fun fillMap()
-
     override fun onResume() {
         super.onResume()
         mapView.onResume()
         vesselParts?.forEach { vesselPart ->
             if (vesselPart.lat != null && vesselPart.lon != null) {
+                var resourceId = context?.resources?.getIdentifier("ic_part_" + vesselPart.type, "drawable", context?.packageName)
                 var latlng = LatLng(vesselPart.lat.toDouble(), vesselPart.lon.toDouble())
                 mapView.getMapAsync { map ->
                     map.addMarker(
                             MarkerOptions()
                                     .position(latlng)
-                                    .title(vesselPart.name)
-                                    .icon(createPinForPart(R.drawable.ic_part_bulb))
+                                    .title(vesselPart.name + " - " + vesselPart.component)
+                                    .icon(createPinForPart(resourceId!!))
                     )
                 }
             }
