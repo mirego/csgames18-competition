@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67233D2E2067178D00855EFA /* URLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67233D2D2067178D00855EFA /* URLService.swift */; };
 		940F0B61F668AD88441334C2 /* Pods_MapPing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16CD00BB887C10CE3E91B52C /* Pods_MapPing.framework */; };
 		F1196A76206481B60084672D /* PartAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A75206481B60084672D /* PartAnnotationView.swift */; };
 		F1196A782064857D0084672D /* PartAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1196A772064857D0084672D /* PartAnnotation.swift */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		16CD00BB887C10CE3E91B52C /* Pods_MapPing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapPing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BFA57CDB381CDA05A7C2162 /* Pods-MapPing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapPing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapPing/Pods-MapPing.debug.xcconfig"; sourceTree = "<group>"; };
+		67233D2D2067178D00855EFA /* URLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLService.swift; sourceTree = "<group>"; };
 		E901EFF955E9ACF4A910DAE7 /* Pods-MapPing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapPing.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapPing/Pods-MapPing.release.xcconfig"; sourceTree = "<group>"; };
 		F1196A75206481B60084672D /* PartAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartAnnotationView.swift; sourceTree = "<group>"; };
 		F1196A772064857D0084672D /* PartAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartAnnotation.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				F1196A872065357A0084672D /* Observable.swift */,
+				67233D2D2067178D00855EFA /* URLService.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				F1196A782064857D0084672D /* PartAnnotation.swift in Sources */,
 				F1196A7A2064928E0084672D /* NavigationViewController.swift in Sources */,
 				F19EA0A72061C58400FE9A5E /* RootViewController.swift in Sources */,
+				67233D2E2067178D00855EFA /* URLService.swift in Sources */,
 				F1196A76206481B60084672D /* PartAnnotationView.swift in Sources */,
 				F19EA0B72061C6C100FE9A5E /* ListViewController.swift in Sources */,
 				F19EA0BB2061C6DC00FE9A5E /* MapView.swift in Sources */,
