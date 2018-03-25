@@ -1,14 +1,64 @@
 # CS Games 2018 - Mobile Competition
 
-## TO DO
-
-- icons beside
-
-
-
 Welcome to the **CS Games 2018 Mobile Competition**!
 
-[(French above ↑)](#cs-games-2018---compétition-mobile)
+## TO DO
+
+- Icons for pins on the map
+- Analysis to find the most dense spot for spare parts on the map?
+- Geocoding API?
+- host images for the part types
+- Give turn-by-turn directions between the current position and a selected part
+- mark them as "picked up" to easily see those that were found and those that are left.
+- Pickup notes: When parts are picked up, it could also be useful to add information from the situation. Part photo, pickup notes, etc - a form could be displayed to enter these details.
+- Persistence: While entering data in the app has its value, it's rendered useless if everything is forgotten once the app is closed. Implementing a local storage would insure persistence.
+- Send your position, get distance between all points
+
+
+## Team
+
+**Team Name:** Battlestar Concordia
+**Team Code:** {mirego1}
+**University:** Concordia University
+
+**Authors:**
+- Jacob Gagne
+- Lance Lafontaine
+
+## Solution
+
+**Platform:** Android
+
+**Client Features:**
+1. {Map mode: connect the data source to display every pin}
+2. {Pin pick-up: found parts can be marked as "picked-up"}
+3. {Siri: ask Siri which part is the nearest to current position}
+4. {etc.}
+
+**Server Features (for after our Series A funding) :**
+1. Full authentication with register, login and logout
+
+**Client Build Steps:**
+- {We added the GooglePlaces lib to the Podfile, you need to run `pod install` before build}
+- {We activated the "Siri" capability, connect an Apple Developer account to test}
+
+**Server Build Steps:**
+
+**What went well:**
+- {The base project was really well done, it helped a lot to begin}
+- {The clustering was really tricky, we had to try a couple of libraries...}
+
+**What went wrong:**
+- After competing in the Mobile competitions for 2 years in a row, we were really expecting requirements for an Express server..
+- {The clustering was really tricky, we had to try a couple of libraries...}
+
+**What you are proud of:**
+- {We're quite proud to have succeeded in connecting Siri, it was above our expectations and it works quite well}
+- {We're sad we couldn't attack the AR mode, it looked very promising}
+
+**What you are disappointed of:**
+- {We're quite proud to have succeeded in connecting Siri, it was above our expectations and it works quite well}
+- {We're sad we couldn't attack the AR mode, it looked very promising}
 
 ## Introduction
 
