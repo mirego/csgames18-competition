@@ -1,27 +1,27 @@
 package com.mirego.csmapapplication.fragment
 
-import android.support.v4.app.Fragment
+import android.graphics.Bitmap
+import android.graphics.Canvas
 import android.os.Bundle
+import android.support.annotation.DrawableRes
+import android.support.v4.app.Fragment
+import android.support.v4.content.res.ResourcesCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.JsonArrayRequest
+import com.android.volley.toolbox.Volley
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.BitmapDescriptor
-import com.mirego.csmapapplication.R
-import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
+import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import kotlinx.android.synthetic.main.fragment_map.mapView
-import kotlinx.android.synthetic.main.fragment_map.view.mapView
-import android.opengl.ETC1.getHeight
-import android.opengl.ETC1.getWidth
-import android.graphics.Canvas
-import android.graphics.Bitmap
-import android.support.v4.content.res.ResourcesCompat
-import android.graphics.drawable.Drawable
-import android.support.annotation.DrawableRes
-
+import com.mirego.csmapapplication.R
+import kotlinx.android.synthetic.main.fragment_map.*
+import kotlinx.android.synthetic.main.fragment_map.view.*
 
 
 class MapSegmentFragment : Fragment(), OnMapReadyCallback {
@@ -47,6 +47,44 @@ class MapSegmentFragment : Fragment(), OnMapReadyCallback {
     override fun onResume() {
         super.onResume()
         mapView.onResume()
+
+        val url = "https://s3.amazonaws.com/shared.ws.mirego.com/competition/mapping.json"
+
+        var requestQueue = Volley.newRequestQueue(this.context);
+
+        val jsonArrayRequest = JsonArrayRequest(Request.Method.GET, url, null,
+                Response.Listener { response ->
+                    for (i in 0 until response.length()) {
+
+                        val piece = response.getJSONObject(i)
+                        val name = piece.getString("name")
+                        val type = piece.getString("type")
+                        if (!piece.isNull("lat") && !piece.isNull("lon")) {
+                            val lat = piece.getDouble("lat")
+                            val lon = piece.getDouble("lon")
+                            println(name)
+                            var resourceId = context?.resources?.getIdentifier("ic_part_" + type, "drawable", context?.packageName)
+                            resourceId?.let {
+                                this.mapView.getMapAsync { map ->
+                                    map.addMarker(
+                                            MarkerOptions()
+                                                    .position(LatLng(lat, lon))
+                                                    .title(name)
+                                                    .icon(createPinForPart(resourceId))
+                                    )
+                                }
+                            }
+
+                        }
+                    }
+                },
+                Response.ErrorListener { error ->
+                    println("Something here")
+                    // TODO: Handle error
+                }
+        )
+
+        requestQueue.add(jsonArrayRequest)
     }
 
     override fun onMapReady(p0: GoogleMap?) {
@@ -54,6 +92,7 @@ class MapSegmentFragment : Fragment(), OnMapReadyCallback {
     }
 
     private fun createPinForPart(@DrawableRes partResId: Int): BitmapDescriptor {
+
         val pinDrawable = ResourcesCompat.getDrawable(resources, R.drawable.ic_pin, null)
         val partDrawable = ResourcesCompat.getDrawable(resources, partResId, null)!!
 
