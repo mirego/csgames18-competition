@@ -7,7 +7,8 @@
 
 import UIKit
 
-class PartCellView: UIView {
+class PartCellView: UICollectionViewCell {
+    static let reuseIdentifier = "PartCellView"
 
     private let partImage = UIImageView()
     private let title = UILabel()
@@ -15,8 +16,8 @@ class PartCellView: UIView {
     private let coordinates = UILabel()
     private let distance = UILabel()
 
-    init() {
-        super.init(frame: .zero)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
 
         partImage.backgroundColor = .white
         partImage.contentMode = .center
@@ -55,12 +56,14 @@ class PartCellView: UIView {
         distance.pin.right(of: coordinates, aligned: .center).marginLeft(6)
     }
 
-    func configure(partImageName: String, title: String, subTitle: String, coordinates: String, distance: String) {
-        partImage.image = UIImage(named: partImageName)
-        self.title.setProperties(text: title, fit: true)
-        self.subTitle.setProperties(text: subTitle, fit: true)
+    func configure(part: Part) {
+        let coordinates = "\(part.latitude)° N, \(part.longitude)° W";
+        
+        partImage.image = UIImage(named: "part-\(part.type)")
+        self.title.setProperties(text: part.name, fit: true)
+        self.subTitle.setProperties(text: part.component, fit: true)
         self.coordinates.setProperties(text: coordinates, fit: true)
-        self.distance.setProperties(text: distance, fit: true)
+        self.distance.setProperties(text: "(0.62 km)", fit: true)
         setNeedsLayout()
     }
 }

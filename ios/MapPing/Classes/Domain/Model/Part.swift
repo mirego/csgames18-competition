@@ -19,7 +19,7 @@ struct Part: Codable {
     let name: String
     let component: String
     let notes: String
-    let type: String
+    let type: PartType
     let latitude: Double
     let longitude: Double
     let address: String

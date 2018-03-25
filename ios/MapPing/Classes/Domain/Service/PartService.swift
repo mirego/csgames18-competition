@@ -28,8 +28,4 @@ class PartService {
             }
         }
     }
-    
-    static func getParts(completion: @escaping (_ posts: [Part]?, _ error: Error?) -> ()) {
-        
-    }
 }
