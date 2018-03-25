@@ -24,6 +24,7 @@ class PartAnnotationView: MKAnnotationView {
         addSubview(pinImage)
         addSubview(partCallout)
         addSubview(partImage)
+        partName.adjustsFontSizeToFitWidth = true
         partCallout.addSubview(partName)
         partCallout.addSubview(calloutButton)
         calloutButton.addTarget(self, action: #selector(calloutDetailPressed), for: .touchUpInside)
@@ -43,10 +44,10 @@ class PartAnnotationView: MKAnnotationView {
     override func layoutSubviews() {
         super.layoutSubviews()
         partImage.pin.hCenter().top(11).size(CGSize(width: 22, height: 22))
-        partCallout.pin.hCenter().top(-64).size(CGSize(width: 128, height: 48))
+        partCallout.pin.hCenter().top(-64).size(CGSize(width: 258, height: 48))
         partCallout.setRoundCornersMask()
         partCallout.backgroundColor = UIColor(hex: 0x000000, alpha: 0.7)
-        partName.pin.vCenter().width(100).sizeToFit(.widthFlexible).maxHeight(32).before(of: calloutButton)
+        partName.pin.vCenter().start(8).height(32).before(of: calloutButton).marginRight(8)
         partName.textColor = UIColor.white
         calloutButton.pin.right(8).vCenter()
     }
@@ -63,30 +64,6 @@ class PartAnnotationView: MKAnnotationView {
     
     func didDeselect() {
         partCallout.isHidden = true
-    }
-    
-    // Click
-    
-    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        let hitView = super.hitTest(point, with: event)
-        if (hitView != nil) {
-            self.superview?.bringSubview(toFront: self)
-        }
-        return hitView;
-    }
-    
-    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-        let rect = self.bounds
-        var isInside = rect.contains(point)
-        
-        if(!isInside) {
-            for view in self.subviews {
-                isInside = view.frame.contains(point)
-                break;
-            }
-        }
-        
-        return isInside
     }
  
 }

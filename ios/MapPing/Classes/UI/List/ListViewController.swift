@@ -37,10 +37,10 @@ class ListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        _ = partService.partsObservable.register { (_, parts) in
+        _ = partService.partsObservable.register { [weak self] (_, parts) in
             print("Nb of parts received: \(parts.count)")
             
-            self.mainView.configure(parts: parts)
+            self?.mainView.configure(parts: parts)
         }
     }
 }
