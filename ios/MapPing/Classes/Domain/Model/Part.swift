@@ -10,9 +10,14 @@ struct Part: Codable {
         case name
         case latitude = "lat"
         case longitude = "lon"
+        case type = "type"
+        case description = "component"
     }
 
     let name: String
-    let latitude: Float
-    let longitude: Float
+    let latitude: Double?
+    let longitude: Double?
+    let type: String
+    let description: String
+    
 }

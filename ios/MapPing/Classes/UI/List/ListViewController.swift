@@ -7,16 +7,19 @@
 
 import UIKit
 
-class ListViewController: BaseViewController {
+class ListViewController: BaseViewController, ContentSizeUpdate {
 
-    private var mainView: ListView {
+    //NR: USELESS?!?!
+    /*private var mainView: ListView {
         return self.view as! ListView
-    }
+    }*/
 
     private let partService: PartService
+    private let scroll: UIScrollView
 
     init(partService: PartService) {
         self.partService = partService
+        self.scroll = UIScrollView();
         super.init(nibName: nil, bundle: nil)
         title = "Map Ping"
         navigationIcon = #imageLiteral(resourceName: "icn-list")
@@ -29,16 +32,35 @@ class ListViewController: BaseViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
 
     override func loadView() {
-        view = ListView()
+        view = scroll
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let listView = ListView()
+        listView.contentSizeDelegate = self
+        scroll.addSubview(listView)
+        
         _ = partService.partsObservable.register { (_, parts) in
+            print("Parts received!!")
             print("Nb of parts received: \(parts.count)")
+            //Add the parts to the list
+            listView.addPartCells(partInfo: parts)
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        scroll.backgroundColor = .white
+        scroll.isUserInteractionEnabled = true
+        //scroll.contentSize = CGSize(width: self.view.frame.size.width, height: 5000);
+    }
+    
+    //MARK: ContentSizeUpdate
+    func updateContentSize(height: CGFloat) {
+        scroll.contentSize = CGSize(width: self.view.frame.size.width, height: height)
     }
 }
