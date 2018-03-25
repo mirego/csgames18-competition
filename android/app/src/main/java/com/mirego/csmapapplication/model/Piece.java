@@ -1,6 +1,7 @@
 package com.mirego.csmapapplication.model;
 
 import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Piece {
     @Expose
@@ -12,8 +13,10 @@ public class Piece {
     @Expose
     private String type;
     @Expose
+    @SerializedName("lat")
     private double latitude;
     @Expose
+    @SerializedName("lon")
     private double longitude;
     @Expose
     private String address;
