@@ -53,7 +53,7 @@ class MainActivity : FragmentActivity() {
     }
 
     private fun downloadData() {
-        retrofit.create(GitHubService::class.java).listRepos("olivierpineau").enqueue(object : Callback<List<Repo>> {
+        retrofit.create(GitHubService::class.java).listRepos("olivierpineuau").enqueue(object : Callback<List<Repo>> {
             override fun onFailure(call: Call<List<Repo>>?, t: Throwable?) {
                 Log.d("street's test", "Oops")
             }

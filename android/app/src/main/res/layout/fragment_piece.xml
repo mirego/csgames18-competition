@@ -41,6 +41,7 @@
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:maxLines="1"
+                    android:id="@+id/txtObjectName"
                     android:text="Bougie 4W"
                     android:textAppearance="@style/partTitle"
                     android:textColor="@color/purpleBrown" />
@@ -50,6 +51,7 @@
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:maxLines="1"
+                    android:id="@+id/txtDescription"
                     android:text="Moteur principal"
                     android:textColor="@color/purpleBrown" />
 
@@ -65,6 +67,7 @@
                     android:ellipsize="end"
                     android:maxLines="1"
                     android:text="46.7552° N, 71.2265° W"
+                    android:id="@+id/txtPosition"
                     android:textColor="@color/brownishGrey" />
 
                     <TextView
@@ -75,6 +78,7 @@
                         android:maxLines="1"
                         android:text="(0.62 km)"
                         android:textColor="@color/brownishGrey"
+                        android:id="@+id/txtDistance"
                         android:textStyle="italic" />
 
                 </LinearLayout>
