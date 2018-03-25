@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Map Ping</string>
+
+    <string name="name">Nom</string>
+    <string name="component">Composant</string>
+    <string name="address">Adresse</string>
 </resources>
