@@ -13,9 +13,9 @@ class MapPingApplication : Application() {
         super.onCreate()
 
         netComponent = DaggerNetComponent.builder()
-            .appModule(AppModule(this))
-            .netModule(NetModule(DATA_SOURCE_URL))
-            .build()
+                .appModule(AppModule(this))
+                .netModule(NetModule(DATA_SOURCE_URL))
+                .build()
     }
 
     companion object {

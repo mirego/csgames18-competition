@@ -13,14 +13,14 @@ import com.mirego.csmapapplication.MapPingApplication
 import com.mirego.csmapapplication.R
 import com.mirego.csmapapplication.fragment.ListSegmentFragment
 import com.mirego.csmapapplication.fragment.MapSegmentFragment
-import com.mirego.csmapapplication.model.Repo
+import com.mirego.csmapapplication.model.VesselPart
+import com.mirego.csmapapplication.service.MappingService
 import kotlinx.android.synthetic.main.activity_main.*
-import retrofit2.Retrofit
-import javax.inject.Inject
-import com.mirego.csmapapplication.service.GitHubService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import retrofit2.Retrofit
+import javax.inject.Inject
 
 
 class MainActivity : FragmentActivity() {
@@ -53,21 +53,21 @@ class MainActivity : FragmentActivity() {
     }
 
     private fun downloadData() {
-        retrofit.create(GitHubService::class.java).listRepos("olivierpineau").enqueue(object : Callback<List<Repo>> {
-            override fun onFailure(call: Call<List<Repo>>?, t: Throwable?) {
-                Log.d("street's test", "Oops")
+        retrofit.create(MappingService::class.java).listVesselParts().enqueue(object : Callback<List<VesselPart>> {
+            override fun onFailure(call: Call<List<VesselPart>>?, t: Throwable?) {
+                Log.d("Main Activity", "Fail")
             }
 
-            override fun onResponse(call: Call<List<Repo>>?, response: Response<List<Repo>>?) {
-                Log.d("street's test", "That's it")
+            override fun onResponse(call: Call<List<VesselPart>>?, response: Response<List<VesselPart>>?) {
+                mapFragment.setVesselParts(response?.body())
             }
         })
     }
 
     private fun setupMainView() {
         supportFragmentManager.beginTransaction()
-            .add(fragmentRoot.id, listFragment)
-            .commit()
+                .add(fragmentRoot.id, listFragment)
+                .commit()
     }
 
     private fun onSegmentButtonClicked(button: ImageButton) {
@@ -136,10 +136,10 @@ class MainActivity : FragmentActivity() {
 
     private fun tintSegmentButton(button: ImageButton, selected: Boolean) {
         button.setColorFilter(
-            ContextCompat.getColor(
-                this,
-                if (selected) R.color.brightSunYellow else R.color.cloudGray
-            )
+                ContextCompat.getColor(
+                        this,
+                        if (selected) R.color.brightSunYellow else R.color.cloudGray
+                )
         )
     }
 
