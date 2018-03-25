@@ -16,4 +16,6 @@ class Part {
     val longitude: Double? = null
 
     val address: String? = null
+
+    var distance: Float? = null
 }
