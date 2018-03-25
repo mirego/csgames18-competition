@@ -1,7 +1,5 @@
 package com.mirego.csmapapplication.model
 
-import com.google.gson.annotations.SerializedName
-
 class VesselPart {
 
     val name: String? = null

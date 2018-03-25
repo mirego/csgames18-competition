@@ -14,13 +14,13 @@ import com.mirego.csmapapplication.R
 import com.mirego.csmapapplication.fragment.ListSegmentFragment
 import com.mirego.csmapapplication.fragment.MapSegmentFragment
 import com.mirego.csmapapplication.model.VesselPart
-import kotlinx.android.synthetic.main.activity_main.*
-import retrofit2.Retrofit
-import javax.inject.Inject
 import com.mirego.csmapapplication.service.MappingService
+import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import retrofit2.Retrofit
+import javax.inject.Inject
 
 
 class MainActivity : FragmentActivity() {
@@ -66,8 +66,8 @@ class MainActivity : FragmentActivity() {
 
     private fun setupMainView() {
         supportFragmentManager.beginTransaction()
-            .add(fragmentRoot.id, listFragment)
-            .commit()
+                .add(fragmentRoot.id, listFragment)
+                .commit()
     }
 
     private fun onSegmentButtonClicked(button: ImageButton) {
@@ -136,10 +136,10 @@ class MainActivity : FragmentActivity() {
 
     private fun tintSegmentButton(button: ImageButton, selected: Boolean) {
         button.setColorFilter(
-            ContextCompat.getColor(
-                this,
-                if (selected) R.color.brightSunYellow else R.color.cloudGray
-            )
+                ContextCompat.getColor(
+                        this,
+                        if (selected) R.color.brightSunYellow else R.color.cloudGray
+                )
         )
     }
 

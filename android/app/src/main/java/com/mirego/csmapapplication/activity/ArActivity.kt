@@ -28,15 +28,8 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
-
-import com.google.ar.core.Anchor
-import com.google.ar.core.ArCoreApk
-import com.google.ar.core.Config
-import com.google.ar.core.Plane
-import com.google.ar.core.Point
+import com.google.ar.core.*
 import com.google.ar.core.Point.OrientationMode
-import com.google.ar.core.Session
-import com.google.ar.core.TrackingState
 import com.google.ar.core.exceptions.UnavailableApkTooOldException
 import com.google.ar.core.exceptions.UnavailableArcoreNotInstalledException
 import com.google.ar.core.exceptions.UnavailableSdkTooOldException
@@ -48,12 +41,10 @@ import com.mirego.csmapapplication.rendering.BackgroundRenderer
 import com.mirego.csmapapplication.rendering.ObjectRenderer
 import com.mirego.csmapapplication.rendering.PlaneRenderer
 import com.mirego.csmapapplication.rendering.PointCloudRenderer
-import kotlinx.android.synthetic.main.activity_ar.surfaceView
-
+import kotlinx.android.synthetic.main.activity_ar.*
 import java.io.IOException
-import java.util.ArrayList
+import java.util.*
 import java.util.concurrent.ArrayBlockingQueue
-
 import javax.microedition.khronos.egl.EGLConfig
 import javax.microedition.khronos.opengles.GL10
 
@@ -93,17 +84,17 @@ class ArActivity : AppCompatActivity(), GLSurfaceView.Renderer {
 
         // Set up tap listener.
         gestureDetector = GestureDetector(
-            this,
-            object : GestureDetector.SimpleOnGestureListener() {
-                override fun onSingleTapUp(e: MotionEvent): Boolean {
-                    onSingleTap(e)
-                    return true
-                }
+                this,
+                object : GestureDetector.SimpleOnGestureListener() {
+                    override fun onSingleTapUp(e: MotionEvent): Boolean {
+                        onSingleTap(e)
+                        return true
+                    }
 
-                override fun onDown(e: MotionEvent): Boolean {
-                    return true
-                }
-            })
+                    override fun onDown(e: MotionEvent): Boolean {
+                        return true
+                    }
+                })
 
         surfaceView!!.setOnTouchListener { v, event -> gestureDetector!!.onTouchEvent(event) }
 
@@ -194,17 +185,17 @@ class ArActivity : AppCompatActivity(), GLSurfaceView.Renderer {
     }
 
     override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<String>,
-        results: IntArray
+            requestCode: Int,
+            permissions: Array<String>,
+            results: IntArray
     ) {
         if (!CameraPermissionHelper.hasCameraPermission(this)) {
             Toast.makeText(
-                this,
-                "Camera permission is needed to run this application",
-                Toast.LENGTH_LONG
+                    this,
+                    "Camera permission is needed to run this application",
+                    Toast.LENGTH_LONG
             )
-                .show()
+                    .show()
             if (!CameraPermissionHelper.shouldShowRequestPermissionRationale(this)) {
                 // Permission denied with checking "Do not ask again".
                 CameraPermissionHelper.launchPermissionSettings(this)
@@ -218,7 +209,7 @@ class ArActivity : AppCompatActivity(), GLSurfaceView.Renderer {
         if (hasFocus) {
             // Standard Android full-screen functionality.
             window
-                .decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    .decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                     or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                     or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                     or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
@@ -245,8 +236,8 @@ class ArActivity : AppCompatActivity(), GLSurfaceView.Renderer {
             virtualObject.setMaterialProperties(0.0f, 3.5f, 1.0f, 6.0f)
 
             virtualObjectShadow.createOnGlThread(/*context=*/this,
-                "andy_shadow.obj",
-                "andy_shadow.png"
+                    "andy_shadow.obj",
+                    "andy_shadow.png"
             )
             virtualObjectShadow.setBlendMode(ObjectRenderer.BlendMode.Shadow)
             virtualObjectShadow.setMaterialProperties(1.0f, 0.0f, 0.0f, 1.0f)
@@ -354,7 +345,7 @@ class ArActivity : AppCompatActivity(), GLSurfaceView.Renderer {
 
             // Visualize planes.
             planeRenderer.drawPlanes(
-                session!!.getAllTrackables(Plane::class.java), camera.displayOrientedPose, projmtx
+                    session!!.getAllTrackables(Plane::class.java), camera.displayOrientedPose, projmtx
             )
 
             // Visualize anchors created by touch.
@@ -383,22 +374,22 @@ class ArActivity : AppCompatActivity(), GLSurfaceView.Renderer {
 
     private fun showSnackbarMessage(message: String, finishOnDismiss: Boolean) {
         messageSnackbar = Snackbar.make(
-            this@ArActivity.findViewById(android.R.id.content),
-            message,
-            Snackbar.LENGTH_INDEFINITE
+                this@ArActivity.findViewById(android.R.id.content),
+                message,
+                Snackbar.LENGTH_INDEFINITE
         )
         messageSnackbar!!.view.setBackgroundColor(-0x40cdcdce)
         if (finishOnDismiss) {
             messageSnackbar!!.setAction(
-                "Dismiss"
+                    "Dismiss"
             ) { messageSnackbar!!.dismiss() }
             messageSnackbar!!.addCallback(
-                object : BaseTransientBottomBar.BaseCallback<Snackbar>() {
-                    override fun onDismissed(transientBottomBar: Snackbar?, event: Int) {
-                        super.onDismissed(transientBottomBar, event)
-                        finish()
-                    }
-                })
+                    object : BaseTransientBottomBar.BaseCallback<Snackbar>() {
+                        override fun onDismissed(transientBottomBar: Snackbar?, event: Int) {
+                            super.onDismissed(transientBottomBar, event)
+                            finish()
+                        }
+                    })
         }
         messageSnackbar!!.show()
     }
