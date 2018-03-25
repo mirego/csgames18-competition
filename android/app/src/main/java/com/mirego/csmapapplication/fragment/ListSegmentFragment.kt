@@ -28,7 +28,6 @@ class ListSegmentFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        //setContentView(R.layout.fragment_list)
         val view = inflater.inflate(R.layout.fragment_list, container, false)
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
         linearLayoutManager = LinearLayoutManager(context)
