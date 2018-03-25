@@ -11,7 +11,6 @@ Welcome to the **CS Games 2018 Mobile Competition**!
 - mark them as "picked up" to easily see those that were found and those that are left.
 - Pickup notes: When parts are picked up, it could also be useful to add information from the situation. Part photo, pickup notes, etc - a form could be displayed to enter these details.
 - Persistence: While entering data in the app has its value, it's rendered useless if everything is forgotten once the app is closed. Implementing a local storage would insure persistence.
-- Send your position, get distance between all points
 
 
 ## Team
@@ -38,7 +37,7 @@ Welcome to the **CS Games 2018 Mobile Competition**!
 2. User management endpoints (getAllUsers, getUserById)
 3. Mapping endpoints (getAllTypes)
 4. Generated a new mapping.json by parsing it and obtaining lat/lon through Google geocoding API
-5. Endpoint to calculate the "general distance" between the user's location and all part locations
+5. Endpoint to calculate the "penguin teleportation distance" between the user's location and all part locations
 
 
 SERVER URL!!!

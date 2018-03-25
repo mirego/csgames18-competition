@@ -1,5 +1,4 @@
 const bcrypt = require('bcrypt')
-const util = require('../util/util')
 
 const userGateway = require('../gateways/users')
 const SALT_ROUNDS = 10
@@ -12,9 +11,6 @@ function _ensureNecessaryUserProperties(user, res) {
 
 module.exports = {
     register(req, res) {
-        const possibleOptionsResponse = util.respondToOptionsMethod(req, res)
-        if (possibleOptionsResponse) return possibleOptionsResponse
-
         let user = req.body
         const possibleEarlyReturn = _ensureNecessaryUserProperties(user, res)
         if (possibleEarlyReturn) return possibleEarlyReturn
@@ -45,9 +41,6 @@ module.exports = {
     },
 
     login(req, res) {
-        const possibleOptionsResponse = util.respondToOptionsMethod(req, res)
-        if (possibleOptionsResponse) return possibleOptionsResponse
-
         var user = req.body
         const possibleEarlyReturn = _ensureNecessaryUserProperties(user)
         if (possibleEarlyReturn) return possibleEarlyReturn
@@ -70,9 +63,6 @@ module.exports = {
     },
 
     logout(req, res) {
-        const possibleOptionsResponse = util.respondToOptionsMethod(req, res)
-        if (possibleOptionsResponse) return possibleOptionsResponse
-
         req.session.username = null
         return res.status(200).send({'message':'Successfully logged out.'})
     }

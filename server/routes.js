@@ -9,10 +9,8 @@ module.exports = (app) => {
     // User //
     //////////
     app.get(BASE_URL + '/user', users.getAllUsers)
-    app.options(BASE_URL + '/user', users.getAllUsers)
 
     app.get(BASE_URL + '/user/:userId', users.getUserById)
-    app.options(BASE_URL + '/user/:userId', users.getUserById)
     // app.put(BASE_URL + '/user/:userId', users.modifyUserById)
     // app.delete(BASE_URL + '/user/:userId', users.deleteUserById)
 
@@ -20,12 +18,10 @@ module.exports = (app) => {
     // Mapping //
     /////////////
     app.get(BASE_URL + '/mapping/types', mapping.getAllTypes)
-    app.options(BASE_URL + '/mapping/types', mapping.getAllTypes)
 
     //////////////
     // Location //
     //////////////
     app.post(BASE_URL + '/distance', location.getDistanceBetweenPoints)
-    app.options(BASE_URL + '/distance', location.getDistanceBetweenPoints)
 }
 
