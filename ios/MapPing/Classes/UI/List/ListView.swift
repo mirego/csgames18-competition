@@ -18,7 +18,6 @@ class ListView: UIView, UITableViewDataSource {
 
         backgroundColor = .white
 
-        //partCellView.configure(partImageName: "part-sensor", title: "Bougie 4W", subTitle: "Moteur principal", coordinates: "46.7552° N, 71.2265° W", distance: "(0.62 km)")
 
         
         tableView.dataSource = self
@@ -34,7 +33,7 @@ class ListView: UIView, UITableViewDataSource {
         let part = data[indexPath.row]
         let view = tableView.dequeueReusableCell(withIdentifier: "cell") as? PartCellView ?? PartCellView()
 
-        view.configure(partImageName: "part-sensor", title: part.name, subTitle: part.component, coordinates: part.formattedCoordinates, distance: "(distance tbd)")
+        view.configure(partImageName: "part-\(part.type)", title: part.name, subTitle: part.component, coordinates: part.formattedCoordinates, distance: "(distance tbd)")
         return view
     }
     
@@ -53,7 +52,7 @@ class ListView: UIView, UITableViewDataSource {
     override func layoutSubviews() {
         super.layoutSubviews()
         tableView.pin.all()
-        tableView.contentInset.top = 32
+        tableView.contentInset.top = 16
         tableView.rowHeight = 100
     }
 }
