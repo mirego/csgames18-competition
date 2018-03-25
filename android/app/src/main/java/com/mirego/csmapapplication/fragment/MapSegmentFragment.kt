@@ -47,6 +47,9 @@ class MapSegmentFragment : Fragment(), OnMapReadyCallback {
                     it.renderer = ClusterRenderer(context!!, map, it)
                     it.onCameraIdle()
                     map.setOnMarkerClickListener(clusterManager)
+                    map.setOnCameraIdleListener {
+                        clusterManager?.cluster()
+                    }
                 }
 
                 map.moveCamera(CameraUpdateFactory.newCameraPosition(
