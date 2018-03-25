@@ -22,6 +22,7 @@ class ListView: UIView, UITableViewDataSource {
 
         
         tableView.dataSource = self
+        tableView.register(PartCellView.self, forCellReuseIdentifier: "cell")
         addSubview(tableView)
     }
     
@@ -31,7 +32,7 @@ class ListView: UIView, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let part = data[indexPath.row]
-        let view = PartCellView()
+        let view = tableView.dequeueReusableCell(withIdentifier: "cell") as? PartCellView ?? PartCellView()
 
         view.configure(partImageName: "part-sensor", title: part.name, subTitle: part.component, coordinates: part.formattedCoordinates, distance: "(idk yet lol)")
         return view

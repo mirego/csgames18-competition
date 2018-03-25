@@ -17,8 +17,8 @@ class PartCellView: UITableViewCell {
     
     var part : Part!
 
-    init() {
-        super.init(style: UITableViewCellStyle.subtitle, reuseIdentifier: "PartCellView")
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         partImage.backgroundColor = .white
         partImage.contentMode = .center
@@ -41,6 +41,10 @@ class PartCellView: UITableViewCell {
         addSubview(distance)
 
         height = 100
+    }
+    
+    convenience init() {
+        self.init(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
     }
 
     required init(coder aDecoder: NSCoder) {
