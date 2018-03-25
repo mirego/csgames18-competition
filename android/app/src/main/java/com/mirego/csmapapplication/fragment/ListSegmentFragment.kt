@@ -11,7 +11,9 @@ import com.mirego.csmapapplication.model.Part
 import android.support.v7.widget.CardView
 import android.util.Log
 import android.widget.BaseAdapter
+import android.widget.ImageView
 import android.widget.TextView
+import com.mirego.csmapapplication.helper.IconUtil
 import kotlinx.android.synthetic.main.fragment_list.*
 
 class ListSegmentFragment : Fragment() {
@@ -33,8 +35,6 @@ class ListSegmentFragment : Fragment() {
 
     fun onPartListLoad(partList: List<Part>?) {
         for (part in partList!!) {
-            // var newCard = baseCard // TODO need a deep copy of basCard then change its attributes
-            // view!!.findViewById<ConstraintLayout>(R.id.frag_list).addView(newCard)
         }
 
         val adapter = CartsAdapter(this, partList)
@@ -69,7 +69,7 @@ class ListSegmentFragment : Fragment() {
             val item = getItem(position)
             vh.title.text = item.name
             vh.component.text = item.component
-
+            vh.icon.setImageResource(IconUtil.getIconFromPart(item))
             vh.localization.text = if (item.latitude == null || item.longitude == null) {
                 "N/A° N, N/A° W"
             } else {
@@ -99,6 +99,7 @@ class ListSegmentFragment : Fragment() {
     }
     private class ViewHolder(view: View?) {
         val title: TextView = view?.findViewById<TextView>(R.id.title) as TextView
+        val icon: ImageView = view?.findViewById<ImageView>(R.id.imageIcon) as ImageView
         val component: TextView = view?.findViewById<TextView>(R.id.component) as TextView
         val localization: TextView = view?.findViewById<TextView>(R.id.localization) as TextView
         val distance: TextView = view?.findViewById<TextView>(R.id.distance) as TextView

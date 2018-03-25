@@ -18,4 +18,6 @@ class Part {
     val address: String? = null
 
     var distance: Float? = null
+
+    var type: String? = null
 }

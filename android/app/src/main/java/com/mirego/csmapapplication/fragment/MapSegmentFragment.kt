@@ -21,10 +21,13 @@ import android.graphics.Bitmap
 import android.support.v4.content.res.ResourcesCompat
 import android.graphics.drawable.Drawable
 import android.support.annotation.DrawableRes
+import android.util.Log
+import com.google.android.gms.maps.MapView
+import com.mirego.csmapapplication.model.Part
+import kotlinx.android.synthetic.*
 
 
-
-class MapSegmentFragment : Fragment(), OnMapReadyCallback {
+class MapSegmentFragment() : Fragment(), OnMapReadyCallback {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,6 +44,19 @@ class MapSegmentFragment : Fragment(), OnMapReadyCallback {
                         .icon(createPinForPart(R.drawable.ic_part_bulb))
                 )
             }
+        }
+    }
+
+    fun onPartListLoad(partList: List<Part>?) {
+        for (part in partList!!) {
+            /*view!!.findViewById<MapView>(R.id.mapView).getMapAsync({map ->
+                map.addMarker(
+                    MarkerOptions()
+                            .position(LatLng(part.latitude!!, part.longitude!!))
+                            .title(part.name)
+                            .icon(createPinForPart(R.drawable.ic_part_bulb))
+                )
+            })*/
         }
     }
 

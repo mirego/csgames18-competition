@@ -128,6 +128,7 @@ class MainActivity : FragmentActivity() {
 
             mapButton -> {
                 replaceFragment(mapFragment)
+                mapFragment.onPartListLoad(listSpaceshipPart)
             }
 
             arButton -> {
