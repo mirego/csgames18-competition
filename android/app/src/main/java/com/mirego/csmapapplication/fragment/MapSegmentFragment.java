@@ -3,6 +3,7 @@ package com.mirego.csmapapplication.fragment;
 import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -32,8 +33,10 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.mirego.csmapapplication.ExtraKeys;
 import com.mirego.csmapapplication.MapPingApplication;
 import com.mirego.csmapapplication.R;
+import com.mirego.csmapapplication.activity.PieceDetailActivity;
 import com.mirego.csmapapplication.model.Piece;
 
 public class MapSegmentFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, LocationListener {
@@ -184,7 +187,9 @@ public class MapSegmentFragment extends Fragment implements OnMapReadyCallback, 
     @Override
     public boolean onMarkerClick(Marker marker) {
         int index = (int)marker.getTag();
-
+        Intent intent = new Intent(getActivity(), PieceDetailActivity.class);
+        intent.putExtra(ExtraKeys.PIECE_INDEX, index);
+        startActivity(intent);
         return true;
     }
 

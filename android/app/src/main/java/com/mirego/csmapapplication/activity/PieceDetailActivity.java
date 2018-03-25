@@ -3,6 +3,8 @@ package com.mirego.csmapapplication.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toolbar;
@@ -36,11 +38,23 @@ public class PieceDetailActivity extends Activity {
         addressTextView = findViewById(R.id.address_value);
 
         setActionBar(toolbar);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
         pieceIndex = intent.getIntExtra(ExtraKeys.PIECE_INDEX, 0);
 
         refreshData();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     private void refreshData() {
