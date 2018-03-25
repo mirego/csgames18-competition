@@ -90,7 +90,7 @@ public final class MainActivity extends FragmentActivity {
             this.setupButtons();
 //            this.downloadData();
             this.parseData();
-            
+
         }
 
 
@@ -118,8 +118,8 @@ public final class MainActivity extends FragmentActivity {
 
     protected void parseData() {
         try {
-            JSONObject jsonObj = new JSONObject();
-            JSONArray map = jsonObj.getJSONArray("mapping.json");
+            JSONObject jsonObj = new JSONObject("mapping.json");
+            JSONArray map = jsonObj.getJSONArray("map");
 
             // looping through All map
             for (int i = 0; i < map.length(); i++) {
@@ -148,7 +148,8 @@ public final class MainActivity extends FragmentActivity {
                 pinList.add(pin);
             }
         } catch (final JSONException e) {
-
+            String s = e.toString();
+            Log.d("ssaaaaa", s);
         }
 
     }
