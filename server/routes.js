@@ -1,5 +1,6 @@
 const users = require('./controllers/users')
 const mapping = require('./controllers/mapping')
+const location = require('./controllers/location')
 
 const BASE_URL = '/mirego/api/v1'
 
@@ -20,5 +21,11 @@ module.exports = (app) => {
     /////////////
     app.get(BASE_URL + '/mapping/types', mapping.getAllTypes)
     app.options(BASE_URL + '/mapping/types', mapping.getAllTypes)
+
+    //////////////
+    // Location //
+    //////////////
+    app.post(BASE_URL + '/distance', location.getDistanceBetweenPoints)
+    app.options(BASE_URL + '/distance', location.getDistanceBetweenPoints)
 }
 
