@@ -6,26 +6,44 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ListView: UIView, UITableViewDataSource {
+class ListView: UIView, UITableViewDataSource, CLLocationManagerDelegate {
     private let tableView = UITableView()
     var data : [Part]
+    let locationManager : CLLocationManager
+    var location : CLLocation?
 
     init() {
         data = []
-
+        locationManager = CLLocationManager()
+        
         super.init(frame: .zero)
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startMonitoringSignificantLocationChanges()
 
         backgroundColor = .white
 
-        //partCellView.configure(partImageName: "part-sensor", title: "Bougie 4W", subTitle: "Moteur principal", coordinates: "46.7552° N, 71.2265° W", distance: "(0.62 km)")
-
-        
         tableView.dataSource = self
         tableView.register(PartCellView.self, forCellReuseIdentifier: "cell")
         addSubview(tableView)
     }
-    
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations.last!
+        
+        let date = location.timestamp
+        let howRecent = date.timeIntervalSinceNow
+        
+        // If relatively recent
+        if (abs(howRecent) < 15) {
+            print("Long: \(location.coordinate.longitude) lat: \(location.coordinate.latitude)")
+            self.location = location
+            DispatchQueue.main.async { self.refresh() }
+        }
+    }
+
     func refresh() {
         tableView.reloadData()
     }
@@ -33,8 +51,24 @@ class ListView: UIView, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let part = data[indexPath.row]
         let view = tableView.dequeueReusableCell(withIdentifier: "cell") as? PartCellView ?? PartCellView()
-
-        view.configure(partImageName: "part-sensor", title: part.name, subTitle: part.component, coordinates: part.formattedCoordinates, distance: "(distance tbd)")
+        let locstring : String
+        
+        if let location = location {
+            if let lat = part.latitude, let long = part.longitude {
+                let partLocation = CLLocation(latitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(long))
+                
+                let distance = location.distance(from: partLocation)
+                locstring = "(\(distance))"
+            }
+            else {
+                locstring = "(unavailable)"
+            }
+        }
+        else {
+            locstring = "(unavailable)"
+        }
+        
+        view.configure(partImageName: "part-sensor", title: part.name, subTitle: part.component, coordinates: part.formattedCoordinates, distance: locstring)
         return view
     }
     
