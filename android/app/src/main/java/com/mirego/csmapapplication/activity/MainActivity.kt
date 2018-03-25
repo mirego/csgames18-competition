@@ -9,15 +9,19 @@ import android.support.v4.content.ContextCompat
 import android.util.Log
 import android.view.View
 import android.widget.ImageButton
+import android.widget.ListAdapter
+import android.widget.ListView
 import com.mirego.csmapapplication.MapPingApplication
 import com.mirego.csmapapplication.R
+import com.mirego.csmapapplication.R.id.itemList
+import com.mirego.csmapapplication.adapters.ItemListAdapter
 import com.mirego.csmapapplication.fragment.ListSegmentFragment
 import com.mirego.csmapapplication.fragment.MapSegmentFragment
-import com.mirego.csmapapplication.model.Repo
+import com.mirego.csmapapplication.model.Item
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Retrofit
 import javax.inject.Inject
-import com.mirego.csmapapplication.service.GitHubService
+import com.mirego.csmapapplication.service.ItemService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -28,6 +32,11 @@ class MainActivity : FragmentActivity() {
     private val listFragment = ListSegmentFragment()
     private val mapFragment = MapSegmentFragment()
     private var selectedSegmentIndex = 0
+
+    private var items: List<Item>? = null
+    private var adapter: ListAdapter? = null
+
+    private val mainActivity = this
 
     private lateinit var segmentButtons: List<ImageButton>
 
@@ -53,15 +62,26 @@ class MainActivity : FragmentActivity() {
     }
 
     private fun downloadData() {
-        retrofit.create(GitHubService::class.java).listRepos("olivierpineau").enqueue(object : Callback<List<Repo>> {
-            override fun onFailure(call: Call<List<Repo>>?, t: Throwable?) {
-                Log.d("street's test", "Oops")
+        retrofit.create(ItemService::class.java).listItems().enqueue(object : Callback<List<Item>> {
+            override fun onFailure(call: Call<List<Item>>?, t: Throwable?) {
+                Log.d("fetch info", "failed to fetch items")
             }
 
-            override fun onResponse(call: Call<List<Repo>>?, response: Response<List<Repo>>?) {
-                Log.d("street's test", "That's it")
+            override fun onResponse(call: Call<List<Item>>?, response: Response<List<Item>>?) {
+                Log.d("fetch info", "fetched items successfully")
+                items = response?.body()
+                adapter = ItemListAdapter(mainActivity, items?: emptyList())
+                refreshList()
             }
         })
+    }
+
+    private fun refreshList() {
+        if(adapter != null){
+            (findViewById<ListView>(R.id.itemList)).adapter = this.adapter
+        }else{
+            downloadData()
+        }
     }
 
     private fun setupMainView() {
@@ -74,6 +94,7 @@ class MainActivity : FragmentActivity() {
         when (button) {
             listButton -> {
                 replaceFragment(listFragment)
+                refreshList()
             }
 
             mapButton -> {

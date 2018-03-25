@@ -1,7 +1,10 @@
 package com.mirego.csmapapplication.service
 
-/**
- * Created by jacob on 2018-03-24.
- */
+import com.mirego.csmapapplication.model.Item
+import retrofit2.Call
+import retrofit2.http.GET
+
 interface ItemService {
+    @GET("/mapping.json")
+    fun listItems(): Call<List<Item>>
 }

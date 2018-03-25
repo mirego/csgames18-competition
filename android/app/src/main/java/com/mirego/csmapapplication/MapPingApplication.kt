@@ -19,6 +19,6 @@ class MapPingApplication : Application() {
     }
 
     companion object {
-        private const val DATA_SOURCE_URL = "https://api.github.com"
+        private const val DATA_SOURCE_URL = "http://concordia-at-csgames.com:4000"
     }
 }
