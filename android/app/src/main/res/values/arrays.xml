@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="piece_menu">
+        <item>Piece Details</item>
+        <item>Navigate to piece</item>
+    </string-array>
+</resources>

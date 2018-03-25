@@ -3,6 +3,7 @@ package com.mirego.csmapapplication.fragment;
 import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -20,6 +21,7 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -185,7 +187,26 @@ public class MapSegmentFragment extends Fragment implements OnMapReadyCallback, 
     }
 
     @Override
-    public boolean onMarkerClick(Marker marker) {
+    public boolean onMarkerClick(final Marker marker) {
+
+
+        /*
+        builder.setTitle("Choose an option")
+                .setItems(R.array.piece_menu, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        if(which == 0) {
+                            int index = (int)marker.getTag();
+                            Intent intent = new Intent(getActivity(), PieceDetailActivity.class);
+                            intent.putExtra(ExtraKeys.PIECE_INDEX, index);
+                            startActivity(intent);
+                        }  else {
+
+                        }
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();*/
+
         int index = (int)marker.getTag();
         Intent intent = new Intent(getActivity(), PieceDetailActivity.class);
         intent.putExtra(ExtraKeys.PIECE_INDEX, index);

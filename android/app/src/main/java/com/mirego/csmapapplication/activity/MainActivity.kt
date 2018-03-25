@@ -43,8 +43,6 @@ class MainActivity : FragmentActivity() {
 
         setActionBar(toolbar)
 
-
-
         setupButtons()
 
         downloadData()
