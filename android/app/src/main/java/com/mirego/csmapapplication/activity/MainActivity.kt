@@ -1,8 +1,7 @@
 package com.mirego.csmapapplication.activity
-
+import android.os.Bundle;
 
 import android.content.Intent
-import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentActivity
 import android.support.v4.content.ContextCompat
@@ -13,6 +12,7 @@ import com.mirego.csmapapplication.MapPingApplication
 import com.mirego.csmapapplication.R
 import com.mirego.csmapapplication.fragment.ListSegmentFragment
 import com.mirego.csmapapplication.fragment.MapSegmentFragment
+import com.mirego.csmapapplication.model.DataTask
 import com.mirego.csmapapplication.model.Repo
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Retrofit
@@ -49,19 +49,18 @@ class MainActivity : FragmentActivity() {
 
         setupButtons()
 
-        downloadData()
+        var d:DataTask= DataTask()
+        var json=d.execute().get();
+        val b=Bundle ();
+        b.putString("json",json.toString());
+
+
+
     }
 
-    private fun downloadData() {
-        retrofit.create(GitHubService::class.java).listRepos("olivierpineau").enqueue(object : Callback<List<Repo>> {
-            override fun onFailure(call: Call<List<Repo>>?, t: Throwable?) {
-                Log.d("street's test", "Oops")
-            }
 
-            override fun onResponse(call: Call<List<Repo>>?, response: Response<List<Repo>>?) {
-                Log.d("street's test", "That's it")
-            }
-        })
+    private fun downloadData() {
+
     }
 
     private fun setupMainView() {
@@ -142,6 +141,8 @@ class MainActivity : FragmentActivity() {
             )
         )
     }
+
+
 
     companion object {
         private const val SELECTED_SEGMENT_INDEX_KEY = "SELECTED_SEGMENT_INDEX_KEY"

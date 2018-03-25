@@ -4,12 +4,12 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-feature
         android:name="android.hardware.camera.ar"
         android:required="true" />
 
     <application
+
         android:name="com.mirego.csmapapplication.MapPingApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -36,5 +36,7 @@
             android:name="com.google.ar.core"
             android:value="required" />
     </application>
+
+
 
 </manifest>

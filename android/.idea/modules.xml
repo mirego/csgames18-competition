@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/android.iml" filepath="$PROJECT_DIR$/android.iml" />
+      <module fileurl="file://D:\dev\projects\csgames\mobile\android\android.iml" filepath="D:\dev\projects\csgames\mobile\android\android.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\dev\projects\csgames\mobile\android\app\app.iml" filepath="D:\dev\projects\csgames\mobile\android\app\app.iml" />
     </modules>
   </component>
 </project>
