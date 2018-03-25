@@ -8,6 +8,9 @@ module.exports = {
         if (possibleOptionsResponse) return possibleOptionsResponse
 
         let currentPoint = req.body
+        console.log(currentPoint)
+        console.log(currentPoint)
+        console.log(currentPoint)
         if (!currentPoint || !currentPoint.lat || !currentPoint.lon) {
             return res.status(422).send({"message":"You must supply the 'lat' and 'lon' fields for your point."})
         }

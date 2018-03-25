@@ -38,7 +38,10 @@ Welcome to the **CS Games 2018 Mobile Competition**!
 2. User management endpoints (getAllUsers, getUserById)
 3. Mapping endpoints (getAllTypes)
 4. Generated a new mapping.json by parsing it and obtaining lat/lon through Google geocoding API
-5. Endpoint to calculate distance between the user's location and all part locations
+5. Endpoint to calculate the "general distance" between the user's location and all part locations
+
+
+SERVER URL!!!
 
 **Client Build Steps:**
 - {We added the GooglePlaces lib to the Podfile, you need to run `pod install` before build}
