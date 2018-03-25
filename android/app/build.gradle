@@ -22,6 +22,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 allprojects {
@@ -33,6 +37,7 @@ allprojects {
     }
 }
 
+ext.anko_version = '0.10.4'
 kapt {
     generateStubs = true
 }
@@ -48,13 +53,36 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.0'
     implementation 'com.google.ar:core:1.0.0'
     implementation 'de.javagl:obj:0.2.1'
-    implementation 'com.google.android.gms:play-services-maps:12.0.0'
+    compile 'com.google.android.gms:play-services:12.0.0'
+    compile 'com.google.maps.android:android-maps-utils:0.4+'
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
     implementation 'com.android.support:design:27.1.0'
     implementation 'com.google.dagger:dagger:2.12'
     implementation 'com.google.code.gson:gson:2.8.2'
+
+    // Anko Commons
+    compile "org.jetbrains.anko:anko-commons:$anko_version"
+
+    // Anko Layouts
+    compile "org.jetbrains.anko:anko-sdk25:$anko_version"
+    compile "org.jetbrains.anko:anko-appcompat-v7:$anko_version"
+
+    // CardView-v7
+    compile "org.jetbrains.anko:anko-cardview-v7:$anko_version"
+
+    // Design
+    compile "org.jetbrains.anko:anko-design:$anko_version"
+    compile "org.jetbrains.anko:anko-design-coroutines:$anko_version"
+
+    // GridLayout-v7
+    compile "org.jetbrains.anko:anko-gridlayout-v7:$anko_version"
+
+    compile "org.jetbrains.anko:anko-constraint-layout:$anko_version"
+
+    compile "io.reactivex.rxjava2:rxjava:2.1.9"
+    compile 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
 
     kapt 'com.google.dagger:dagger-compiler:2.12'
 

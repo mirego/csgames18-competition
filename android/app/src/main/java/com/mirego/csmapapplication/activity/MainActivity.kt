@@ -2,37 +2,44 @@ package com.mirego.csmapapplication.activity
 
 
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.support.v4.app.ActivityCompat
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentActivity
 import android.support.v4.content.ContextCompat
-import android.util.Log
 import android.view.View
 import android.widget.ImageButton
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
+import com.google.android.gms.maps.model.LatLng
 import com.mirego.csmapapplication.MapPingApplication
 import com.mirego.csmapapplication.R
 import com.mirego.csmapapplication.fragment.ListSegmentFragment
 import com.mirego.csmapapplication.fragment.MapSegmentFragment
-import com.mirego.csmapapplication.model.Repo
+import com.mirego.csmapapplication.model.Mapping
+import com.mirego.csmapapplication.service.MappingService
+import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
-import retrofit2.Retrofit
+import org.jetbrains.anko.alert
 import javax.inject.Inject
-import com.mirego.csmapapplication.service.GitHubService
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 
 class MainActivity : FragmentActivity() {
+    val PERMISSION_REQUEST_ID = 1
 
     private val listFragment = ListSegmentFragment()
     private val mapFragment = MapSegmentFragment()
     private var selectedSegmentIndex = 0
 
     private lateinit var segmentButtons: List<ImageButton>
+    private lateinit var fusedLocationClient: FusedLocationProviderClient
 
     @Inject
-    lateinit var retrofit: Retrofit
+    lateinit var mappingService: MappingService
+
+    var mappings: List<Mapping> = emptyList<Mapping>()
+    var lastLocation: LatLng? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,31 +50,67 @@ class MainActivity : FragmentActivity() {
 
         setActionBar(toolbar)
 
-        if (savedInstanceState == null) {
-            setupMainView()
-        }
-
         setupButtons()
 
-        downloadData()
+        setUpData()
     }
 
-    private fun downloadData() {
-        retrofit.create(GitHubService::class.java).listRepos("olivierpineau").enqueue(object : Callback<List<Repo>> {
-            override fun onFailure(call: Call<List<Repo>>?, t: Throwable?) {
-                Log.d("street's test", "Oops")
+    private fun setUpData() {
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+
+        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    arrayOf(android.Manifest.permission.ACCESS_COARSE_LOCATION), PERMISSION_REQUEST_ID)
+        } else {
+            fusedLocationClient.lastLocation
+                    .addOnSuccessListener {
+                        lastLocation = LatLng(it.latitude, it.longitude)
+                        getMappings()
+                    }
+        }
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int,
+                                            permissions: Array<String>, grantResults: IntArray) {
+        when (requestCode) {
+            PERMISSION_REQUEST_ID -> {
+                if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+                    if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                        fusedLocationClient.lastLocation
+                                .addOnSuccessListener {
+                                    lastLocation = LatLng(it.latitude, it.longitude)
+                                    getMappings()
+                                }
+                    }
+
+                } else {
+                    alert("Please enable location.").show()
+                }
             }
 
-            override fun onResponse(call: Call<List<Repo>>?, response: Response<List<Repo>>?) {
-                Log.d("street's test", "That's it")
+            else -> {
+                // Ignore all other requests.
             }
-        })
+        }
+    }
+
+    private fun getMappings() {
+        mappingService.getAll()
+                .subscribeOn(Schedulers.newThread())
+                .subscribe({ m ->
+                    mappings = m
+                    runOnUiThread { setupMainView() }
+                })
     }
 
     private fun setupMainView() {
+        val args = Bundle()
+        args.putParcelableArrayList("mappings", ArrayList(mappings))
+        args.putParcelable("location", lastLocation)
+        listFragment.arguments = args
         supportFragmentManager.beginTransaction()
-            .add(fragmentRoot.id, listFragment)
-            .commit()
+                .add(fragmentRoot.id, listFragment)
+                .commit()
     }
 
     private fun onSegmentButtonClicked(button: ImageButton) {
@@ -87,6 +130,10 @@ class MainActivity : FragmentActivity() {
     }
 
     private fun replaceFragment(fragment: Fragment) {
+        val args = Bundle()
+        args.putParcelableArrayList("mappings", ArrayList(mappings))
+        args.putParcelable("location", lastLocation)
+        fragment.arguments = args
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(fragmentRoot.id, fragment)
         transaction.commit()
@@ -136,10 +183,10 @@ class MainActivity : FragmentActivity() {
 
     private fun tintSegmentButton(button: ImageButton, selected: Boolean) {
         button.setColorFilter(
-            ContextCompat.getColor(
-                this,
-                if (selected) R.color.brightSunYellow else R.color.cloudGray
-            )
+                ContextCompat.getColor(
+                        this,
+                        if (selected) R.color.brightSunYellow else R.color.cloudGray
+                )
         )
     }
 
