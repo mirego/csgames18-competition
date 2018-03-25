@@ -48,7 +48,7 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.0'
     implementation 'com.google.ar:core:1.0.0'
     implementation 'de.javagl:obj:0.2.1'
-    implementation 'com.google.android.gms:play-services-maps:12.0.0'
+    implementation 'com.google.android.gms:play-services-maps:11.0.0'
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
