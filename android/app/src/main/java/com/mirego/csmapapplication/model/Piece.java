@@ -39,12 +39,4 @@ public final class Piece {
         this.lon=lo;
         this.adress=adr;
     }
-   // public ArrayList<Piece> chargerDonné () throws JSONException {
-
-
-
-
-
-
-
 }
