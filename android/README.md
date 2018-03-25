@@ -13,19 +13,18 @@
 **Plateforme:** Android
 
 **Fonctionnalités:**
-1. {}
-2. {Ramassage de pièce: possibilité de marquer une pièce ramassée}
-3. {Siri: demander à Siri la pièce la plus proche de ma position actuelle}
-4. {etc.}
+1. Binding de la liste de mappings
+2. Binding des markers avec les données
+3. Clustering des markers
+4. Calcul de la distance
+5. Tri des données par distance
 
 **Étapes de build:**
-- {On a ajouté la librairie GooglePlaces au Podfile, il faut rouler `pod install` avant de builder}
-- {On a activé la capability "Siri", connecter un compte Apple Developer pour tester}
+- Gradle s'en occupe (On a une couple de dépendances de plus.)
 
 **Ce qui a bien été ou mal été:**
-- {Le projet de base était vraiment bien fait, ça a aidé pour commencer}
-- {Le clustering on a eu pas mal de misère, les librairies qu'on a essayé marchaient mal}
+- Le seed project était en Kotlin (Props!)
+- Nous avons voulu traduire le layout de listItem en Anko, ça a très bien été.
 
 **Fiertés et déceptions:**
-- {On est assez fier d'avoir pu faire marcher Siri, c'était hors de nos attentes et ça fonctionne aux toasts}
-- {On est déçus de ne pas avoir pu attaquer le mode AR, ça aurait été sick}
+- On est fiers d'avoir fait du beau code et d'avoir exploité à fond les fonctionnalités de Kotlin.
