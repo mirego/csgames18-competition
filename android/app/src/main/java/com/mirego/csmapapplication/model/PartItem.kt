@@ -5,13 +5,12 @@ import java.math.BigDecimal
 /**
  * Created by Felix on 2018-03-24.
  */
-class PartItem (
-    val name : String,
-    val component : String,
-    val notes : String,
-    val type : String,
-    val lat : BigDecimal,
-    val lon : BigDecimal,
-    val address : String
-)
-{ }
+class PartItem {
+    private val name: String? = null
+    private val component: String? = null
+    private val notes: String? = null
+    private val type: String? = null
+    private val lat: BigDecimal? = null
+    private val lon: BigDecimal? = null
+    private val address: String? = null
+}

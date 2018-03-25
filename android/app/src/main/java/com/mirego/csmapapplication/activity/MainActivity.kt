@@ -13,11 +13,13 @@ import com.mirego.csmapapplication.MapPingApplication
 import com.mirego.csmapapplication.R
 import com.mirego.csmapapplication.fragment.ListSegmentFragment
 import com.mirego.csmapapplication.fragment.MapSegmentFragment
+import com.mirego.csmapapplication.model.PartItem
 import com.mirego.csmapapplication.model.Repo
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Retrofit
 import javax.inject.Inject
 import com.mirego.csmapapplication.service.GitHubService
+import com.mirego.csmapapplication.service.PartItemService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -30,6 +32,7 @@ class MainActivity : FragmentActivity() {
     private var selectedSegmentIndex = 0
 
     private lateinit var segmentButtons: List<ImageButton>
+    private lateinit var partItemsList: List<PartItem>
 
     @Inject
     lateinit var retrofit: Retrofit
@@ -44,7 +47,7 @@ class MainActivity : FragmentActivity() {
         setActionBar(toolbar)
 
         if (savedInstanceState == null) {
-            setupMainView()
+            //setupMainView()
         }
 
         setupButtons()
@@ -53,13 +56,19 @@ class MainActivity : FragmentActivity() {
     }
 
     private fun downloadData() {
-        retrofit.create(GitHubService::class.java).listRepos("olivierpineau").enqueue(object : Callback<List<Repo>> {
-            override fun onFailure(call: Call<List<Repo>>?, t: Throwable?) {
+        retrofit.create(PartItemService::class.java).getPartItemsMappings().enqueue(object : Callback<ArrayList<PartItem>> {
+            override fun onFailure(call: Call<ArrayList<PartItem>>?, t: Throwable?) {
                 Log.d("street's test", "Oops")
             }
 
-            override fun onResponse(call: Call<List<Repo>>?, response: Response<List<Repo>>?) {
-                Log.d("street's test", "That's it")
+            override fun onResponse(call: Call<ArrayList<PartItem>>?, response: Response<ArrayList<PartItem>>?) {
+                if (response != null && response.body() != null)
+                {
+                    val args = Bundle()
+                    args.putSerializable("partItems", response.body()!!)
+                    listFragment.arguments = args
+                    setupMainView()
+                }
             }
         })
     }

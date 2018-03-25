@@ -33,9 +33,8 @@ class ListSegmentFragment : Fragment() {
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
         linearLayoutManager = LinearLayoutManager(context)
         recyclerView.layoutManager = linearLayoutManager
-        val list = arrayListOf(PartItem("Générateur de flammèches", "", "", "", BigDecimal(1), BigDecimal(1), ""),
-                PartItem("", "", "", "", BigDecimal(1), BigDecimal(1), ""))
-        adapter = RecyclerAdapter(list)
+        val partItems = savedInstanceState?.getSerializable("partItems") as ArrayList<PartItem>
+        adapter = RecyclerAdapter(partItems)
         recyclerView.adapter = adapter
         return view
     }
