@@ -41,6 +41,12 @@
             android:label="@string/piece_detail">
 
         </activity>
+
+        <activity
+            android:name=".activity.CreatePieceActivity"
+            android:label="@string/new_piece">
+
+        </activity>
     </application>
 
 </manifest>

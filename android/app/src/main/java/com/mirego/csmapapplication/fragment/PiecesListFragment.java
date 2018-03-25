@@ -48,6 +48,15 @@ public class PiecesListFragment extends Fragment implements PiecesAdapter.OnItem
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+
+        mPiecesAdapter = new PiecesAdapter(getActivity(), (List<Piece>) MapPingApplication.pieces);
+        mPiecesAdapter.setOnItemClickListener(this);
+        rcPieces.setAdapter(mPiecesAdapter);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
