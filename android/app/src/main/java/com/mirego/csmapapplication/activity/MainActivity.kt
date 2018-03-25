@@ -11,16 +11,17 @@ import android.view.View
 import android.widget.ImageButton
 import com.mirego.csmapapplication.MapPingApplication
 import com.mirego.csmapapplication.R
+import com.mirego.csmapapplication.adapter.MappingListAdapter
 import com.mirego.csmapapplication.fragment.ListSegmentFragment
 import com.mirego.csmapapplication.fragment.MapSegmentFragment
-import com.mirego.csmapapplication.model.Repo
+import com.mirego.csmapapplication.model.LocationDto
+import com.mirego.csmapapplication.service.MappingService
 import kotlinx.android.synthetic.main.activity_main.*
-import retrofit2.Retrofit
-import javax.inject.Inject
-import com.mirego.csmapapplication.service.GitHubService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import retrofit2.Retrofit
+import javax.inject.Inject
 
 
 class MainActivity : FragmentActivity() {
@@ -28,8 +29,12 @@ class MainActivity : FragmentActivity() {
     private val listFragment = ListSegmentFragment()
     private val mapFragment = MapSegmentFragment()
     private var selectedSegmentIndex = 0
+    private var data: ArrayList<LocationDto>? = null
 
     private lateinit var segmentButtons: List<ImageButton>
+
+    private var adapter: MappingListAdapter? = null
+
 
     @Inject
     lateinit var retrofit: Retrofit
@@ -48,19 +53,38 @@ class MainActivity : FragmentActivity() {
         }
 
         setupButtons()
+        setupAdapter()
+    }
 
-        downloadData()
+    private fun setupAdapter(){
+        if (data == null){
+            downloadData()
+        }else{
+            updateAdapter(data!!)
+        }
+    }
+
+    private fun updateAdapter(data: ArrayList<LocationDto>){
+        adapter = MappingListAdapter(this, data)
+        listFragment.setAdapter(adapter!!)
     }
 
     private fun downloadData() {
-        retrofit.create(GitHubService::class.java).listRepos("olivierpineau").enqueue(object : Callback<List<Repo>> {
-            override fun onFailure(call: Call<List<Repo>>?, t: Throwable?) {
-                Log.d("street's test", "Oops")
+        retrofit.create(MappingService::class.java).listData().enqueue(object: Callback<List<LocationDto>>{
+            override fun onFailure(call: Call<List<LocationDto>>?, t: Throwable?) {
+                Log.d("PLS", "NO")
             }
 
-            override fun onResponse(call: Call<List<Repo>>?, response: Response<List<Repo>>?) {
-                Log.d("street's test", "That's it")
+            override fun onResponse(call: Call<List<LocationDto>>?, response: Response<List<LocationDto>>?) {
+                if (response != null) {
+                    val list = response.body()
+                    if (data == null){
+                        data = ArrayList(list)
+                    }
+                    updateAdapter(data!!)
+                }
             }
+
         })
     }
 

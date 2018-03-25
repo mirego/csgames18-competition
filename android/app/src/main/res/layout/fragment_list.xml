@@ -37,6 +37,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/nameTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
@@ -46,6 +47,7 @@
                     android:textColor="@color/purpleBrown" />
 
                 <TextView
+                    android:id="@+id/componentTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
@@ -60,14 +62,16 @@
                     android:orientation="horizontal">
 
                     <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:text="46.7552° N, 71.2265° W"
-                    android:textColor="@color/brownishGrey" />
+                        android:id="@+id/lat_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="46.7552° N, 71.2265° W"
+                        android:textColor="@color/brownishGrey" />
 
                     <TextView
+                        android:id="@+id/distanceTxt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
