@@ -10,13 +10,25 @@ import MapKit
 
 class MapView: UIView {
     let mapView = MKMapView()
+    var data : [Part]
 
     init() {
+        data = []
         super.init(frame: .zero)
 
         mapView.register(PartAnnotationView.self, forAnnotationViewWithReuseIdentifier: PartAnnotationView.reuseIdentifier)
         mapView.delegate = self
         addSubview(mapView)
+    }
+    
+    func refresh() {
+        // TODO
+        for part in data {
+            if let lat = part.latitude, let long = part.longitude {
+                let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(long))
+                mapView.addAnnotation(PartAnnotation(coordinate: coordinate, iconName: "part-\(part.type)"))
+            }
+        }
     }
 
     required init(coder aDecoder: NSCoder) {

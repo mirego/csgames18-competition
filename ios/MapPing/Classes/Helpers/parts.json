@@ -1,0 +1,875 @@
+[
+ {
+   "name": "Générateur de flammèches",
+   "component": "Propulsion intergalactique",
+   "notes": "Passer au Bureau 200",
+   "type": "generator",
+   "lat": 46.7909223,
+   "lon": -71.2873006,
+   "address": "2327 Boulevard du Versant N, Ville de Québec, QC G1N 4C2, Canada"
+ },
+ {
+   "name": "Bobine d'uranium",
+   "component": "Alimentation nucléaire",
+   "notes": "Dans une arcade à grue, bonne chance pour le pogner (amène des 2$)",
+   "type": "coil",
+   "lat": 46.7904521,
+   "lon": -71.2882447,
+   "address": "2376 Rue Galvani, Ville de Québec, QC G1N, Canada"
+ },
+ {
+   "name": "Dog tag scanner",
+   "component": "Identification de l'équipage",
+   "notes": "Sur le toit d'un des blocs de résidence",
+   "type": "scanner",
+   "lat": null,
+   "lon": null,
+   "address": "2337 Rue Jean-Durand, Ville de Québec, QC G1V 4K4, Canada"
+ },
+ {
+   "name": "Égoût à liquide amniotique",
+   "component": "Sanitary facilities",
+   "notes": "Dans la room de crossfit du Gym Le Chalet",
+   "type": "sink",
+   "lat": 46.7906725,
+   "lon": -71.2868071,
+   "address": "2473 Rue Galvani, Ville de Québec, QC G1N, Canada"
+ },
+ {
+   "name": "Cartouche de kérosène solide",
+   "component": "Propulsion intergalactique",
+   "notes": "Au centre de kinésiologie",
+   "type": "fuel",
+   "lat": 46.7846046,
+   "lon": -71.2772369,
+   "address": "Pavillon de l'Éducation physique et des sports, 2300 Rue de la Terrasse, Ville de Québec, QC G1V 0A6, Canada"
+ },
+ {
+   "name": "Têtes de satellite",
+   "component": "Environment awareness and discovery",
+   "notes": "Gardé derrière le bar. Demander au gérant de soir",
+   "type": "heads",
+   "lat": 46.7786537,
+   "lon": -71.2691903,
+   "address": ""
+ },
+ {
+   "name": "Bougie 18W",
+   "component": "Équipement d'exploration planétaire",
+   "notes": "À la RÉMUL",
+   "type": "bulb",
+   "lat": 46.7788006,
+   "lon": -71.27846,
+   "address": "Pavillon Ferdinand-Vandry, 1050 Avenue de la Médecine, Ville de Québec, QC G1V 0A6, Canada"
+ },
+ {
+   "name": "Roue de zirconium",
+   "component": "Équipement d'exploration planétaire",
+   "notes": "Ça a fait un trou dans le sol, impossible de la manquer",
+   "type": "wheel",
+   "lat": 46.7840463,
+   "lon": -71.2688255,
+   "address": "Rue des Arts, Ville de Québec, QC G1V 2W3, Canada"
+ },
+ {
+   "name": "Chaîne en iridium ionisé",
+   "component": "Équipement d'exploration planétaire",
+   "notes": "Défoncé le toit, dans la piscine de l'Universel",
+   "type": "chain",
+   "lat": null,
+   "lon": null,
+   "address": "2300 Ch Ste-Foy, Ville de Québec, QC G1V 1S5, Canada"
+ },
+ {
+   "name": "Batterie au thallium",
+   "component": "Propulsion intergalactique",
+   "notes": "Passe par le chemin Ste-Foy, on la voit perchée sur un lampadaire",
+   "type": "battery",
+   "lat": 46.7873962,
+   "lon": -71.2729454,
+   "address": "2175-2189 Ch Ste-Foy, Ville de Québec, QC G1V, Canada"
+ },
+ {
+   "name": "Alternateur à roulement",
+   "component": "Équipement d'exploration planétaire",
+   "notes": "Juste à côté de l'autre. Trouve l'autre!",
+   "type": "generator",
+   "lat": 46.7840169,
+   "lon": -71.2694907,
+   "address": "Rue des Arts, Ville de Québec, QC G1V 2W3, Canada"
+ },
+ {
+   "name": "Gestionnaire du flow in/out",
+   "component": "Sanitary facilities",
+   "notes": "Sous les estrades les plus nord-est",
+   "type": "regulator",
+   "lat": 46.7828414,
+   "lon": -71.2812066,
+   "address": "Rue De La Médecine, Ville de Québec, QC G1V, Canada"
+ },
+ {
+   "name": "Cartouche de kérosène solide",
+   "component": "Propulsion intergalactique",
+   "notes": "Plus haut point du centre de glisse",
+   "type": "fuel",
+   "lat": 46.7910692,
+   "lon": -71.2745762,
+   "address": ""
+ },
+ {
+   "name": "Alternateur vitesse-lumière",
+   "component": "Propulsion intergalactique",
+   "notes": "Demander au gars du café",
+   "type": "generator",
+   "lat": 46.7874697,
+   "lon": -71.268289,
+   "address": "880-886 Avenue Myrand, Ville de Québec, QC G1V 2W6, Canada"
+ },
+ {
+   "name": "Bobine de magnésium",
+   "component": "Équipement d'exploration planétaire",
+   "notes": "Dans une patch de sable",
+   "type": "coil",
+   "lat": 46.7871318,
+   "lon": -71.2666583,
+   "address": "844 Rue Paradis, Ville de Québec, QC G1V 0C3, Canada"
+ },
+ {
+   "name": "Embrayage 16 vitesses",
+   "component": "Propulsion intergalactique",
+   "notes": "Au bureau de la sécurité, Cégep Garneau",
+   "type": "clutch",
+   "lat": null,
+   "lon": null,
+   "address": "749 Avenue Baillairgé, Ville de Québec, QC G1S 4S7, Canada"
+ },
+ {
+   "name": "Senseur hygrométrique",
+   "component": "Équipement d'exploration planétaire",
+   "notes": "Traversé le toit et fait un abat dans l'allée 5!!!",
+   "type": "sensor",
+   "lat": 46.7965487,
+   "lon": -71.2741041,
+   "address": "2020 Rue Cyrille-Duquet, Ville de Québec, QC G1N 2E8, Canada"
+ },
+ {
+   "name": "Embrayage 2 vitesses",
+   "component": "Équipement d'exploration planétaire",
+   "notes": "Sur le toit de Sobeys",
+   "type": "clutch",
+   "lat": 46.8034818,
+   "lon": -71.2961626,
+   "address": "950 Avenue Galilée, Ville de Québec, QC G1P 4B7, Canada"
+ },
+ {
+   "name": "Gear d'embrayage simple",
+   "component": "Moteur principal",
+   "notes": "Enterré avec Paul Gravel †",
+   "type": "gear",
+   "lat": 46.8070068,
+   "lon": -71.272366,
+   "address": "1460 Boulevard Wilfrid-Hamel, Ville de Québec, QC G1N 3Y6, Canada"
+ },
+ {
+   "name": "Connecteurs de transfert numérique",
+   "component": "Environment awareness and discovery",
+   "notes": "Sur le toit du Dollorama",
+   "type": "plugs",
+   "lat": 46.7981499,
+   "lon": -71.2562299,
+   "address": ""
+ },
+ {
+   "name": "Recharge de l'ordinateur principal",
+   "component": "Main CPU",
+   "notes": "Dans un container gris",
+   "type": "battery",
+   "lat": 46.8044068,
+   "lon": -71.2040234,
+   "address": ""
+ },
+ {
+   "name": "Détecteur de fumée électronique",
+   "component": "Sanitary facilities",
+   "notes": "Dans un égout sur le coin Repentigny / Eymard",
+   "type": "sensor",
+   "lat": 46.7899085,
+   "lon": -71.2542129,
+   "address": "1486 Rue de Repentigny, Ville de Québec, QC G1S 1Y6, Canada"
+ },
+ {
+   "name": "RAM usage gauge",
+   "component": "Main CPU",
+   "notes": "Coin sud-ouest, Villa Bagatelle",
+   "type": "dial",
+   "lat": 46.7883365,
+   "lon": -71.2466812,
+   "address": "1563 Avenue James Lemoine, Ville de Québec, QC G1S 3T5, Canada"
+ },
+ {
+   "name": "Régulateur d'ions de lithium",
+   "component": "Alimentation nucléaire",
+   "notes": "Récupéré par le proprio des Saveurs de l'Inde",
+   "type": "regulator",
+   "lat": 46.7817247,
+   "lon": -71.2527323,
+   "address": "1279 Avenue Maguire, Ville de Québec, QC G1T 1H9, Canada"
+ },
+ {
+   "name": "Spaceship license scanner",
+   "component": "Environment awareness and discovery",
+   "notes": "Domaine Cataraquoi? Dans le plus grand arbre.",
+   "type": "scanner",
+   "lat": 46.7727902,
+   "lon": -71.2532043,
+   "address": "2216 Chemin du Foulon, Québec City, QC G1T 1X4, Canada"
+ },
+ {
+   "name": "Égoût à sébum reproducteur",
+   "component": "Sanitary facilities",
+   "notes": "Direct sur le \"H\" de l'hélicoptère",
+   "type": "sink",
+   "lat": 46.7682048,
+   "lon": -71.2823868,
+   "address": "2649-2675 Rue Jean-Brillant, Ville de Québec, QC G1W, Canada"
+ },
+ {
+   "name": "Turbo Mach-VII",
+   "component": "Propulsion intergalactique",
+   "notes": "Pas loin de la pancarte à l'entrée",
+   "type": "turbo",
+   "lat": 46.7781981,
+   "lon": -71.2675381,
+   "address": "5834 Boulevard Laurier, Ville de Québec, QC G1V 0B1, Canada"
+ },
+ {
+   "name": "Piston à billes",
+   "component": "Moteur principal",
+   "notes": "Ramassé par Raoul, un chauffeur de taxi",
+   "type": "piston",
+   "lat": 46.7493301,
+   "lon": -71.3012695,
+   "address": "Sentier des Grèves de la Promenade Samuel-De Champlain, Ville de Québec, QC G1W 4V4, Canada"
+ },
+ {
+   "name": "Câble d'alimentation",
+   "component": "Moteur principal",
+   "notes": "En plein dans la côte, impossible à manquer",
+   "type": "cable",
+   "lat": null,
+   "lon": null,
+   "address": "2355-2373 Chemin du Foulon, Québec City, QC G1T 1X4, Canada"
+ },
+ {
+   "name": "Cartouche de kérosène solide",
+   "component": "Propulsion intergalactique",
+   "notes": "Récupéré par Chez Victor",
+   "type": "fuel",
+   "lat": 46.7702624,
+   "lon": -71.2832451,
+   "address": "2668-2698 Boulevard Laurier, Ville de Québec, QC G1V, Canada"
+ },
+ {
+   "name": "Ligne de gaz",
+   "component": "Moteur principal",
+   "notes": "Dans la cour arrière de la shop de bike",
+   "type": "hose",
+   "lat": 46.7845459,
+   "lon": -71.3040161,
+   "address": "727 Avenue Dalquier, Ville de Québec, QC G1V 1A3, Canada"
+ },
+ {
+   "name": "Baromètre spatio-temporel",
+   "component": "Système de navigation principal",
+   "notes": "Enterré sur les plaines. Bring a metal detector.",
+   "type": "dial",
+   "lat": 46.7979445,
+   "lon": -71.2238503,
+   "address": "1-3 Avenue Ontario, Ville de Québec, QC G1K, Canada"
+ },
+ {
+   "name": "Cooler au chmu",
+   "component": "Système de navigation principal",
+   "notes": "Avalé par une baleine",
+   "type": "radiator",
+   "lat": 46.8367097,
+   "lon": -71.1816216,
+   "address": "1 Boulevard Henri-Bourassa, Ville de Québec, QC G1J 1W8, Canada"
+ },
+ {
+   "name": "Bougie 15W",
+   "component": "Équipement d'exploration planétaire",
+   "notes": "Ramassé par Kévin, 7 ans. Passer par la directrice, il veut rien redonner",
+   "type": "bulb",
+   "lat": 46.8155686,
+   "lon": -71.3148522,
+   "address": "2920 Rue Claisse, Ville de Québec, QC G1P 3A8, Canada"
+ },
+ {
+   "name": "Turbo Speedlite V8",
+   "component": "Équipement d'exploration planétaire",
+   "notes": "Sur le toit du Centre Vidéotron",
+   "type": "turbo",
+   "lat": 46.8280195,
+   "lon": -71.2487412,
+   "address": "250F Rue de l'Exposition, Ville de Québec, QC G1L 4W7, Canada"
+ },
+ {
+   "name": "Windshield washer tank",
+   "component": "Visière spaciale",
+   "notes": "Dans l'arène des spectacles de phoques",
+   "type": "reservoir",
+   "lat": 46.751271,
+   "lon": -71.2882229,
+   "address": "Rue Ragueneau, Ville de Québec, QC G1W, Canada"
+ },
+ {
+   "name": "Purificateur de carburant magnétique",
+   "component": "Moteur principal",
+   "notes": "Sur le toit d'une maison grise",
+   "type": "coil",
+   "lat": 46.8002945,
+   "lon": -71.3575745,
+   "address": "1323 Rue du Domaine du Moulin, L'Ancienne-Lorette, QC G2E 4J8, Canada"
+ },
+ {
+   "name": "Générateur de quarks",
+   "component": "Alimentation nucléaire",
+   "notes": "Sous la pancarte de la ville",
+   "type": "generator",
+   "lat": 46.8716929,
+   "lon": -71.3368034,
+   "address": "240 Rue William Marsh, Ville de Québec, QC G3E 1K9, Canada"
+ },
+ {
+   "name": "Odomètre Mach-3",
+   "component": "Système de navigation principal",
+   "notes": "Accoté sur un garde-fou",
+   "type": "dial",
+   "lat": null,
+   "lon": null,
+   "address": "383 Avenue Ste Brigitte, Sainte-Brigitte-de-Laval, QC G0A 3K0, Canada"
+ },
+ {
+   "name": "Cartouche de kérosène solide",
+   "component": "Propulsion intergalactique",
+   "notes": "Accroché sur une soucoupe Bell",
+   "type": "fuel",
+   "lat": 46.878499,
+   "lon": -71.1944962,
+   "address": "401 Rue Adanac, Ville de Québec, QC G1C 6B9, Canada"
+ },
+ {
+   "name": "Mag chromé en stainless",
+   "component": "Swag spatial",
+   "notes": "Enterré sous la neige",
+   "type": "mag",
+   "lat": null,
+   "lon": null,
+   "address": "816 Rue Alphonse Desrochers, Saint-Nicolas, QC G7A 5H9, Canada"
+ },
+ {
+   "name": "Régulateur au cobalt",
+   "component": "Environment awareness and discovery",
+   "notes": "Main building, floor 1, displayed on the wall",
+   "type": "regulator",
+   "lat": null,
+   "lon": null,
+   "address": "57 Copernicus St, Ottawa, ON K1N, Canada"
+ },
+ {
+   "name": "Bougie 8W",
+   "component": "Équipement d'exploration planétaire",
+   "notes": "Récupéré par l'AGEG",
+   "type": "sparkplug",
+   "lat": 45.3781963,
+   "lon": -71.9258595,
+   "address": "Centre d'excellence en génie de l'information, C1, Sherbrooke, QC J1K 2X9, Canada"
+ },
+ {
+   "name": "Évacuateur de surchauffes",
+   "component": "Moteur principal",
+   "notes": "À côté de la plus grosse roche",
+   "type": "radiator",
+   "lat": 45.3935982,
+   "lon": -71.9381762,
+   "address": "2706 Rue Hertel, Sherbrooke, QC J1J 2J3, Canada"
+ },
+ {
+   "name": "Batterie 2500V",
+   "component": "Propulsion intergalactique",
+   "notes": "Dans le grand arbre au coin",
+   "type": "battery",
+   "lat": 45.3985705,
+   "lon": -71.8909264,
+   "address": "135 Rue Brooks, Sherbrooke, QC J1H 4X8, Canada"
+ },
+ {
+   "name": "Générateur d'hologrammes",
+   "component": "Équipement d'exploration planétaire",
+   "notes": "Ramassé par un étudiant lendemain de brosse. Demander Michael.",
+   "type": "generator",
+   "lat": 45.3873596,
+   "lon": -71.8941879,
+   "address": "1252 Rue Craig, Sherbrooke, QC J1H 4H3, Canada"
+ },
+ {
+   "name": "Bougie 8W",
+   "component": "Équipement d'exploration planétaire",
+   "notes": "Sur le sommet. IL FAIT BEN FROID ICI!",
+   "type": "sparkplug",
+   "lat": 28.7350057,
+   "lon": 84.473598,
+   "address": ""
+ },
+ {
+   "name": "Cooler au chmu",
+   "component": "Équipement d'exploration planétaire",
+   "notes": "Dans une fausse fusée, attention de ne pas confondre...",
+   "type": "radiator",
+   "lat": 45.4947249,
+   "lon": -73.5621196,
+   "address": "1100 Rue Notre-Dame Ouest, Montréal, QC H3C, Canada"
+ },
+ {
+   "name": "Bougie 1W",
+   "component": "Sanitary facilities",
+   "notes": "Dans l'infâme stationnement souterrain",
+   "type": "sparkplug",
+   "lat": 45.4945294,
+   "lon": -73.5624737,
+   "address": "1100 Rue Notre-Dame Ouest, Montréal, QC H3C, Canada"
+ },
+ {
+   "name": "Filtre à particules de météores",
+   "component": "Sanitary facilities",
+   "notes": "Demander aux étudiants très sérieux",
+   "type": "filter",
+   "lat": 45.4945031,
+   "lon": -73.5618728,
+   "address": "1075-1099 Rue William, Montréal, QC H3C 2G8, Canada"
+ },
+ {
+   "name": "Scanner d'étoiles",
+   "component": "Galaxy radar",
+   "notes": "Demander Olivier Aubin",
+   "type": "sensor",
+   "lat": 45.4920137,
+   "lon": -73.5586381,
+   "address": ""
+ },
+ {
+   "name": "Générateur d'ondes soniques",
+   "component": "Galaxy radar",
+   "notes": "Sur les rails... attention aux trains!",
+   "type": "generator",
+   "lat": 45.4995643,
+   "lon": -73.5658479,
+   "address": "Place Bonaventure, Montréal, QC, Canada"
+ },
+ {
+   "name": "Ligne d'échappement",
+   "component": "Moteur principal",
+   "notes": "À côté de la patch de pissenlits",
+   "type": "hose",
+   "lat": 46.81736,
+   "lon": -71.3095737,
+   "address": "2654-2684 Rue Claisse, Ville de Québec, QC G1P 3E8, Canada"
+ },
+ {
+   "name": "Ventilation extérieure",
+   "component": "Swag spatial",
+   "notes": "Déjà récupérée par Cam Ping",
+   "type": "fan",
+   "lat": 46.7800386,
+   "lon": -71.2763625,
+   "address": "Pavillon Alexandre-Vachon, 1045 Avenue de la Médecine, Ville de Québec, QC G1V 0A6, Canada"
+ },
+ {
+   "name": "Bombonne d'huile 5W50",
+   "component": "Moteur principal",
+   "notes": "Dans les poches de Ping Floyd",
+   "type": "reservoir",
+   "lat": 46.7800496,
+   "lon": -71.2765074,
+   "address": "Pavillon Alexandre-Vachon, 1045 Avenue de la Médecine, Ville de Québec, QC G1V 0A6, Canada"
+ },
+ {
+   "name": "Embrayage 8 vitesses",
+   "component": "Side propellers",
+   "notes": "Sur le bureau de Overslee Ping",
+   "type": "clutch",
+   "lat": 46.7801506,
+   "lon": -71.2763545,
+   "address": "Pavillon Alexandre-Vachon, 1045 Avenue de la Médecine, Ville de Québec, QC G1V 0A6, Canada"
+ },
+ {
+   "name": "Attache à débris",
+   "component": "Véhicule de secours",
+   "notes": "Ask Mike Triass",
+   "type": "mount",
+   "lat": 43.1293029,
+   "lon": -77.6266479,
+   "address": "740 Library Rd, Rochester, NY 14611, USA"
+ },
+ {
+   "name": "Identificateur de demi-vie",
+   "component": "Équipement d'exploration planétaire",
+   "notes": "Shout \"CON - CON\" in the entrance, the part will reveal itself",
+   "type": "scanner",
+   "lat": 45.4972657,
+   "lon": -73.5790227,
+   "address": ""
+ },
+ {
+   "name": "Mechanical shaft",
+   "component": "Entrée de marchandises",
+   "notes": "Enterré lors de la reconstruction de la pente",
+   "type": "valve",
+   "lat": 45.5056156,
+   "lon": -73.6137592,
+   "address": "2500 Chemin de Polytechnique, Montréal, QC H3T 1J4, Canada"
+ },
+ {
+   "name": "Gear d'attache mécanique",
+   "component": "Véhicule de secours",
+   "notes": "Dans le sac d'un gars de PolyPhoto",
+   "type": "gear",
+   "lat": null,
+   "lon": null,
+   "address": "École Polytechnique de Montréal, Montréal, QC H3T 1J4, Canada"
+ },
+ {
+   "name": "Attache-roue en chrome",
+   "component": "Véhicule de secours",
+   "notes": "Owned by teacher of 60-212. Object-Oriented Programming Using Java",
+   "type": "disk",
+   "lat": 42.3041661,
+   "lon": -83.066597,
+   "address": "2585 Wyandotte St W, Windsor, ON N9B 1K6, Canada"
+ },
+ {
+   "name": "Connecteurs analogiques",
+   "component": "Environment awareness and discovery",
+   "notes": "Go straight to EITC E1-586",
+   "type": "plugs",
+   "lat": 49.8074436,
+   "lon": -97.1365643,
+   "address": "40-48 Dafoe Rd W, Winnipeg, MB R3T, Canada"
+ },
+ {
+   "name": "Spark fuel",
+   "component": "Swag spatial",
+   "notes": "Easy to find, it's not tricolor",
+   "type": "fuel",
+   "lat": 44.2252281,
+   "lon": -76.4950132,
+   "address": "Kingston Hall, Kingston, ON K7L 3N5, Canada"
+ },
+ {
+   "name": "Wiper shaft",
+   "component": "Visière spaciale",
+   "notes": "Sur le toit du bâtiment des sciences, passer de soir quand les projections sur le mur sud, c'est plus beau.",
+   "type": "shaft",
+   "lat": 45.5090687,
+   "lon": -73.5682297,
+   "address": ""
+ },
+ {
+   "name": "Storage gauge",
+   "component": "Main CPU",
+   "notes": "Found in the Niagara Falls. Now guess where it ended up at Brock.",
+   "type": "dial",
+   "lat": 43.1174627,
+   "lon": -79.2481613,
+   "address": "Isaac Brock Blvd E, St. Catharines, ON L2S 3A1, Canada"
+ },
+ {
+   "name": "Ligne de kérosène",
+   "component": "Propulsion intergalactique",
+   "notes": "Well... good luck for that one.",
+   "type": "hose",
+   "lat": 43.3890819,
+   "lon": -79.2622375,
+   "address": "Niagara Regional Municipality, ON, Canada"
+ },
+ {
+   "name": "Unidentified part",
+   "component": "???",
+   "notes": "À ramasser sur le chemin du retour avec le spaceship",
+   "type": "regulator",
+   "lat": 62.2065119,
+   "lon": -76.4208984,
+   "address": "Baie-d'Hudson, QC, Canada"
+ },
+ {
+   "name": "Valve de contrôle",
+   "component": "Véhicule de secours",
+   "notes": "Read your warm fuzzies",
+   "type": "valve",
+   "lat": null,
+   "lon": null,
+   "address": "90-94 York Blvd, North York, ON M3J, Canada"
+ },
+ {
+   "name": "Têtes de transmission de signal",
+   "component": "Main CPU",
+   "notes": "Dans la plus haute fenêtre extérieure de la mairie",
+   "type": "heads",
+   "lat": 45.428399,
+   "lon": -75.7384694,
+   "address": "101 Rue Saint-Jean-Bosco, Gatineau, QC J8Y 3G5, Canada"
+ },
+ {
+   "name": "Batterie titane-plomb",
+   "component": "Side propellers",
+   "notes": "On top of the clock tower. If unsure, ask help to the SOCIS.",
+   "type": "battery",
+   "lat": 43.5321848,
+   "lon": -80.2269316,
+   "address": "MacKinnon Bldg, 87 Trent Ln, Guelph, ON N1G 1Y4, Canada"
+ },
+ {
+   "name": "Shaft en tungstène",
+   "component": "Propulsion intergalactique",
+   "notes": "Dans le container à poubelles de la Chasse-Galerie",
+   "type": "shaft",
+   "lat": 46.3475127,
+   "lon": -72.5774378,
+   "address": "Université Du Québec à Trois Rivières, Trois-Rivières, QC G8Z 4M3, Canada"
+ },
+ {
+   "name": "Coil 550°F",
+   "component": "Side propellers",
+   "notes": "Sous la croix",
+   "type": "coil",
+   "lat": 45.5089033,
+   "lon": -73.5879707,
+   "address": "Chemin Olmsted, Montréal, QC H2W 1S8, Canada"
+ },
+ {
+   "name": "Chaîne en vibre de verre",
+   "component": "Véhicule de secours",
+   "notes": "Sur le top de la tour du Canadiens",
+   "type": "chain",
+   "lat": 45.4965412,
+   "lon": -73.5684013,
+   "address": "Deloitte Tower, Montreal, QC H3C, Canada"
+ },
+ {
+   "name": "Valve de contrôle de fluide",
+   "component": "Propulsion intergalactique",
+   "notes": "Dans un pit de construction",
+   "type": "valve",
+   "lat": 45.4910059,
+   "lon": -73.5588741,
+   "address": "1345 Rue Olier, Montréal, QC H3C 1W5, Canada"
+ },
+ {
+   "name": "1-speed drive shaft",
+   "component": "Véhicule de secours",
+   "notes": "Dans un panier de magasinage du Costco (pour l'identifier, sa roulette arrière-droite grince vraiment beaucoup)",
+   "type": "shaft",
+   "lat": 45.4857107,
+   "lon": -73.5535526,
+   "address": "300 Rue Bridge, Montréal, QC H3K 2C3, Canada"
+ },
+ {
+   "name": "Roulement d'équipement",
+   "component": "Entrée de marchandises",
+   "notes": "Sur le top de l'Orbite",
+   "type": "gear",
+   "lat": 45.5227662,
+   "lon": -73.5344124,
+   "address": "208 Ch de la Ronde, Montréal, QC H3C 0K7, Canada"
+ },
+ {
+   "name": "Bougie \"Blaster\" 1500W",
+   "component": "Propulsion intergalactique",
+   "notes": "Sur le toit qui est supposé s'ouvrir mais qui ne s'ouvre pas (hey une chance que ça a pas passé à travers)",
+   "type": "bulb",
+   "lat": 45.557754,
+   "lon": -73.5515785,
+   "address": ""
+ },
+ {
+   "name": "Mag flat en béton",
+   "component": "Swag spatial",
+   "notes": "Dans un bac de tomates (consultez les Satay Brothers)",
+   "type": "mag",
+   "lat": 45.4794522,
+   "lon": -73.5769844,
+   "address": "138 Avenue Atwater, Montréal, QC H4C 2H6, Canada"
+ },
+ {
+   "name": "Chaîne de ligne de montage",
+   "component": "Équipement d'exploration planétaire",
+   "notes": "Monter dans La Grande roue de Montréal pour bien le voir. Accroché au mât d'un voilier blanc et bleu",
+   "type": "chain",
+   "lat": 45.5037603,
+   "lon": -73.5454845,
+   "address": ""
+ },
+ {
+   "name": "Réservoir de chmu liquide",
+   "component": "Équipement d'exploration planétaire",
+   "notes": "Au pied de la Biosphère",
+   "type": "reservoir",
+   "lat": 45.5139858,
+   "lon": -73.532095,
+   "address": "160 Chemin du Tour de l'isle, Montréal, QC H3C, Canada"
+ },
+ {
+   "name": "Roue de gallium",
+   "component": "Entrée de marchandises",
+   "notes": "Dans le Trou du diable (pas la micro, le vrai!)",
+   "type": "wheel",
+   "lat": 46.5396318,
+   "lon": -72.7549195,
+   "address": "902-946 Prom Du St Maurice, Shawinigan, QC G9N 1L8, Canada"
+ },
+ {
+   "name": "Détecteur de trous noirs",
+   "component": "Galaxy radar",
+   "notes": "Sous la patte arrière gauche d'un dinosaure vert",
+   "type": "sensor",
+   "lat": 46.0579852,
+   "lon": -72.3114109,
+   "address": "180 Rang du Moulin Rouge, Saint-Léonard-d'Aston, QC J0C 1M0, Canada"
+ },
+ {
+   "name": "Tinque à coke + menthos",
+   "component": "Swag spatial",
+   "notes": "Il se promène sur le traversier",
+   "type": "reservoir",
+   "lat": 46.0553645,
+   "lon": -73.1212234,
+   "address": "Ferry Ramp, Saint-Ignace-de-Loyola, QC J0K 2P0, Canada"
+ },
+ {
+   "name": "Turbo au charbon",
+   "component": "Entrée de marchandises",
+   "notes": "Voir avec Matstreet, il fait dire allo à Myriam",
+   "type": "turbo",
+   "lat": 46.042259,
+   "lon": -73.1165886,
+   "address": "102 Rue Pierre Letendre, Sorel-Tracy, QC J3P, Canada"
+ },
+ {
+   "name": "Ventilation à l'hydrogène",
+   "component": "Véhicule de secours",
+   "notes": "Ramassé par un pêcheur, qui l'a ensuite oublié au Pit Caribou",
+   "type": "fan",
+   "lat": 48.5206693,
+   "lon": -64.2154151,
+   "address": "1-21 Rue Donohue, Percé, QC G0C 2L0, Canada"
+ },
+ {
+   "name": "Prises de recharge armurées",
+   "component": "Véhicule de secours",
+   "notes": "Récupéré par le CSIS. Bonne chance pour ça aussi...",
+   "type": "plugs",
+   "lat": 45.4969849,
+   "lon": -73.5660142,
+   "address": "715 Rue Peel, Montréal, QC H3C 1B2, Canada"
+ },
+ {
+   "name": "Câble de remplissage de chmu liquide",
+   "component": "Équipement d'exploration planétaire",
+   "notes": "Sous la patinoire (il devrait faire au-dessus de 0°C ce weekend)",
+   "type": "hose",
+   "lat": 45.4988273,
+   "lon": -73.5978735,
+   "address": "Lac aux Castors perimeter path, Montreal, QC H3H 1A2, Canada"
+ },
+ {
+   "name": "Ampoule LED",
+   "component": "Swag spatial",
+   "notes": "Dans la valise d'une Audi A3 sur les gros mags rouge. Le gars a perdu ses clés, lui offrir d'appeler CAA",
+   "type": "bulb",
+   "lat": 46.7865,
+   "lon": -71.2828159,
+   "address": "2360 Avenue Nérée-Tremblay, Ville de Québec, QC G1V 4H2, Canada"
+ },
+ {
+   "name": "Détecteur d'explosifs",
+   "component": "Entrée de marchandises",
+   "notes": "Traversé le toit du Simons, c'est dans le linge pour femme",
+   "type": "sensor",
+   "lat": null,
+   "lon": null,
+   "address": "Boulevard Laurier, Ville de Québec, QC G1V 2L1, Canada"
+ },
+ {
+   "name": "Shaft en silicium",
+   "component": "Sanitary facilities",
+   "notes": "Au comptoir du Apple Store (ils utilisent \"Find My Spaceship\")",
+   "type": "shaft",
+   "lat": 46.7743186,
+   "lon": -71.2795758,
+   "address": ""
+ },
+ {
+   "name": "Dataset connector",
+   "component": "Main CPU",
+   "notes": "Torcher au dodgeball pour serrer la main au gérant et demander les pièces",
+   "type": "plugs",
+   "lat": null,
+   "lon": null,
+   "address": "220 Rue Fortin, Ville de Québec, QC G1M, Canada"
+ },
+ {
+   "name": "Régulateur d'alimentation solaire",
+   "component": "Équipement d'exploration planétaire",
+   "notes": "Dans le bas de la chute, accoté sur une roche",
+   "type": "regulator",
+   "lat": 46.8918739,
+   "lon": -71.1481476,
+   "address": "3371 Avenue Royale, Ville de Québec, QC G1C 1S3, Canada"
+ },
+ {
+   "name": "Boîte de cooling",
+   "component": "Équipement d'exploration planétaire",
+   "notes": "Pendu sur une lumière du pont qui l'allume plus",
+   "type": "radiator",
+   "lat": 46.746801,
+   "lon": -71.291914,
+   "address": "Pierre-Laporte Bridge, Saint-Nicolas, QC, Canada"
+ },
+ {
+   "name": "Bulbe d'émission d'ondes radioactives",
+   "component": "Alimentation nucléaire",
+   "notes": "Au pied d'un des piliers du pont de Québec (côté Lévis)",
+   "type": "bulb",
+   "lat": 46.742331,
+   "lon": -71.2862492,
+   "address": "1405 Pont de Québec, Saint-Nicolas, QC G7A 2R2, Canada"
+ },
+ {
+   "name": "Dryer exhaust",
+   "component": "Sanitary facilities",
+   "notes": "Dans un des étangs",
+   "type": "hose",
+   "lat": 46.7880721,
+   "lon": -71.333971,
+   "address": ""
+ },
+ {
+   "name": "Détecteur de débris",
+   "component": "Moteur principal",
+   "notes": "À la sortie de secours de la gate 1",
+   "type": "sensor",
+   "lat": 46.7902465,
+   "lon": -71.3966274,
+   "address": "25 Rue Principale, Ville de Québec, QC G2G, Canada"
+ },
+ {
+   "name": "Connexion des essuie-glaces",
+   "component": "Visière spaciale",
+   "notes": "Demander à la caissière de SAGE - Cantine",
+   "type": "cable",
+   "lat": null,
+   "lon": null,
+   "address": "555 Boulevard de l'Université, Chicoutimi, QC G7H 2B1, Canada"
+ }
+]

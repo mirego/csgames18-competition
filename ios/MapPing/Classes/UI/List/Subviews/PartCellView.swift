@@ -7,16 +7,18 @@
 
 import UIKit
 
-class PartCellView: UIView {
+class PartCellView: UITableViewCell {
 
     private let partImage = UIImageView()
     private let title = UILabel()
     private let subTitle = UILabel()
     private let coordinates = UILabel()
     private let distance = UILabel()
+    
+    var part : Part!
 
-    init() {
-        super.init(frame: .zero)
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         partImage.backgroundColor = .white
         partImage.contentMode = .center
@@ -39,6 +41,11 @@ class PartCellView: UIView {
         addSubview(distance)
 
         height = 100
+        
+    }
+    
+    convenience init() {
+        self.init(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -54,7 +61,7 @@ class PartCellView: UIView {
         coordinates.pin.below(of: subTitle, aligned: .left).marginTop(5)
         distance.pin.right(of: coordinates, aligned: .center).marginLeft(6)
     }
-
+    
     func configure(partImageName: String, title: String, subTitle: String, coordinates: String, distance: String) {
         partImage.image = UIImage(named: partImageName)
         self.title.setProperties(text: title, fit: true)

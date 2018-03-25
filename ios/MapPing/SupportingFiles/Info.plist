@@ -24,6 +24,10 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string> </string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>To find some alien parts!</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>To find some alien parts!</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>leaguespartan-bold.ttf</string>
@@ -32,6 +36,7 @@
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
+		<string>location-services</string>
 		<string>armv7</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
