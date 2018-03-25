@@ -15,7 +15,7 @@ class PartService {
     var partsObservable = Observable<[Part]>()
 
     func refreshParts() {
-        var arrayofparts = [Part]()
+        //var arrayofparts = [Part]()
         // TODO 🙄
         /*do {
             let url = try Data(contentsOf: partsUrl)
@@ -28,16 +28,29 @@ class PartService {
            
         }*/
         
-
+        
         
         do {
             let data = try Data(contentsOf: partsUrl)
-            let parts = try JSONDecoder().decode(Part.self, from: data)
+            let parts = try JSONDecoder().decode([Part].self, from: data)
             print(parts)
+            
+            
+            var filteredParts: [Part] = [Part]()
+            var count = 0;
+            for part in parts {
+                if((part.latitude != nil)) {
+                    filteredParts.append(part)
+                }
+                count += 1
+            }
+            //print("added \(count) items")
+            
+            partsObservable.notify(data: filteredParts)
         } catch {
-            print("something was not successful")
+            print("something was not successful \(error)")
         }
-        partsObservable.notify(data: [])
+        
 //        var err: NSError?
 //
 //        print("1123123123 \(boardsDictionary)");

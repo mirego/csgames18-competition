@@ -567,10 +567,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X32L3PWM9B;
+				DEVELOPMENT_TEAM = C93A6Z9KNL;
 				INFOPLIST_FILE = "$(SRCROOT)/MapPing/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shengbo.mapping;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mirego.MapPing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -583,10 +583,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X32L3PWM9B;
+				DEVELOPMENT_TEAM = C93A6Z9KNL;
 				INFOPLIST_FILE = "$(SRCROOT)/MapPing/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shengbo.mapping;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mirego.MapPing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -43,7 +43,7 @@ class MapViewController: BaseViewController {
             //Add the parts to the list
             
             for part in parts {
-                self.mainView.mapView.addAnnotation(PartAnnotation(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(part.latitude), longitude: CLLocationDegrees(part.longitude)), iconName: "part-\(part.type)"))
+                self.mainView.mapView.addAnnotation(PartAnnotation(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(part.latitude!), longitude: CLLocationDegrees(part.longitude!)), iconName: "part-\(part.type)"))
             }
         }
     }
