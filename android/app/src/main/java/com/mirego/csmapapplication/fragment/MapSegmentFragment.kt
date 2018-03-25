@@ -9,6 +9,8 @@ import android.support.v4.content.res.ResourcesCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.android.gms.maps.CameraUpdate
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.BitmapDescriptor
@@ -24,6 +26,7 @@ class MapSegmentFragment : Fragment(), OnMapReadyCallback {
     private var lon: Double = 46.7794201
     private var lat: Double = -71.2778703
     private var title: String = "Placeholder"
+    private var type: String = "bulb"
 
     private var globalMapSegmentView: View? = null
 
@@ -67,19 +70,24 @@ class MapSegmentFragment : Fragment(), OnMapReadyCallback {
         return BitmapDescriptorFactory.fromBitmap(bitmap)
     }
 
-    fun setPinLocation(lon: Double, lat: Double, title: String){
+    fun setPinLocation(lon: Double, lat: Double, title: String, type: String){
         this.lon = lon
         this.lat = lat
         this.title = title
+        this.type = type
+
+        val uri = "@drawable/ic_part_" + type
+        val imageResource = activity?.getResources()?.getIdentifier(uri, null, activity?.getPackageName())
 
         globalMapSegmentView?.mapView?.getMapAsync { map ->
             map.clear()
             map.addMarker(
                 MarkerOptions()
-                        .position(LatLng(this.lon,this.lat))
+                        .position(LatLng(lat, lon))
                         .title(title)
-                        .icon(createPinForPart(R.drawable.ic_part_bulb))
+                        .icon(createPinForPart(imageResource?:1))
             )
+            map.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(lat, lon), 16f))
         }
     }
 }

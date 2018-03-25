@@ -9,10 +9,8 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.mirego.csmapapplication.R
+import com.mirego.csmapapplication.activity.MainActivity
 import com.mirego.csmapapplication.model.Item
-import android.graphics.drawable.Drawable
-
-
 
 
 class ItemListAdapter(private var activity: Activity, private var items: List<Item>): BaseAdapter() {
@@ -20,11 +18,15 @@ class ItemListAdapter(private var activity: Activity, private var items: List<It
     private class ViewHolder(row: View?) {
         var txtTitle: TextView? = null
         var txtType: TextView? = null
+        var txtDistance: TextView? = null
+        var txtLocation: TextView? = null
         var imageView: ImageView? = null
 
         init {
             this.txtTitle = row?.findViewById(R.id.item_title)
             this.txtType = row?.findViewById(R.id.item_type)
+            this.txtDistance = row?.findViewById(R.id.item_distance)
+            this.txtLocation = row?.findViewById(R.id.item_location)
             this.imageView = row?.findViewById(R.id.imageIcon)
         }
     }
@@ -52,6 +54,10 @@ class ItemListAdapter(private var activity: Activity, private var items: List<It
         viewHolder.imageView?.setImageDrawable(res)
         viewHolder.txtTitle?.text = item.getName()
         viewHolder.txtType?.text = item.getDescription()
+        viewHolder.txtLocation?.text = item.getLocation()
+        viewHolder.txtDistance?.text = item.getDistance() + " PTD" // Penguin teleportation distance
+
+        view?.setOnClickListener({ _ -> (activity as? MainActivity)?.gotoPointOnMap(item) })
 
         return view as View
     }
